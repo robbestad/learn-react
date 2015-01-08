@@ -1,9 +1,10 @@
 /**
- * Home class
+ * Click a button class
  * @flow
  */
 
 var React = require("react");
+var Markdown2Html = require("react-markdown-to-html");
 
 module.exports = React.createClass({
 
@@ -27,6 +28,9 @@ module.exports = React.createClass({
                 <input type="button" className="button" value="ClickMe" onClick={this.onClick} />
             </p>
             <p>Status: <span className="buttonStatus">{this.state.buttonText}</span></p>
+
+            <hr />
+            <Markdown2Html src="./assets/CLICKBUTTON.md" />
         </div>
     }
 });

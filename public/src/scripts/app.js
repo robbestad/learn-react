@@ -18,12 +18,6 @@ var React = require('react'),
     NavItemLink = ReactRouterBootstrap.NavItemLink,
     ButtonLink = ReactRouterBootstrap.ButtonLink;
 
-// Require individual app components
-var Home = require('./home/index');
-var StickyDiv = require('./stickydiv/index');
-var Markdown = require('./markdown/index');
-var Button = require('./button');
-
 // Layout view
 var Layout = React.createClass({
     render: function () {
@@ -32,8 +26,8 @@ var Layout = React.createClass({
                 <header>
                     <Nav bsStyle="pills" className="pull-right">
                         <NavItemLink to="home">Home</NavItemLink>
-                        <NavItemLink to="stickydiv">Sticky Div</NavItemLink>
-                        <NavItemLink to="markdown">Markdown Include</NavItemLink>
+                        <NavItemLink to="stickydiv">StickyDiv</NavItemLink>
+                        <NavItemLink to="markdown">IncludeMD</NavItemLink>
                         <NavItemLink to="button">Button</NavItemLink>
                     </Nav>
                     <h1 className="text-muted">React Reflux Boilerplate</h1>
@@ -46,10 +40,10 @@ var Layout = React.createClass({
 // Define react-router routes
 var routes = (
     <Route path="/" handler={Layout}>
-        <DefaultRoute handler={Home} />
-        <Route name="stickydiv" handler={StickyDiv} />
-        <Route name="markdown" handler={Markdown} />
-        <Route name="home" handler={Home} />
+        <DefaultRoute handler={require('./home/index')} />
+        <Route name="stickydiv" handler={require('./stickydiv/index')} />
+        <Route name="markdown" handler={require('./markdown/index')} />
+        <Route name="home" handler={require('./home/index')} />
         <Route name="button" handler={require('./button')} />
     </Route>
 );
