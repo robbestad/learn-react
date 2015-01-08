@@ -1,7 +1,7 @@
 [ignore]
-/Users/svenanders/Work/robbis/opensource/reflux-boilerplate/public/dist
+.*/dist/.*
 [include]
-/Users/svenanders/Work/robbis/opensource/reflux-boilerplate/public/src
+
 [libs]
 
 [options]

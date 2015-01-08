@@ -20,7 +20,8 @@ $ ./script/dev
 
 ## Test
 
-```npm test
+```npm test```
+
 
 ## Demo
 
