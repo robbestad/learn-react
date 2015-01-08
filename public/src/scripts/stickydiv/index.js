@@ -19,8 +19,8 @@ module.exports = React.createClass({
     render: function(): any {
         return (
             <div>
-                <Sticky><span style={{backgroundColor:'white',border:'1px dashed #333',
-                    fontSize:'24px',padding:'1px'}}>Sticky Div</span></Sticky>
+                <Sticky><span style={{backgroundColor:'white',
+                    fontSize:'24px',padding:'2px'}}>Sticky Div</span></Sticky>
                 <Markdown2Html src="assets/STICKY.md" />
                 <p>Sample text to fill up the page</p>
                 <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci distinctio doloribus earum fugit id incidunt iste itaque minus modi nisi nulla omnis perspiciatis placeat provident tenetur ullam unde, voluptatum.</div>
