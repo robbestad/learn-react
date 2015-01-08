@@ -14,7 +14,6 @@ var React = require('react'),
 
     ReactBootstrap = require('react-bootstrap'),
     Nav = ReactBootstrap.Nav,
-
     ReactRouterBootstrap = require('react-router-bootstrap'),
     NavItemLink = ReactRouterBootstrap.NavItemLink,
     ButtonLink = ReactRouterBootstrap.ButtonLink;

@@ -10,14 +10,8 @@ var Sticky = require('react-stickydiv');
 var ReactBootstrap = require('react-bootstrap'),
     Input = ReactBootstrap.Input,
     Well = ReactBootstrap.Well;
-var marked = require('marked');
 
 var Markdown2Html = require("react-markdown-to-html");
-
-// Simple unrecommended way to save state between route changes.
-// A Reflux store should be used instead for the sake of expandability
-// and convention but this is just a simple demo for React.
-var name = 'friend';
 
 // Create a react view-controller
 module.exports = React.createClass({

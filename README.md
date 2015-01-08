@@ -20,9 +20,9 @@ $ ./script/dev
 
 ## Type checking
 
-Type checking is implemented with Flow.
-
 ```flow check```
+
+Type checking is implemented with Flow.
 
 ## Tests
 
@@ -34,4 +34,3 @@ react-router.
 ## Demo
 
 [Heroku](https://reactboiler.herokuapp.com/)
-
