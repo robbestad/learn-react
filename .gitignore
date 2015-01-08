@@ -1,0 +1,14 @@
+.DS_Store
+../api/run.sh
+npm-debug.log
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+node_modules
+/_
+/public/dist
+/.idea
