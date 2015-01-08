@@ -2,8 +2,6 @@
 
 [React][1] Component that converts a Markdown file to HTML
 
-Demo at [opensourceprojects.robbestad.com][2]
-
 ## Installation
 
     % npm install react-markdown-to-html --save

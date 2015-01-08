@@ -16,7 +16,7 @@ module.exports = React.createClass({
     render: function(): any {
         return (
             <div>
-                <Markdown2Html src="assets/MARKDOWN2HTML.md" />
+                <Markdown2Html src="assets/INCLUDEMD.md" />
             </div>
         );
     }
