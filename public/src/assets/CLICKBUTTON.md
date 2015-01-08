@@ -12,28 +12,31 @@
         getInitialState: function (): any {
             return {
                 buttonText: "Not clicked",
-                buttonClicked: 0
+                buttonClicked: 0,
+                buttonStyle:'info'
             };
         },
 
         onClick: function (): any {
             this.state.buttonClicked ?
-                this.setState({buttonText: "Not clicked", buttonClicked: 0}) :
-                this.setState({buttonText: "Clicked", buttonClicked: 1});
+                this.setState({buttonText: "Not clicked",
+                    buttonClicked: 0, buttonStyle:'info'}) :
+                this.setState({buttonText: "Clicked me",
+                    buttonClicked: 1, buttonStyle:'success'});
         },
+
 
         render: function ():any {
             return <div>
                 <h1>Button</h1>
-                <p>
-                <input type="button" className="button"
-                    value="ClickMe" onClick={this.onClick} />
+                 <p>
+                    <Button bsStyle={this.state.buttonStyle}
+                      className="button"
+                      onClick={this.onClick}>
+                      <span className="buttonStatus">{this.state.buttonText}</span>
+                    </Button>
                 </p>
-                <p>
-                Status: <span className="buttonStatus">
-                            {this.state.buttonText}
-                        </span>
-                </p>
+
             </div>
         }
     });

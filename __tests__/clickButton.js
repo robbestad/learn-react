@@ -20,6 +20,6 @@ describe('ClickButton', function() {
 
         TestUtils.Simulate.click(button);
         buttonText = TestUtils.findRenderedDOMComponentWithClass(instance, 'buttonStatus');
-        expect(buttonText.getDOMNode().textContent).toBe('Clicked');
+        expect(buttonText.getDOMNode().textContent).toBe('Clicked me');
     });
 });

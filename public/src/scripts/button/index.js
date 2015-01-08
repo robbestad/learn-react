@@ -3,7 +3,10 @@
  * @flow
  */
 
-var React = require("react");
+var React = require("react"),
+    ReactBootstrap = require('react-bootstrap'),
+    Button = ReactBootstrap.Button;
+
 var Markdown2Html = require("react-markdown-to-html");
 
 module.exports = React.createClass({
@@ -11,23 +14,24 @@ module.exports = React.createClass({
     getInitialState: function (): any {
         return {
             buttonText: "Not clicked",
-            buttonClicked: 0
+            buttonClicked: 0,
+            buttonStyle:'info'
         };
     },
 
     onClick: function (): any {
-        this.state.buttonClicked ? this.setState({buttonText: "Not clicked", buttonClicked: 0}) :
-            this.setState({buttonText: "Clicked", buttonClicked: 1});
+        this.state.buttonClicked ? this.setState({buttonText: "Not clicked", buttonClicked: 0, buttonStyle:'info'}) :
+            this.setState({buttonText: "Clicked me", buttonClicked: 1, buttonStyle:'success'});
     },
 
     render: function ():any {
         return <div>
             <h1>Button</h1>
-            <p>Demonstrates the use of an internal onClick function.</p>
+            <p>Demonstrates the use of the onClick function on a button.</p>
             <p>
-                <input type="button" className="button" value="ClickMe" onClick={this.onClick} />
+                <Button bsStyle={this.state.buttonStyle} className="button"
+                    onClick={this.onClick}><span className="buttonStatus">{this.state.buttonText}</span></Button>
             </p>
-            <p>Status: <span className="buttonStatus">{this.state.buttonText}</span></p>
 
             <hr />
             <Markdown2Html src="./assets/CLICKBUTTON.md" />
