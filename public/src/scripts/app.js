@@ -16,7 +16,10 @@ var React = require('react'),
     Nav = ReactBootstrap.Nav,
     ReactRouterBootstrap = require('react-router-bootstrap'),
     NavItemLink = ReactRouterBootstrap.NavItemLink,
-    ButtonLink = ReactRouterBootstrap.ButtonLink;
+    MenuItem = ReactBootstrap.MenuItem,
+    ButtonLink = ReactRouterBootstrap.ButtonLink,
+    DropdownButton = ReactBootstrap.DropdownButton,
+    ButtonToolbar = ReactBootstrap.ButtonToolbar;
 
 // Layout view
 var Layout = React.createClass({
@@ -24,12 +27,20 @@ var Layout = React.createClass({
         return (
             <div className="container main-container">
                 <header>
-                    <Nav bsStyle="pills" className="pull-right">
+
+
+                    <ButtonToolbar className="pull-right">
+                    <DropdownButton bsStyle="info" title="About" key="0">
+                        <NavItemLink to="source">Source</NavItemLink>
+                    </DropdownButton>
+                        <DropdownButton bsStyle="warning" title="Modules" key="1">
                         <NavItemLink to="home">Home</NavItemLink>
-                        <NavItemLink to="stickydiv">StickyDiv</NavItemLink>
-                        <NavItemLink to="markdown">IncludeMD</NavItemLink>
-                        <NavItemLink to="button">Button</NavItemLink>
-                    </Nav>
+                        <NavItemLink to="stickydiv">Sticky Div</NavItemLink>
+                        <NavItemLink to="markdown">Include Markdown</NavItemLink>
+                        <NavItemLink to="button">Button Example</NavItemLink>
+                    </DropdownButton>
+                    </ButtonToolbar>
+
                     <h1 className="text-muted">React Reflux Boilerplate</h1>
                 </header>
                 <RouteHandler />
@@ -45,6 +56,7 @@ var routes = (
         <Route name="markdown" handler={require('./markdown/index')} />
         <Route name="home" handler={require('./home/index')} />
         <Route name="button" handler={require('./button')} />
+        <Route name="source" handler={require('./source')} />
     </Route>
 );
 
