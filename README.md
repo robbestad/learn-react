@@ -18,10 +18,16 @@ $ ./script/dev
 # open http://localhost:3000
 ```
 
-## Test
+## Type checking
+
+Type checking is implemented with Flow.
+
+## Tests
 
 ```npm test```
 
+Testing is done with Jest. It uses a preprocessor that strips Flow type annotations and a test helper that mocks
+react-router.
 
 ## Demo
 
