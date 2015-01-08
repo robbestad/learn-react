@@ -16,6 +16,7 @@
     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules/react",
       "<rootDir>/node_modules/underscore",
+      "<rootDir>/node_modules/jquery",
       "<rootDir>/node_modules/reflux"
     ]
   },

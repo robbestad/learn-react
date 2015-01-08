@@ -26,7 +26,7 @@ var Markdown = require('./markdown/index');
 
 // Layout view
 var Layout = React.createClass({
-    render: function(){
+    render: function () {
         return (
             <div className="container main-container">
                 <header>
@@ -44,11 +44,11 @@ var Layout = React.createClass({
 });
 // Define react-router routes
 var routes = (
-    <Route name="/" handler={Layout}>
-    <Route name="stickydiv" handler={StickyDiv} />
-    <Route name="markdown" handler={Markdown} />
-    <Route name="home" handler={Home} />
-
+    <Route path="/" handler={Layout}>
+        <DefaultRoute handler={Home} />
+        <Route name="stickydiv" handler={StickyDiv} />
+        <Route name="markdown" handler={Markdown} />
+        <Route name="home" handler={Home} />
     </Route>
 );
 
