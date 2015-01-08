@@ -22,6 +22,8 @@ $ ./script/dev
 
 Type checking is implemented with Flow.
 
+```flow check```
+
 ## Tests
 
 ```npm test```
