@@ -26,7 +26,8 @@
     "boilerplate"
   ],
   "engines": {
-    "node": "0.10.x"
+    "node": "0.10.x",
+    "npm": "2.1.x"
   },
   "author": "Sven Anders Robbestad",
   "license": "ISC",
