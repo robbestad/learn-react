@@ -4,7 +4,7 @@ jest.dontMock('../public/src/scripts/home/index.js');
 jest.dontMock('object-assign');
 jest.dontMock('../test-helpers/index.js');
 
-describe('LoadSubscriber', function() {
+describe('LoadHome', function() {
   it('renders home-page', function() {
     var React = require('react/addons');
 

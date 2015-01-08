@@ -59,6 +59,7 @@ module.exports = Reflux.createStore({
     // Delete a post based on ID.
     // TODO Handle ID not found; currently does nothing
     deletePost: function(postId){
+        console.log("clicked me");
         store.posts = store.posts.filter(function(post){
             return post.id !== postId;
         });

@@ -5,7 +5,8 @@
 
 var React = require("react"),
     Reflux = require('reflux'),
-    store = require('./store');
+    store = require('./store'),
+    actions = require('./actions');
 
 module.exports = React.createClass({
     mixins: [Reflux.connect(store, 'store')],
@@ -17,7 +18,6 @@ module.exports = React.createClass({
         };
     },
 
-
     render: function ():any {
         if("undefined" == typeof this.state.store){
             return <div><h1>Home</h1></div>
@@ -27,12 +27,13 @@ module.exports = React.createClass({
             case store.STATE_OK:
                 return <div>
                     <h1>Home</h1>
-                        {this.state.store.posts.map(function (item, idx) {
-                            return <div style={{marginBottom:'10px'}} key={idx}>{item.body}</div>
-                        })}
+                    {this.state.store.posts.map(function (item, idx) {
+                        return <div style={{marginBottom:'10px'}} key={idx}>{item.body}</div>
+                    })}
                 </div>
             default:
                 return <div><h1>Home</h1></div>
         }
     }
 });
+

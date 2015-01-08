@@ -22,6 +22,7 @@ var React = require('react'),
 var Home = require('./home/index');
 var StickyDiv = require('./stickydiv/index');
 var Markdown = require('./markdown/index');
+var Button = require('./button');
 
 // Layout view
 var Layout = React.createClass({
@@ -33,6 +34,7 @@ var Layout = React.createClass({
                         <NavItemLink to="home">Home</NavItemLink>
                         <NavItemLink to="stickydiv">Sticky Div</NavItemLink>
                         <NavItemLink to="markdown">Markdown Include</NavItemLink>
+                        <NavItemLink to="button">Button</NavItemLink>
                     </Nav>
                     <h1 className="text-muted">React Reflux Boilerplate</h1>
                 </header>
@@ -48,6 +50,7 @@ var routes = (
         <Route name="stickydiv" handler={StickyDiv} />
         <Route name="markdown" handler={Markdown} />
         <Route name="home" handler={Home} />
+        <Route name="button" handler={require('./button')} />
     </Route>
 );
 
