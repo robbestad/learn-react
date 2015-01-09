@@ -11,7 +11,7 @@ var React = require("react"),
 var Thumbnail= React.createClass({
     render: function():any {
         return <div className="col-md-2 col-sm-4" style={{width:'85px'}}>
-        <img src={this.props.img} style={{width: '75px', height: '60px', paddingTop:'25px', display: 'block'}} />
+        <img src={this.props.img} style={{width: '75px', height: '65px', paddingTop:'15px'}} />
         </div>
     }
 });
@@ -45,7 +45,7 @@ module.exports = React.createClass({
                 return <div>
                     <h1>Reflux Example</h1>
                     <h4>This componenent uses Reflux to populate a datastore with
-                        the content from new posts on Reddit</h4>
+                        new posts on Reddit</h4>
                     {this.state.store.posts.data.children.map(function (item, idx) {
                         var permalink = "http://www.reddit.com/" + item.data.permalink;
                         var thumbnail=false;
