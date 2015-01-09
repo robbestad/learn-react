@@ -4,7 +4,8 @@ var Reflux = require('reflux');
 // and deleting a post
 var actions = Reflux.createActions([
     'deletePost',
-    'reloadPosts'
+    'reloadPosts',
+    'pollReddit'
 ]);
 
 // Force deletePosts to take a single argument

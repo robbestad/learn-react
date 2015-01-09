@@ -30,7 +30,7 @@ module.exports = Reflux.createStore({
     // Pull posts from server and trigger to let listeners know
     // posts changed
     updateFromServer: function(){
-        $.get('/assets/posts.json')
+        $.get('http://www.reddit.com/new/.json')
             .done(function(data){
                 store = {
                     state: STATE_OK,
@@ -73,6 +73,11 @@ module.exports = Reflux.createStore({
             posts: []
         };
         this.trigger(store);
+        this.updateFromServer();
+    },
+    // Set default data, put into loading state, kick off posts fetch from
+    // server, and let listeners know
+    pollReddit: function(){
         this.updateFromServer();
     }
 });
