@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     gutil = require('gulp-util'),
+    autoprefixer = require('gulp-autoprefixer'),
     cssmin = require('gulp-cssmin');
 
 module.exports = function(config){
@@ -13,6 +14,9 @@ module.exports = function(config){
                 gutil.log('Error in sass build:');
                 gutil.log(err.stack);
             });
+
+            pipeline = pipeline.pipe(autoprefixer())
+
 
         if(config.cssmin)
             pipeline = pipeline.pipe(cssmin());

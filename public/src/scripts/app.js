@@ -31,17 +31,20 @@ var Layout = React.createClass({
 
                     <ButtonToolbar className="pull-right">
                     <DropdownButton bsStyle="info" title="About" key="0">
+                        <NavItemLink to="home">Home</NavItemLink>
                         <NavItemLink to="source">Source</NavItemLink>
                     </DropdownButton>
-                        <DropdownButton bsStyle="warning" title="Modules" key="1">
-                        <NavItemLink to="home">Home</NavItemLink>
+                        <DropdownButton bsStyle="warning" title="Examples" key="1">
+                        <NavItemLink to="reflux">Reflux example</NavItemLink>
+                        <NavItemLink to="button">Button Example</NavItemLink>
+                    </DropdownButton>
+                        <DropdownButton bsStyle="success" title="Modules" key="2">
                         <NavItemLink to="stickydiv">Sticky Div</NavItemLink>
                         <NavItemLink to="markdown">Include Markdown</NavItemLink>
-                        <NavItemLink to="button">Button Example</NavItemLink>
                     </DropdownButton>
                     </ButtonToolbar>
 
-                    <h1 className="text-muted">React Reflux Boilerplate</h1>
+                    <h1 className="text-muted">React Tutorial</h1>
                 </header>
                 <RouteHandler />
             </div>
@@ -51,10 +54,11 @@ var Layout = React.createClass({
 // Define react-router routes
 var routes = (
     <Route path="/" handler={Layout}>
-        <DefaultRoute handler={require('./home/index')} />
-        <Route name="stickydiv" handler={require('./stickydiv/index')} />
-        <Route name="markdown" handler={require('./markdown/index')} />
-        <Route name="home" handler={require('./home/index')} />
+        <DefaultRoute handler={require('./home')} />
+        <Route name="stickydiv" handler={require('./stickydiv')} />
+        <Route name="markdown" handler={require('./markdown')} />
+        <Route name="home" handler={require('./home')} />
+        <Route name="reflux" handler={require('./reflux')} />
         <Route name="button" handler={require('./button')} />
         <Route name="source" handler={require('./source')} />
     </Route>
