@@ -1,10 +1,10 @@
 {
   "name": "react-reflux-boilerplate",
   "version": "2.0.15",
-  "description": "Boilerplate App for React & Reflux",
+  "description": "Tutorial for React",
   "repository": {
     "type": "git",
-    "url": "https://github.com/svenanders/react-reflux-boilerplate"
+    "url": "https://github.com/svenanders/react-tutorial"
   },
   "scripts": {
     "start": "node start.js",
