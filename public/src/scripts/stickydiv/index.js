@@ -14,7 +14,6 @@ var marked = require('marked');
 
 var Markdown2Html = require("react-markdown-to-html");
 
-// Create a react view-controller
 module.exports = React.createClass({
     render: function(): any {
         return (

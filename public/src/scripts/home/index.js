@@ -8,17 +8,17 @@ var React = require("react"),
     store = require('./store'),
     actions = require('./actions');
 
-module.exports = React.createClass({
+    module.exports = React.createClass({
     mixins: [Reflux.connect(store, 'store')],
 
     // Pull initial state from store
-    getInitialState: function () {
+    getInitialState: function (): any {
         return {
             store: store.getData()
         };
     },
 
-    render: function ():any {
+    render: function (): any {
         if("undefined" == typeof this.state.store){
             return <div><h1>Home</h1></div>
         }

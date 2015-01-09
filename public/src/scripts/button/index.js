@@ -20,7 +20,8 @@ module.exports = React.createClass({
     },
 
     onClick: function (): any {
-        this.state.buttonClicked ? this.setState({buttonText: "Not clicked", buttonClicked: 0, buttonStyle:'info'}) :
+        this.state.buttonClicked ?
+            this.setState({buttonText: "Not clicked", buttonClicked: 0, buttonStyle:'info'}) :
             this.setState({buttonText: "Clicked me", buttonClicked: 1, buttonStyle:'success'});
     },
 

@@ -22,7 +22,7 @@ $ ./script/dev
 
 ```flow check```
 
-Type checking is implemented with Flow.
+Static Type checking is implemented with Flow.
 
 ## Tests
 

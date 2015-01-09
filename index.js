@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function (options) {
 
     options = options || {};
@@ -24,11 +26,12 @@ module.exports = function (options) {
     app.logger = options.logger || console.log.bind(console);
 
     // Enable verbose logging for incoming requests if configured to do so
-    if (config.verbose)
+    if (config.verbose) {
         app.use(function (req, res, next) {
             app.logger(req.method + ' ' + req.path + ' (remote: ' + req.ip + ')');
             next();
         });
+    }
 
     // Body-parsing middleware
     app.use(bodyParser.urlencoded({extended: true}));
