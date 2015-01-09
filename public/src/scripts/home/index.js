@@ -19,7 +19,7 @@ var React = require("react"),
     },
     componentDidMount:function():any{
         var _actions=actions;
-        setInterval(function(){_actions.pollReddit();},1000);
+        setInterval(function(){_actions.pollReddit();},5000);
     },
 
     render: function (): any {
@@ -32,11 +32,19 @@ var React = require("react"),
                 return <div>
                     <h1>Latest posts from Reddit</h1>
                     {this.state.store.posts.data.children.map(function (item, idx) {
+                        var permalink="http://www.reddit.com/"+item.data.permalink;
                         return <div style={{marginBottom:'10px'}} key={idx}>
-                            <a href={item.data.url}>
-                            {item.data.title}
-                                </a>
-                            <br/>{item.data.subreddit}
+                            <span style={{fontSize:'12px',color:'#aaa'}} >{item.data.subreddit}</span><br/>
+                            <span style={{fontSize:'18px'}} >{item.data.title}</span>
+                            <br/>
+                            <a href={item.data.url} target="reddit">
+                            {item.data.domain}
+                            </a>
+                            <a style={{paddingLeft:'10px'}}  href={permalink} target="reddit">
+                            Comments
+                            </a>
+
+
                         </div>
                     })}
                 </div>
