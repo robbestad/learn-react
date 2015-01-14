@@ -27,7 +27,17 @@ module.exports = React.createClass({
         return <div>
             <Breadcrumbs />
             <h1>Home</h1>
+
+            <p>
+            Welcome to my collection of React examples, modules and tutorials. More will be coming
+                every now and then, so be sure to bookmark and come back.
+            </p>
+
+            <h3>Editable test</h3>
             <input type="button" value="Edit" onClick={this.onClick} />
+            <Editable editable={this.state.editable}
+            html="<b>H</b>el<b>lo </b><i><b>W</b>or<b>l</b>d<b>!</b></i>"
+            ref="editable" onChange={this.onChange} />
         </div>
     }
 
