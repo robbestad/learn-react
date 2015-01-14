@@ -10,6 +10,7 @@ var React = require('react'),
     DefaultRoute = Router.DefaultRoute,
     NotFoundRoute = Router.NotFoundRoute,
     RouteHandler = Router.RouteHandler,
+    Redirect = Router.Redirect,
     Link = Router.Link,
 
     ReactBootstrap = require('react-bootstrap'),
@@ -56,7 +57,7 @@ var Layout = React.createClass({
 });
 // Define react-router routes
 var routes = (
-    <Route name="/" path="/" handler={Layout}>
+    <Route name="/" handler={Layout}>
         <DefaultRoute handler={require('./home')} />
         <Route name="stickydiv" handler={require('./stickydiv')} />
         <Route name="markdown" handler={require('./markdown')} />
@@ -65,6 +66,7 @@ var routes = (
         <Route name="button" handler={require('./button')} />
         <Route name="source" handler={require('./source')} />
         <Route name="breadcrumbs" handler={require('./breadcrumbs')} />
+        <Redirect from="/" to="home" />
     </Route>
 );
 

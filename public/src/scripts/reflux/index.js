@@ -7,7 +7,7 @@ var React = require("react"),
     Reflux = require('reflux'),
     store = require('./store'),
     actions = require('./actions');
-var Breadcrumbs = require('../react-breadcrumbs');
+var Breadcrumbs = require('react-breadcrumbs');
 
 var Thumbnail= React.createClass({
     render: function():any {
