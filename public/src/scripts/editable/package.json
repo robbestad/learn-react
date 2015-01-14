@@ -1,0 +1,33 @@
+{
+  "name": "react-editable-div",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "react": ">=0.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:svenanders/react-editable.git"
+  },
+  "homepage": "http://opensourceprojects.robbestad.com/",
+  "keywords": [
+    "react",
+    "react-component",
+    "editable",
+    "component"
+  ],
+  "author": {
+    "name": "Sven Anders Robbestad",
+    "email": "anders@robbestad.com",
+    "url": "http://www.robbestad.com"
+  },
+  "scripts": {},
+  "license": "ISC",
+  "contributors": [
+    {
+      "name": "Sven Anders Robbestad",
+      "email": "robbestad@gmail.com"
+    }
+  ]
+}
