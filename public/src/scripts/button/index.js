@@ -9,7 +9,10 @@ var React = require("react"),
 
 var Markdown2Html = require("react-markdown-to-html");
 
+var Breadcrumbs = require('react-breadcrumbs');
+
 module.exports = React.createClass({
+    displayName:"Button Example",
 
     getInitialState: function (): any {
         return {
@@ -27,6 +30,8 @@ module.exports = React.createClass({
 
     render: function ():any {
         return <div>
+            <Breadcrumbs />
+
             <h1>Button</h1>
             <p>Demonstrates the use of the onClick function on a button.</p>
             <p>

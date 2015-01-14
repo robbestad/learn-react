@@ -7,6 +7,7 @@ var React = require("react"),
     Reflux = require('reflux'),
     store = require('./store'),
     actions = require('./actions');
+var Breadcrumbs = require('../react-breadcrumbs');
 
 var Thumbnail= React.createClass({
     render: function():any {
@@ -18,6 +19,8 @@ var Thumbnail= React.createClass({
 
 
 module.exports = React.createClass({
+    displayName:"Reflux",
+
     mixins: [Reflux.connect(store, 'store')],
 
     // Pull initial state from store
@@ -36,6 +39,8 @@ module.exports = React.createClass({
     render: function ():any {
         if ("undefined" == typeof this.state.store) {
             return <div>
+                <Breadcrumbs />
+
                 <h1>Reflux Example</h1>
             </div>
         }
@@ -43,6 +48,8 @@ module.exports = React.createClass({
         switch (this.state.store.state) {
             case store.STATE_OK:
                 return <div>
+                    <Breadcrumbs />
+
                     <h1>Reflux Example</h1>
                     <h4>This componenent uses Reflux to populate a datastore with
                         new posts on Reddit</h4>

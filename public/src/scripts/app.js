@@ -23,6 +23,8 @@ var React = require('react'),
 
 // Layout view
 var Layout = React.createClass({
+    displayName:"App",
+
     render: function () {
         return (
             <div className="container main-container">
@@ -41,6 +43,7 @@ var Layout = React.createClass({
                         <DropdownButton bsStyle="success" title="Modules" key="2">
                         <NavItemLink to="stickydiv">Sticky Div</NavItemLink>
                         <NavItemLink to="markdown">Include Markdown</NavItemLink>
+                        <NavItemLink to="breadcrumbs">Breadcrumbs</NavItemLink>
                     </DropdownButton>
                     </ButtonToolbar>
 
@@ -53,7 +56,7 @@ var Layout = React.createClass({
 });
 // Define react-router routes
 var routes = (
-    <Route path="/" handler={Layout}>
+    <Route name="/" path="/" handler={Layout}>
         <DefaultRoute handler={require('./home')} />
         <Route name="stickydiv" handler={require('./stickydiv')} />
         <Route name="markdown" handler={require('./markdown')} />
@@ -61,6 +64,7 @@ var routes = (
         <Route name="reflux" handler={require('./reflux')} />
         <Route name="button" handler={require('./button')} />
         <Route name="source" handler={require('./source')} />
+        <Route name="breadcrumbs" handler={require('./breadcrumbs')} />
     </Route>
 );
 

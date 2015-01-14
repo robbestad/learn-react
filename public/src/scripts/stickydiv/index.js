@@ -6,6 +6,7 @@
 var React = require('react');
 
 var Sticky = require('react-stickydiv');
+var Breadcrumbs = require('react-breadcrumbs');
 
 var ReactBootstrap = require('react-bootstrap'),
     Input = ReactBootstrap.Input,
@@ -15,9 +16,11 @@ var marked = require('marked');
 var Markdown2Html = require("react-markdown-to-html");
 
 module.exports = React.createClass({
+    displayName:"Sticky Div",
     render: function(): any {
         return (
             <div>
+                <Breadcrumbs />
                 <Sticky><span style={{backgroundColor:'white',
                     fontSize:'24px',padding:'2px'}}>Sticky Div</span></Sticky>
                 <Markdown2Html src="assets/STICKY.md" />
