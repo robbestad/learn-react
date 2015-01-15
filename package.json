@@ -70,6 +70,11 @@
     "watchify": "^2.2.1"
   },
   "devDependencies": {
+    "6to5": "^2.12.3",
+    "6to5-loader": "^2.0.0",
+    "es6-loader": "^0.2.0",
+    "exports-loader": "^0.6.2",
+    "imports-loader": "^0.6.3",
     "jest": "^0.1.37",
     "jest-cli": "^0.2.1",
     "jsx-loader": "^0.12.2",

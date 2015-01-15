@@ -8,25 +8,9 @@ var watchify = require('watchify'),
 
 module.exports = function(config){
 
-  // Access our pre-configured browserify instance
-  var bundler = require('../lib/bundler')(config);
-
-  // A custom bundle function that can be used to rebundle indefinitely
-  var bundle = require('../lib/bundle')(config);
-
   return function(){
 
-    bundler = watchify(bundler);
-    bundler.errHandler = function(err){
-      gutil.log('Error in bundle:');
-      gutil.log(err.stack);
-    };
-    bundler
-      .on('update', function(){
-        bundle(bundler);
-        gutil.log('Rebundling...');
-      });
-
+    gulp.watch('./public/src/scripts/**/*.*', ['webpack']);
     gulp.watch('./public/src/styles/**/*.*', ['styles']);
 
     gulp.watch(
@@ -35,8 +19,6 @@ module.exports = function(config){
     );
 
     require('../')({logger:gutil.log});
-
-    return bundle(bundler);
 
   };
 };

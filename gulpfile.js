@@ -32,21 +32,21 @@ gulp.task('vendor', ['clean:vendor'], require('./tasks/vendor')(config));
 gulp.task('styles', ['clean:styles'], require('./tasks/styles')(config));
 
 // Webpack bundle
-gulp.task('webpack', require('./tasks/webpack')(config));
+gulp.task('webpack', ['clean:scripts', 'vendor'], require('./tasks/webpack')(config));
 
 // Bundle once
-gulp.task('scripts', ['clean:scripts', 'vendor'], require('./tasks/scripts')(config));
+//gulp.task('scripts', ['clean:scripts', 'vendor'], require('./tasks/webpack')(config));
 
 // Bundle and watch for changes to all files appropriately
 gulp.task('serve', ['vendor', 'copy', 'styles'],
   require('./tasks/serve')(config));
 
 // Alias
-gulp.task('dev', ['serve']);
+gulp.task('dev', ['webpack','serve']);
 
 // Copies static files that don't need any build processing to `public/dist`
 gulp.task('copy', ['clean:copy'], require('./tasks/copy')(config));
 
 // For deployment. Makes front-end ready to serve from `public/dist`
-gulp.task('build', ['copy', 'scripts', 'styles']);
+gulp.task('build', ['copy', 'webpack', 'styles']);
 gulp.task('default', ['build','serve']);

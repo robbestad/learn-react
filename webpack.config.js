@@ -7,11 +7,24 @@ var config = {
     },
     module: {
         loaders: [
-            {test: /\.js$/, loader: 'jsx-loader?harmony&stripTypes'}
+            {
+                test: /\.js$/,
+                loader: 'es6-loader',
+                exclude: /node_modules/
+            }
+        ],
+        preLoaders:[
+            {test: /\.js$/, loader: 'jsx-loader?stripTypes&harmony',exclude: /node_modules/}
         ]
     },
     plugins: [
-    ]
+
+    ],
+    resolve: {
+        // you can now require('file') instead of require('file.js')
+        extensions: ['', '.js', '.json', '.jsx']
+    },
+    debug: true
 };
 
 if (process.env.NODE_ENV !== 'development') {
