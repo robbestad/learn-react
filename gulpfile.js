@@ -31,6 +31,9 @@ gulp.task('vendor', ['clean:vendor'], require('./tasks/vendor')(config));
 // Compile scss to css
 gulp.task('styles', ['clean:styles'], require('./tasks/styles')(config));
 
+// Webpack bundle
+gulp.task('webpack', require('./tasks/webpack')(config));
+
 // Bundle once
 gulp.task('scripts', ['clean:scripts', 'vendor'], require('./tasks/scripts')(config));
 
