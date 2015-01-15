@@ -66,10 +66,10 @@
     "underscore": "^1.7.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.0.0",
+    "gulp-webpack": "^1.1.2",
     "watchify": "^2.2.1"
   },
   "devDependencies": {
-    "gulp-webpack": "^1.1.2",
     "jest": "^0.1.37",
     "jest-cli": "^0.2.1",
     "jsx-loader": "^0.12.2",
