@@ -1,0 +1,34 @@
+@import "color-schemer";
+
+// Pick the base color for your scheme:
+$cs-primary: #3D9970;
+// Select your scheme from the list and place it here:
+// tetrad
+$cs-scheme: tetrad; // mono, complement, triad, tetrad, analogic, accented-analogic
+
+// How distant do you want the hue offset to be:
+$cs-hue-offset: 15;
+
+// How distant do you want tints and shades to be from their base:
+$cs-brightness-offset: 5;
+
+$cs-color-model: ryb; // rgb, ryb
+$cs-colorblind: tritanopia; // protanopia, deuteranopia, tritanopia, protanomaly, deuteranomaly, tritanomaly, monochromacy, amonochromacy
+
+// Do you want to “harmonize” your color scheme with photoshop-like blendmodes?
+// See Erica Schoonmaker's technique: http://methodandcraft.com/videos/creating-harmonious-color-schemes
+// Modes:
+// null (no effect), normal, multiply, lighten, darken, darkercolor, lightercolor, lineardodge, linearburn,
+// difference, screen, exclusion, overlay, softlight, hardlight, colordodge, colorburn, linearlight,
+// vividlight, pinlight, hardmix, colorblend, dissolve, divide, hue, luminosity, saturation, subtract
+$cs-harmonize-mode    : darken;
+// What is your common harmonizing color?
+$cs-harmonize-color   : $cs-primary;
+// How strong do you want the effect to be?
+$cs-harmonize-amount  : 75%;
+
+$primary   : cs-primary();
+$secondary : cs-secondary();
+$tertiary  : cs-tertiary();
+$quadrary  : cs-quadrary();
+

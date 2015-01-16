@@ -22,39 +22,25 @@ var React = require('react'),
     DropdownButton = ReactBootstrap.DropdownButton,
     ButtonToolbar = ReactBootstrap.ButtonToolbar;
 
-// Layout view
-var Layout = React.createClass({
-    displayName:"App",
+var Layout = require("./layout");
 
-    render: function () {
-        return (
-            <div className="container main-container">
-                <header>
+//
+//<ButtonToolbar className="pull-right">
+//    <DropdownButton bsStyle="info" title="About" key="0">
+//        <NavItemLink to="home">Home</NavItemLink>
+//        <NavItemLink to="source">Source</NavItemLink>
+//    </DropdownButton>
+//    <DropdownButton bsStyle="warning" title="Examples" key="1">
+//        <NavItemLink to="reflux">Reflux example</NavItemLink>
+//        <NavItemLink to="button">Button Example</NavItemLink>
+//    </DropdownButton>
+//    <DropdownButton bsStyle="success" title="Modules" key="2">
+//        <NavItemLink to="stickydiv">Sticky Div</NavItemLink>
+//        <NavItemLink to="markdown">Include Markdown</NavItemLink>
+//        <NavItemLink to="breadcrumbs">Breadcrumbs</NavItemLink>
+//    </DropdownButton>
+//</ButtonToolbar>
 
-
-                    <ButtonToolbar className="pull-right">
-                    <DropdownButton bsStyle="info" title="About" key="0">
-                        <NavItemLink to="home">Home</NavItemLink>
-                        <NavItemLink to="source">Source</NavItemLink>
-                    </DropdownButton>
-                        <DropdownButton bsStyle="warning" title="Examples" key="1">
-                        <NavItemLink to="reflux">Reflux example</NavItemLink>
-                        <NavItemLink to="button">Button Example</NavItemLink>
-                    </DropdownButton>
-                        <DropdownButton bsStyle="success" title="Modules" key="2">
-                        <NavItemLink to="stickydiv">Sticky Div</NavItemLink>
-                        <NavItemLink to="markdown">Include Markdown</NavItemLink>
-                        <NavItemLink to="breadcrumbs">Breadcrumbs</NavItemLink>
-                    </DropdownButton>
-                    </ButtonToolbar>
-
-                    <h1 className="text-muted">React Tutorial</h1>
-                </header>
-                <RouteHandler />
-            </div>
-        );
-    }
-});
 // Define react-router routes
 var routes = (
     <Route name="/" handler={Layout}>
