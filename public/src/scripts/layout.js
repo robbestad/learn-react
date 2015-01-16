@@ -79,6 +79,8 @@ module.exports = React.createClass({
     },
     openSearch() {
         this.closeMenu();
+
+        this.refs.searchInput.getDOMNode().focus();
         var _this=this;
         var m = $(".main-search"), s = $(".search-link");
         m.slideDown("fast", function () {
@@ -143,18 +145,19 @@ module.exports = React.createClass({
                                 <div className="header-options main-options">
 
 
-                                    <div className="header-panel-wrap" onClick={this.toggleSearch}>
-                                        <span className="active-link search-link header-panel-element header-panel-link glyphicon glyphicon-search">
+                                    <div className="header-panel-wrap">
+                                        <span onClick={this.toggleSearch}
+                                            className="active-link search-link header-panel-element header-panel-link glyphicon glyphicon-search">
                                             <span
                                                 className="text-link">Search</span>
                                         </span>
 
                                         <div className="main-search header-panel">
-
                                             <div className="container">
                                                 <div className="input-search-group">
                                                     <form method="get" action="http://www.google.com/search" role="search">
                                                         <input type="text" name="q"
+                                                            ref="searchInput"
                                                             className="input-search form-control input-lg twitter-typeahead"
                                                             placeholder="Search" id="searchfield" />
                                                         <button className="btn btn-search glyphicon glyphicon-search"
