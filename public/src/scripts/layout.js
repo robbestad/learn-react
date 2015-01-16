@@ -80,10 +80,10 @@ module.exports = React.createClass({
     openSearch() {
         this.closeMenu();
 
-        this.refs.searchInput.getDOMNode().focus();
         var _this=this;
         var m = $(".main-search"), s = $(".search-link");
         m.slideDown("fast", function () {
+            _this.refs.searchInput.getDOMNode().focus();
             _this.setState({searchOpen:true});
         });
 
