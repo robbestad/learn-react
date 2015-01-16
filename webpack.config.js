@@ -23,8 +23,7 @@ var config = {
     resolve: {
         // you can now require('file') instead of require('file.js')
         extensions: ['', '.js', '.json', '.jsx']
-    },
-    debug: true
+    }
 };
 
 if (process.env.NODE_ENV !== 'development') {

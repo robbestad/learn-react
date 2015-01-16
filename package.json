@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node start.js",
     "test": "jest",
-    "postinstall": "gulp build"
+    "postinstall": "gulp build && webpack -p"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/preprocessor.js",
