@@ -7,9 +7,9 @@
     "url": "https://github.com/svenanders/react-tutorial"
   },
   "scripts": {
-    "start": "node start.js",
+    "start": "webpack -p && node start.js",
     "test": "jest",
-    "postinstall": "gulp build && webpack -p"
+    "postinstall": "gulp build"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/preprocessor.js",
