@@ -183,8 +183,8 @@ module.exports = React.createClass({
                 <div className="col-xs-12 col-sm-10 col-md-10 col-md-offset-1 col-sm-offset-1">
                     <RouteHandler />
                 </div>
-                <div className="push"></div>
             </div>
+            <div className="push">&nbsp;</div>
 
             <div id="footer" className="footer">
                 <div className="container">
