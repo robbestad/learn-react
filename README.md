@@ -2,7 +2,7 @@
 
 > An application architecture for React utilizing a unidirectional data flow with the [Reflux](https://www.npmjs.org/package/reflux) Architecture
 
-Uses:
+##### Uses:
 
 - [React Router](https://github.com/rackt/react-router)
 - [Reflux](https://www.npmjs.org/package/reflux)
