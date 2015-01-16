@@ -160,7 +160,7 @@ module.exports = React.createClass({
                                                         <button className="btn btn-search glyphicon glyphicon-search"
                                                             type="submit"></button>
 
-                                                        <input type="hidden" name="sitesearch" value="www.slank.no"/>
+                                                        <input type="hidden" name="sitesearch" value="www.robbestad.com"/>
                                                         <input hidden="true" type="submit" value="Google Search" />
                                                     </form>
                                                 </div>
