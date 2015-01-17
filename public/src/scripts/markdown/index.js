@@ -21,8 +21,10 @@ module.exports = React.createClass({
         return (
             <div>
                 <Breadcrumbs />
+                <div className="flyin-widget">
 
-                <Markdown2Html src="assets/INCLUDEMD.md" />
+                    <Markdown2Html src="assets/INCLUDEMD.md" />
+            </div>
             </div>
         );
     }
