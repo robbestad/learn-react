@@ -31,14 +31,14 @@ module.exports = React.createClass({
     render: function ():any {
         return <div>
             <Breadcrumbs />
-
+            <div className="flyin-widget">
             <h1>Button</h1>
             <p>Demonstrates the use of the onClick function on a button.</p>
             <p>
                 <Button bsStyle={this.state.buttonStyle} className="button"
                     onClick={this.onClick}><span className="buttonStatus">{this.state.buttonText}</span></Button>
             </p>
-
+            </div>
             <hr />
             <Markdown2Html src="./assets/CLICKBUTTON.md" />
         </div>
