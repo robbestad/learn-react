@@ -845,9 +845,6 @@ p.flash-text{
   float: left
 }
 
-.header-bar .header-options.login-options {
-  width: 100%
-}
 
 .header-bar .header-options.main-options {
   margin-left: -128px;
@@ -858,40 +855,6 @@ p.flash-text{
   border-right: 1px solid $secondary
 }
 
-.login-options .header-panel-wrap {
-  width: 100%;
-  text-align: right
-}
-
-.login-options .header-panel-wrap:first-child .header-panel-link {
-  border-left: 0
-}
-
-.login-options .header-panel {
-  text-align: left
-}
-
-.header-bar .header-options.login-options {
-  padding: 0 0 0 64px
-}
-
-.header-bar .header-options.login-options .notification-panel-wrap {
-  width: auto;
-  margin: 0 0 0 -64px
-}
-
-.header-bar .header-options.login-options .profile-link:after, .header-bar .header-options.login-options .profile-link:before {
-  content: " ";
-  display: table
-}
-
-.header-bar .header-options.login-options .profile-link:after {
-  clear: both
-}
-
-.header-bar .header-options.login-options .profile-link .img-wrap {
-  float: right
-}
 
 .header-panel-element {
   position: relative;
@@ -1080,36 +1043,10 @@ h2.footer {
   background: $primary
 }
 
-.login-link, .logout-link {
-  padding: 22px 5px;
-  width: auto;
-  line-height: 1.45em;
-  font-size: 1em;
-  font-weight: 700
-}
 
 .push{
   min-height:25px;
   padding:25px;
-}
-
-.login-link .fa, .logout-link .fa {
-  display: none;
-  margin-right: 15px;
-  color: #666
-}
-
-.login-link.active-link, .logout-link.active-link {
-  color: #f5f5f5
-}
-
-.login-link.active-link .fa, .logout-link.active-link .fa {
-  color: $tertiary
-}
-
-.main-login {
-  left: 0;
-  padding: 42px 30px 0
 }
 
 .header-sub-bar {
@@ -1127,8 +1064,8 @@ h2.footer {
   color: #ccc;
   background: $secondary;
   text-align: center;
-  border-top: 4px solid $tertiary;
-  border-bottom: 8px solid $quadrary;
+  border-top: 2px solid $tertiary;
+  border-bottom: 4px solid $quadrary;
 }
 
 .footer .logo-wrap {
@@ -1174,33 +1111,6 @@ h2.footer {
   border: 1px solid #ddd;
   background-color: #eee;
   padding: 8px
-}
-
-@-webkit-keyframes flyin {
-  0% {
-    transform: translate3d(0, 0, 0)
-  }
-  100% {
-    transform: translate3d(-25020pt, 0, 0)
-  }
-}
-
-@-moz-keyframes flyin {
-  100% {
-    transform: translate3d(-25020pt, 0, 0)
-  }
-}
-
-@-o-keyframes flyin {
-  100% {
-    transform: translate3d(-25020pt, 0, 0)
-  }
-}
-
-@keyframes flyin {
-  100% {
-    transform: translate3d(-25020pt, 0, 0)
-  }
 }
 
 @media (min-width: 0px) {
@@ -1284,29 +1194,6 @@ h2.footer {
     display: none
   }
 
-
-  .login-options {
-    position: relative
-  }
-  .login-options .header-panel-wrap {
-    width: auto;
-    text-align: left
-  }
-  .login-options .header-panel-wrap:first-child .header-panel-link {
-    border-left: 1px solid $secondary
-  }
-  .login-panel-wrap, .logout-panel-wrap {
-    position: relative
-  }
-  .header-bar .header-options.login-options {
-    padding-left: 0
-  }
-  .header-bar .header-options.login-options .notification-panel-wrap {
-    margin-left: 0
-  }
-  .header-bar .header-options.login-options .profile-link .img-wrap {
-    float: none
-  }
   .profile-link {
     padding: 8px 27px
   }
@@ -1314,21 +1201,7 @@ h2.footer {
     width: 48px;
     height: 48px
   }
-  .login-link, .logout-link {
-    padding: 19px 27px 21px;
-    line-height: 1.4em;
-    font-size: 1.286em;
-    font-weight: 400;
-    background: 0 0
-  }
-  .login-link .fa, .logout-link .fa {
-    display: inline-block
-  }
-  .main-login {
-    right: 0;
-    left: auto;
-    width: 300px
-  }
+
   .menu-link {
     padding: 19px 25px 20px 27px
   }
@@ -1451,7 +1324,6 @@ h2.footer {
 and (min--moz-device-pixel-ratio: 1.25), only screen and (-o-min-device-pixel-ratio: 1.25/1),
 only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 200dpi), only screen and (min-resolution: 1.25dppx) {
   .header-bar .logo-wrap .logo, .header-bar .logo-wrap .logo, .footer .logo-wrap .logo {
-    //    background-image: url(assets/logo_head@2x.png);
     background-size: $logoWidth 35px
   }
 }
