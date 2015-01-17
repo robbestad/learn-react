@@ -8,6 +8,7 @@ module.exports = function (options) {
     var express = require('express'),
         bodyParser = require('body-parser'),
         moulder = require('./lib/config-moulder'),
+         compress = require('compression')(),
 
     // Instantiate app
         app = express(),
@@ -36,6 +37,10 @@ module.exports = function (options) {
     // Body-parsing middleware
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json());
+
+    // compress
+    app.use(compress);
+
 
     // Serve static files from `public/dist`
     app.use(express.static(__dirname + '/public/dist'));
