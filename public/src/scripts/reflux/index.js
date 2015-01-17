@@ -49,9 +49,9 @@ module.exports = React.createClass({
             case store.STATE_OK:
                 return <div>
                     <Breadcrumbs />
-
+                    <div className="flyin-widget">
                     <h1>Reflux Example</h1>
-                    <h4>This componenent uses Reflux to populate a datastore with
+                    <h4 style={{color:"#aaa"}}>This componenent uses Reflux to populate a datastore with
                         new posts on Reddit</h4>
                     {this.state.store.posts.data.children.map(function (item, idx) {
                         var permalink = "http://www.reddit.com/" + item.data.permalink;
@@ -74,6 +74,7 @@ module.exports = React.createClass({
                             </div>
                         </div>
                     })}
+                </div>
                 </div>
             default:
                 return <div>
