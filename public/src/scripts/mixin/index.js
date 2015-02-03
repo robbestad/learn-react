@@ -12,9 +12,12 @@ var SetIntervalMixin = {
 };
 
 var React = require("react");
+var Markdown2Html = require("react-markdown-to-html");
+var Breadcrumbs = require('react-breadcrumbs');
+
 
 var Mixin = React.createClass({
-    displayName: "Home",
+    displayName: "Mixins Example",
     getInitialState(){
         return{
             seconds:0
@@ -33,10 +36,13 @@ var Mixin = React.createClass({
     render() {
 
         return <div >
+            <Breadcrumbs />
             <div className="flyin-widget">
 
                 <h1>Mixin</h1>
             {this.props.name} has been running for {this.state.seconds} {this.unit} seconds
+                <Markdown2Html src="assets/MIXINS.md" />
+
 
             </div>
         </div>
