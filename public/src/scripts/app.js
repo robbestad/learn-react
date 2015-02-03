@@ -24,28 +24,13 @@ var React = require('react'),
 
 var Layout = require("./layout");
 
-//
-//<ButtonToolbar className="pull-right">
-//    <DropdownButton bsStyle="info" title="About" key="0">
-//        <NavItemLink to="home">Home</NavItemLink>
-//        <NavItemLink to="source">Source</NavItemLink>
-//    </DropdownButton>
-//    <DropdownButton bsStyle="warning" title="Examples" key="1">
-//        <NavItemLink to="reflux">Reflux example</NavItemLink>
-//        <NavItemLink to="button">Button Example</NavItemLink>
-//    </DropdownButton>
-//    <DropdownButton bsStyle="success" title="Modules" key="2">
-//        <NavItemLink to="stickydiv">Sticky Div</NavItemLink>
-//        <NavItemLink to="markdown">Include Markdown</NavItemLink>
-//        <NavItemLink to="breadcrumbs">Breadcrumbs</NavItemLink>
-//    </DropdownButton>
-//</ButtonToolbar>
-
 // Define react-router routes
 var routes = (
     <Route name="/" handler={Layout}>
         <DefaultRoute handler={require('./home')} />
         <Route name="stickydiv" handler={require('./stickydiv')} />
+        <Route name="static" handler={require('./static')} />
+        <Route name="mixin" handler={require('./mixin')} />
         <Route name="markdown" handler={require('./markdown')} />
         <Route name="home" handler={require('./home')} />
         <Route name="reflux" handler={require('./reflux')} />

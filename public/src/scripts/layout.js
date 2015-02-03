@@ -124,6 +124,12 @@ module.exports = React.createClass({
                                                     <Link to="button">Button Example</Link>
                                                 </li>
                                                 <li>
+                                                    <Link to="mixin">Mixin Example</Link>
+                                                </li>
+                                                <li>
+                                                    <Link to="static">Statics Example</Link>
+                                                </li>
+                                                <li>
                                                     <Link to="stickydiv">Sticky Div</Link>
                                                 </li>
                                                 <li>
