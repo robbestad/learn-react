@@ -18,7 +18,7 @@ var Component = React.createClass({
     statics: {
         componentName: 'My Static Component',
         customRender: function(foo) {
-            return React.renderToStaticMarkup(<div>{foo}</div>);
+            return React.renderToStaticMarkup(<div dangerouslySetInnerHTML={{__html: foo.foo }}/>);
         }
     },
     render: function () {
@@ -26,6 +26,7 @@ var Component = React.createClass({
             <Breadcrumbs />
 
             <h1>{this.state.greeting}</h1>
+            <div dangerouslySetInnerHTML={{__html: <Component.customRender foo="<h3>I'm subverting React from within with my Static Component with renderToStaticMarkup</h3>" />}} />
             <Markdown2Html src="assets/STATICS.md" />
         </div>
     }
