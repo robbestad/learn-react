@@ -26,7 +26,7 @@ var Component = React.createClass({
             <Breadcrumbs />
 
             <h1>{this.state.greeting}</h1>
-            <div dangerouslySetInnerHTML={{__html: <Component.customRender foo="<h3>I'm subverting React from within with my Static Component with renderToStaticMarkup</h3>" />}} />
+            <div dangerouslySetInnerHTML={{__html: <Component.customRender foo="<span>This block is rendered with renderToStaticMarkup</span>" />}} />
             <Markdown2Html src="assets/STATICS.md" />
         </div>
     }
