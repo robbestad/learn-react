@@ -5,6 +5,11 @@ var Breadcrumbs = require('react-breadcrumbs');
 
 var Component = React.createClass({
     displayName:"Statics Example",
+    getDefaultsProps(){
+      return {
+          foo: "bar"
+      }
+    },
     getInitialState() {
         return {
             greeting: 'Hello World'
@@ -13,8 +18,7 @@ var Component = React.createClass({
     statics: {
         componentName: 'My Static Component',
         customRender: function(foo) {
-            var markup = React.renderToStaticMarkup(<div>tester</div>);
-            return markup;
+            return React.renderToStaticMarkup(<div>{foo}</div>);
         }
     },
     render: function () {
@@ -28,6 +32,7 @@ var Component = React.createClass({
 });
 
 //console.log(Component.componentName);  // My Static Component
+console.log(Component.customRender({foo:'bar'}));  // My Static Component
 
 
 module.exports = Component;
