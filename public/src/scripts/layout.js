@@ -115,6 +115,9 @@ module.exports = React.createClass({
                                                     <Link to="home">Home</Link>
                                                 </li>
                                                 <li>
+                                                    <Link to="jfokus">Jfokus</Link>
+                                                </li>
+                                                <li>
                                                     <Link to="source">Source</Link>
                                                 </li>
                                                 <li>

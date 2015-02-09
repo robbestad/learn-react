@@ -36,6 +36,7 @@ module.exports = Reflux.createStore({
                     state: STATE_OK,
                     posts: data
                 };
+
             }.bind(this))
             .fail(function(err){
                 store.state = STATE_ERR;

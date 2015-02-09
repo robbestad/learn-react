@@ -11,7 +11,11 @@ var Component = React.createClass({
         }
     },
     statics: {
-        componentName: 'My Static Component'
+        componentName: 'My Static Component',
+        customRender: function(foo) {
+            var markup = React.renderToStaticMarkup(<div>tester</div>);
+            return markup;
+        }
     },
     render: function () {
         return <div>
