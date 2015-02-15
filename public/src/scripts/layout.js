@@ -141,6 +141,9 @@ module.exports = React.createClass({
                                                 <li>
                                                     <Link to="breadcrumbs">Breadcrumbs</Link>
                                                 </li>
+                                                <li>
+                                                    <Link to="reactfire">ReactFire</Link>
+                                                </li>
 
                                             </ul>
                                         </nav>
