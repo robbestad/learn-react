@@ -27,7 +27,8 @@ let ReactfireDemo = React.createClass({
                 buttonStyle: 'info',
                 buttonText: 'add',
                 appname: 'Firebase and Reactfire Example',
-                text1: 'Demonstrates the use of ReactFire, a convenience library for one-way data binding to a Firebase. Also uses standard Firebase API in order to populate the Firebase.',
+                text1: 'Demonstrates the use of ReactFire, a convenience library for one-way data binding to a ' +
+                'Firebase. Also uses standard Firebase API in order to populate the Firebase.',
                 text2: 'Add some text to the Firebase, and watch as it is immediately displayed below.',
                 text3: 'The database will be reset periodically.'
             },
@@ -36,9 +37,13 @@ let ReactfireDemo = React.createClass({
     },
 
     componentWillMount() {
-        //create the Firebase refs adn set the state strings array
+        //create the Firebase refs & set the state strings array
         let stringsRef = new Firebase(this.props.baseUrl + this.props.strings);
         this.bindAsArray(stringsRef, 'strings');
+    },
+
+    componentDidMount() {
+        this.refs.theInput.getDOMNode().focus();
     },
 
     addInputString() {
