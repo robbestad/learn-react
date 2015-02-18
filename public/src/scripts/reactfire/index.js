@@ -26,10 +26,11 @@ let ReactfireDemo = React.createClass({
             config: {
                 buttonStyle: 'info',
                 buttonText: 'add',
+                buttonTextReset: 'reset database',
                 appname: 'Firebase and Reactfire Example',
                 text1: 'Demonstrates the use of ReactFire, a convenience library for one-way data binding to a Firebase. Also uses standard Firebase API in order to populate the Firebase.',
                 text2: 'Add some text to the Firebase, and watch as it is immediately displayed below.',
-                text3: 'The database will be reset periodically.'
+                text3: 'The database will be reset daily, but if you find the contents offensive you can reset it yourself by using the reset database button.'
             },
             strings: []
         }
@@ -54,6 +55,22 @@ let ReactfireDemo = React.createClass({
                 input.value = '';
             });
         }
+    },
+    resetDatabase() {
+        //called on click of add-button,
+        // resets the Firebase
+        let input = {
+            "strings": {
+                "-JiEPn2FMzEZldTFUmxp": {
+                    "text": "Some text in the FIrebase"
+                },
+                "-JiGNoWeU_Jfjb1Q7hDk": {
+                    "text": "Some other text..."
+                }
+            }
+        }
+        let stringsRef = new Firebase(this.props.baseUrl);
+        stringsRef.set(input);
     },
 
     render() {
@@ -82,6 +99,12 @@ let ReactfireDemo = React.createClass({
                         className='button'
                         onClick={this.addInputString}>
                             {this.state.config.buttonText}
+                    </Button>
+                    <span>&nbsp;</span>
+                    <Button bsStyle={this.state.config.buttonStyle}
+                        className='button'
+                        onClick={this.resetDatabase}>
+                            {this.state.config.buttonTextReset}
                     </Button>
                 </div>
 
