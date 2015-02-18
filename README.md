@@ -1,13 +1,10 @@
-# React Reflux Boilerplate
+# Learn React
 
-> An application architecture for React utilizing a unidirectional data flow with the [Reflux](https://www.npmjs.org/package/reflux) Architecture
+This repo is a learning tool for React. Each single module is meant to show or highlight a feature or thing you can do with React. Fork and add modules if you want to showcase something. 
 
-##### Uses:
+## Check it out online
 
-- [React Router](https://github.com/rackt/react-router)
-- [Reflux](https://www.npmjs.org/package/reflux)
-- [Flow](http://flowtype.org/)
-- [Jest](https://facebook.github.io/jest/)
+[Web site](https://learnreact.robbestad.com/)
 
 ## Install
 
@@ -31,6 +28,12 @@ Static Type checking is implemented with Flow.
 Testing is done with Jest. It uses a preprocessor that strips Flow type annotations and a test helper that mocks
 react-router.
 
-## Demo
+## Tech
 
-[Heroku](https://reactboiler.herokuapp.com/)
+> Built on an application architecture for React 
+    
+- [React Router](https://github.com/rackt/react-router)
+- [Reflux](https://www.npmjs.org/package/reflux)
+- [Flow](http://flowtype.org/)
+- [Jest](https://facebook.github.io/jest/)
+
