@@ -17,7 +17,7 @@ var Breadcrumbs = require('react-breadcrumbs');
 
 
 var Mixin = React.createClass({
-    displayName: "Mixins Example",
+    displayName: "Mixin example",
     getInitialState(){
         return{
             seconds:0
@@ -25,6 +25,7 @@ var Mixin = React.createClass({
     },
     mixins:[SetIntervalMixin],
     statics: {
+        unit:"seconds",
         increment(n) { return n + 1; }
     },
     componentDidMount() {
@@ -40,7 +41,7 @@ var Mixin = React.createClass({
             <div className="flyin-widget">
 
                 <h1>Mixin</h1>
-            {this.props.name} has been running for {this.state.seconds} {this.unit} seconds
+                {this.constructor.displayName} has been running for {this.state.seconds} {Mixin.unit}
                 <Markdown2Html src="assets/MIXINS.md" />
 
 

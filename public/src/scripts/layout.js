@@ -15,6 +15,7 @@ var React = require('react'),
     ButtonLink = ReactRouterBootstrap.ButtonLink,
     DropdownButton = ReactBootstrap.DropdownButton,
     ButtonToolbar = ReactBootstrap.ButtonToolbar;
+var StickyDiv = require('react-stickydiv');
 
 
 module.exports = React.createClass({
@@ -98,7 +99,7 @@ module.exports = React.createClass({
         return (<section>
             <div className="page-header-wrap">
                 <header className="page-header">
-
+                    <StickyDiv>
                     <div id="header" className="header-bar">
                         <div id="feedback-modal"></div>
                         <div className="container">
@@ -188,6 +189,7 @@ module.exports = React.createClass({
                             </div>
                         </div>
                     </div>
+                    </StickyDiv>
                 </header>
             </div>
 

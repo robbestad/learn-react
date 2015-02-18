@@ -961,6 +961,7 @@ p.flash-text{
 h2.header{
   width: $logoWidth;
   height: 46px;
+  color:#61dafb;
   font-size: 34px;
   margin:13px 10px 0 20px;
   font-family: "proxima-nova",sans-serif;
@@ -995,18 +996,19 @@ h2.footer {
 }
 
 .menu-link {
-  padding: 25px 20px 21px 21px;
+//  padding: 25px 20px 21px 21px;
   z-index: 10;
   background-color: transparent;
 }
 
 .menu-link:before {
   content: "";
+  background: url(http://res.cloudinary.com/sven-anders-robbestad/image/upload/c_scale,w_40/v1424243255/React.js_logo_uxyuuh.png) -1px -2px no-repeat;
   display: block;
-  width: 21px;
-  height: 18px;
-  border-top: 11px double #f5f5f5;
-  border-bottom: 4px solid #f5f5f5
+//  width: 30px;
+//  height: 30px;
+//  border-top: 11px double #000033;
+//  border-bottom: 4px solid #f5f5f5
 }
 
 .main-menu {
@@ -1132,7 +1134,11 @@ h2.footer {
     margin-left: 30px
   }
   .header-bar, .header-bar {
-    background: $primary
+    background: $primary;
+    border-radius: 0 0 2px 2px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+
+
   }
   .header-bar .header-bar-wrap, .header-bar .header-bar-wrap {
     padding-left: 0
@@ -1203,13 +1209,12 @@ h2.footer {
   }
 
   .menu-link {
-    padding: 19px 25px 20px 27px
+//    padding: 19px 25px 20px 27px;
+    padding: 15px 5px 1px 12px;
   }
   .menu-link:before {
-    width: 31px;
-    height: 25px;
-    border-top-width: 15px;
-    border-bottom-width: 5px
+    width: 40px;
+    height: 40px;
   }
   .main-menu {
     left: auto;
@@ -1353,7 +1358,7 @@ h1.itemHead{
 
 h2.header{
   margin:0 auto;
-  padding:14px 0 0 20px;
+  padding:17px 0 0 20px;
   text-align: left;
 }
 
