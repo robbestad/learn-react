@@ -3,9 +3,7 @@
 This repo is a learning tool for React. Each single module is meant to show or highlight a feature or thing you can do with React. Fork and add modules if you want to showcase something. 
 
 > Built on an application architecture for React 
-
-##### Uses:
-
+    
 - [React Router](https://github.com/rackt/react-router)
 - [Reflux](https://www.npmjs.org/package/reflux)
 - [Flow](http://flowtype.org/)
