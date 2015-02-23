@@ -9,7 +9,7 @@ var config = {
         loaders: [
             {
                 test: /\.js$/,
-                loader: 'es6-loader',
+                loader: 'babel-loader',
                 exclude: /node_modules/
             }
         ],
