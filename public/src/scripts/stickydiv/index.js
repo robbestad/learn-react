@@ -5,7 +5,7 @@
 
 const React = require('react');
 
-const Sticky = require('../react-stickydiv/index.js');
+var Sticky = require('../react-stickydiv');
 const Breadcrumbs = require('react-breadcrumbs'),
     {Bootstrap, Grid, Col, Row, Button, Input, Well} = require('react-bootstrap'),
     Markdown2Html = require("react-markdown-to-html");
@@ -14,16 +14,16 @@ module.exports = React.createClass({
     displayName: "Sticky Div",
     render: function ():any {
         return <Grid className="flyin-widget">
+
                 <Row className="show-grid">
                     <Col md={12}><Breadcrumbs /></Col>
                 </Row>
 
                 <Row className="show-grid">
                     <Col md={12}>
-                        <Sticky top="115" zIndex="9999999">
-                            <span style={{
-                                backgroundColor: 'transparent', display: 'flex', alignItems: 'center',
-                                justifyContent: 'center', color: 'red',
+                        <Sticky >
+                            <span className="centered" style={{
+                                backgroundColor: 'transparent', color: 'red',
                                 fontSize: '24px', padding: '2px'
                             }}>I'm really sticky</span>
                         </Sticky>
