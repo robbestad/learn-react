@@ -10,6 +10,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: $footerHeight;
+
 }
 .footer {
   position: absolute;
@@ -999,13 +1000,16 @@ h2.footer {
 //  padding: 25px 20px 21px 21px;
   z-index: 10;
   background-color: transparent;
+//  transition: all .3s cubic-bezier(1,0,1,1);
+
 }
 
 .menu-link:before {
   content: "";
   background: url(/assets/react_logo.png) -1px -2px no-repeat;
   display: block;
-//  width: 30px;
+
+  //  width: 30px;
 //  height: 30px;
 //  border-top: 11px double #000033;
 //  border-bottom: 4px solid #f5f5f5
@@ -1364,9 +1368,9 @@ h2.header{
 
 @media (max-width: 779px) {
   h2.header{
-    padding:24px 0 0 32px;
+    padding: 19px 0 0 60px;
     text-align: center;
-
+    width: 270px;
   }
 
   .menu-link {
@@ -1394,6 +1398,8 @@ h2.header{
 }
 @media (max-width: 379px) {
   h2.header{
+    padding: 24px 0 0 30px;
     text-align: center;
+    width: 270px;
   }
 }
