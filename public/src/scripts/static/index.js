@@ -1,5 +1,7 @@
-var React = require("react");
-var Markdown2Html = require("react-markdown-to-html");
+var React = require("react"),
+    {Bootstrap, Grid, Col, Row, Button} = require('react-bootstrap'),
+    {Link} = require('react-router');
+var Markdown2Html = require("../react-markdown-to-html");
 var Breadcrumbs = require('react-breadcrumbs');
 
 
@@ -22,13 +24,26 @@ var Component = React.createClass({
         }
     },
     render: function () {
-        return <div>
-            <Breadcrumbs />
+        return <Grid className="flyin-widget">
+            <Row className="show-grid">
+                <Col md={12}><Breadcrumbs /></Col>
+            </Row>
+            <Row className="show-grid">
+                <Col md={12}>Welcome to my collection of React examples, modules and tutorials. More will be coming
+                    every now and then, so be sure to bookmark and come back.
+                </Col>
+            </Row>
 
-            <h1>{this.state.greeting}</h1>
-            <div dangerouslySetInnerHTML={{__html: <Component.customRender bar="This block is rendered with renderToStaticMarkup" />}} />
-            <Markdown2Html src="assets/STATICS.md" />
-        </div>
+            <Row className="show-grid">
+                <Col md={12}>
+                    <h1>{this.state.greeting}</h1>
+                <div dangerouslySetInnerHTML={{__html: <Component.customRender bar="This block is rendered with renderToStaticMarkup" />}} />
+                <Markdown2Html src="assets/STATICS.md" />
+                </Col>
+
+            </Row>
+
+        </Grid>
     }
 });
 

@@ -6,6 +6,7 @@
 var React = require("react"),
     Reflux = require('reflux'),
     store = require('./store'),
+    PureRenderMixin = require('react/addons').addons.PureRenderMixin,
     actions = require('./actions');
 var Breadcrumbs = require('react-breadcrumbs');
 
@@ -21,7 +22,8 @@ var Thumbnail= React.createClass({
 module.exports = React.createClass({
     displayName:"Reflux",
 
-    mixins: [Reflux.connect(store, 'store')],
+    mixins: [Reflux.ListenerMixin,
+        PureRenderMixin],
 
     // Pull initial state from store
     getInitialState: function ():any {
@@ -30,11 +32,24 @@ module.exports = React.createClass({
         };
     },
     componentDidMount: function ():any {
+        this.listenTo(store, this.onStoreTrigger);
+
         var _actions = actions;
         setInterval(function () {
             _actions.pollReddit();
-        }, 5000);
+        }, 2500000);
     },
+    onStoreTrigger(data){
+       this.setState({
+           store:data
+       })
+    },
+    //
+    //shouldComponentUpdate(nextState, nextProps){
+    //    console.log(nextState);
+    //    console.log(nextProps);
+    //  //return false;
+    //},
 
     render: function ():any {
         if ("undefined" == typeof this.state.store) {
@@ -42,6 +57,7 @@ module.exports = React.createClass({
                 <Breadcrumbs />
 
                 <h1>Reflux Example</h1>
+          undefined:  {this.state}
             </div>
         }
 
@@ -49,6 +65,8 @@ module.exports = React.createClass({
             case store.STATE_OK:
                 return <div>
                     <Breadcrumbs />
+                                {this.state}
+
                     <div className="flyin-widget">
                     <h1>Reflux Example</h1>
                     <h4 style={{color:"#aaa"}}>This componenent uses Reflux to populate a datastore with
@@ -78,7 +96,9 @@ module.exports = React.createClass({
                 </div>
             default:
                 return <div>
-                    <h1>Reflux Example</h1>
+                    <h1>Reflux Example (default)</h1>
+                1:    {this.state}
+               2: {this.props}
                 </div>
         }
     }

@@ -30,6 +30,7 @@ module.exports = Reflux.createStore({
     // Pull posts from server and trigger to let listeners know
     // posts changed
     updateFromServer: function(){
+        var _this=this;
         $.get('http://www.reddit.com/new/.json')
             .done(function(data){
                 store = {
@@ -57,23 +58,7 @@ module.exports = Reflux.createStore({
         this.reloadPosts();
     },
 
-    // Delete a post based on ID.
-    // TODO Handle ID not found; currently does nothing
-    deletePost: function(postId){
-        console.log("clicked me");
-        store.posts = store.posts.filter(function(post){
-            return post.id !== postId;
-        });
-        this.trigger(store);
-    },
-    // Set default data, put into loading state, kick off posts fetch from
-    // server, and let listeners know
     reloadPosts: function(){
-        store = {
-            state: STATE_LOADING,
-            posts: []
-        };
-        this.trigger(store);
         this.updateFromServer();
     },
     // Set default data, put into loading state, kick off posts fetch from

@@ -116,10 +116,13 @@ module.exports = React.createClass({
                                                     <Link to="home">Home</Link>
                                                 </li>
                                                 <li>
-                                                    <Link to="jfokus">Jfokus</Link>
+                                                    <Link to="flux">Flux</Link>
                                                 </li>
                                                 <li>
                                                     <Link to="source">Source</Link>
+                                                </li>
+                                                <li>
+                                                    <Link to="mcfly">McFly</Link>
                                                 </li>
                                                 <li>
                                                     <Link to="reflux">Reflux example</Link>
