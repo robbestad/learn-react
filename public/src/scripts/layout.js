@@ -1,23 +1,8 @@
 var React = require('react'),
-    Router = require('react-router'),
-    Route = Router.Route,
-    DefaultRoute = Router.DefaultRoute,
-    NotFoundRoute = Router.NotFoundRoute,
-    RouteHandler = Router.RouteHandler,
-    Redirect = Router.Redirect,
-    Link = Router.Link,
-
-    ReactBootstrap = require('react-bootstrap'),
-    Nav = ReactBootstrap.Nav,
-    ReactRouterBootstrap = require('react-router-bootstrap'),
-    NavItemLink = ReactRouterBootstrap.NavItemLink,
-    MenuItem = ReactBootstrap.MenuItem,
-    ButtonLink = ReactRouterBootstrap.ButtonLink,
-    DropdownButton = ReactBootstrap.DropdownButton,
-    ButtonToolbar = ReactBootstrap.ButtonToolbar;
-var StickyDiv = require('react-stickydiv'),
+    {Router, Route, DefaultRoute, NotFoundRoute, RouteHandler, Redirect, Link} = require('react-router'),
+    {ReactBootstrap, Nav} = require('react-bootstrap'),
+    {ReactRouterBootstrap, NavItemLink, MenuItem, ButtonLink, DropdownButton, ButtonToolbar} = require('react-router-bootstrap'),
     Headroom = require("react-headroom");
-
 
 module.exports = React.createClass({
     displayName:"Learn React",
