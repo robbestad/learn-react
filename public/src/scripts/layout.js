@@ -122,26 +122,15 @@ module.exports = React.createClass({
                                                     <Link to="home">Home</Link>
                                                 </li>
                                                 <li>
-                                                    <Link to="flux">Flux</Link>
-                                                </li>
-                                                <li>
                                                     <Link to="source">Source</Link>
                                                 </li>
-                                                <li>
-                                                    <Link to="mcfly">McFly</Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="button">Button Example</Link>
-                                                </li>
-                                                <li>
+
                                                     <Link to="mixin">Mixin Example</Link>
                                                 </li>
                                                 <li>
                                                     <Link to="static">Statics Example</Link>
                                                 </li>
-                                                <li>
-                                                    <Link to="stickydiv">Sticky Div</Link>
-                                                </li>
+
                                                 <li>
                                                     <Link to="markdown">Include Markdown</Link>
                                                 </li>
