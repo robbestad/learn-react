@@ -12,14 +12,16 @@ module.exports = React.createClass({
           menuOpen:false
       }
     },
-
+    componentDidMount(){
+        this.closeMenu();
+    },
 
     fadeFlash(){
         $("#feedback-modal").hide();
     },
     flash(body, toggleClass, delay) {
         if("undefined" === typeof delay) delay=3400;
-        var flashDiv = $("#feedback-modal"), className;
+        var flashDiv = $(this.refs.feedbackModal.getDOMNode()), className;
         switch (toggleClass) {
             case "warning":
                 className = "alert-warning";
@@ -45,24 +47,23 @@ module.exports = React.createClass({
     openMenu () {
         this.closeSearch();
         var _this=this;
-        var mm = $(".main-menu"), ml = $(".menu-link");
-        mm.slideDown("fast", function () {
+        $("body").css("overflow","hidden");
+        $(this.refs.mainMenu.getDOMNode()).slideDown("fast", function () {
             _this.setState({menuOpen:true});
         });
     },
 
     closeMenu(){
+        $("body").css("overflow","visible");
         var _this=this;
-        var mm = $(".main-menu"), ml = $(".menu-link");
-        //this.flash("<h1><p class=\"flash-text\">h1 er en bra overskrift</p></h1>", "warning");
-        mm.slideUp("fast", function () {
+        //var mm = $(".main-menu"), ml = $(".menu-link");
+        $(this.refs.mainMenu.getDOMNode()).slideUp("fast", function () {
             _this.setState({menuOpen:false});
         })
     },
     closeSearch() {
         var _this=this;
-        var m = $(".main-search"), s = $(".search-link");
-        m.slideUp("fast", function () {
+        $(this.refs.mainSearch.getDOMNode()).slideUp("fast", function () {
             _this.setState({searchOpen:false});
         })
     },
@@ -70,8 +71,7 @@ module.exports = React.createClass({
         this.closeMenu();
 
         var _this=this;
-        var m = $(".main-search"), s = $(".search-link");
-        m.slideDown("fast", function () {
+        $(this.refs.mainSearch.getDOMNode()).slideDown("fast", function () {
             _this.refs.searchInput.getDOMNode().focus();
             _this.setState({searchOpen:true});
         });
@@ -90,46 +90,46 @@ module.exports = React.createClass({
     render() {
         return (<section>
             <div className="page-header-wrap">
-                <header className="page-header">
-                    <Headroom>
+                <nav ref="mainMenu" className="main-menu header-panel">
+                    <ul >
+                        <li onClick={this.closeMenu}>
+                            <Link to="home">Home</Link>
+                        </li>
+
+                        <li onClick={this.closeMenu}>
+                            <Link to="source">Source</Link>
+                        </li>
+
+                        <li onClick={this.closeMenu}>
+                            <Link to="mixin">Mixin Example</Link>
+                        </li>
+                        <li onClick={this.closeMenu}>
+                            <Link to="static">Statics Example</Link>
+                        </li>
+                        <li onClick={this.closeMenu}>
+                            <Link to="markdown">Include Markdown</Link>
+                        </li>
+                        <li onClick={this.closeMenu}>
+                            <Link to="breadcrumbs">Breadcrumbs</Link>
+                        </li>
+                        <li onClick={this.closeMenu}>
+                            <Link to="reactfire">ReactFire</Link>
+                        </li>
+
+                    </ul>
+                </nav>
+                <Headroom>
+                    <header className="page-header">
                     <div id="header" className="header-bar">
-                        <div id="feedback-modal"></div>
+                        <div ref="feedbackModal" id="feedback-modal"></div>
                         <div className="container">
                             <div className="header-bar-wrap">
                                 <div className="header-options">
                                     <div className="header-panel-wrap" onClick={this.toggleMenu}>
-                                        <span className="menu-link header-panel-element header-panel-link">
+                                        <span ref="menuLink" className="menu-link header-panel-element header-panel-link">
                                             <span
                                                 className="text-link">Meny</span>
                                         </span>
-                                        <nav className="main-menu header-panel">
-                                            <ul >
-                                                <li>
-                                                    <Link to="home">Home</Link>
-                                                </li>
-
-                                                <li>
-                                                    <Link to="source">Source</Link>
-                                                </li>
-
-                                                <li>
-                                                    <Link to="mixin">Mixin Example</Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="static">Statics Example</Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="markdown">Include Markdown</Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="breadcrumbs">Breadcrumbs</Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="reactfire">ReactFire</Link>
-                                                </li>
-
-                                            </ul>
-                                        </nav>
                                     </div>
                                 </div>
 
@@ -147,7 +147,7 @@ module.exports = React.createClass({
                                                 className="text-link">Search</span>
                                         </span>
 
-                                        <div className="main-search header-panel">
+                                        <div ref="mainSearch" className="main-search header-panel">
                                             <div className="container">
                                                 <div className="input-search-group">
                                                     <form method="get" action="http://www.google.com/search" role="search">
@@ -171,8 +171,8 @@ module.exports = React.createClass({
                             </div>
                         </div>
                     </div>
-                    </Headroom>
                 </header>
+                </Headroom>
             </div>
 
             <div className="container main-container">

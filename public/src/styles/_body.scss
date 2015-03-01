@@ -1023,11 +1023,13 @@ h2.footer {
 .main-menu {
   left: 0;
   padding: 14px 0;
-  z-index: 999;
-  position: absolute;
+  z-index: 9999;
+  position: fixed;
+  top:59px;
 }
 
 .main-menu ul {
+  z-index: 9999!important;
   padding: 0;
   margin: 0;
   list-style: none
@@ -1038,7 +1040,8 @@ h2.footer {
 }
 
 .main-menu li:first-child {
-  border-top: none
+  border-top: none;
+
 }
 
 .main-menu li a {
