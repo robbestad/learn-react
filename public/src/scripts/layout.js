@@ -121,16 +121,17 @@ module.exports = React.createClass({
                                                 <li>
                                                     <Link to="home">Home</Link>
                                                 </li>
+
                                                 <li>
                                                     <Link to="source">Source</Link>
                                                 </li>
 
+                                                <li>
                                                     <Link to="mixin">Mixin Example</Link>
                                                 </li>
                                                 <li>
                                                     <Link to="static">Statics Example</Link>
                                                 </li>
-
                                                 <li>
                                                     <Link to="markdown">Include Markdown</Link>
                                                 </li>
