@@ -65,8 +65,6 @@ module.exports = React.createClass({
             case store.STATE_OK:
                 return <div>
                     <Breadcrumbs />
-                                {this.state}
-
                     <div className="flyin-widget">
                     <h1>Reflux Example</h1>
                     <h4 style={{color:"#aaa"}}>This componenent uses Reflux to populate a datastore with
@@ -97,8 +95,8 @@ module.exports = React.createClass({
             default:
                 return <div>
                     <h1>Reflux Example (default)</h1>
-                1:    {this.state}
-               2: {this.props}
+                    {this.state}
+                    {this.props}
                 </div>
         }
     }

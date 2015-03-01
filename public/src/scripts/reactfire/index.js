@@ -1,10 +1,10 @@
 let React = require('react'),
     Breadcrumbs = require('react-breadcrumbs'),
-    Markdown2Html = require("react-markdown-to-html"),
+    Markdown2Html = require("../react-markdown-to-html"),
     Firebase = require('firebase'),
     ReactFireMixin = require('reactfire'),
-    ReactBootstrap = require('react-bootstrap'),
-    Button = ReactBootstrap.Button;
+    {Bootstrap, Grid, Col, Row, Button} = require('react-bootstrap'),
+    {Link} = require('react-router');
 
 let ReactfireDemo = React.createClass({
 
@@ -79,52 +79,63 @@ let ReactfireDemo = React.createClass({
     },
 
     render() {
-        return <div>
-            <Breadcrumbs />
-            <div className="flyin-widget">
+        return  <Grid className="flyin-widget">
+            <Row className="show-grid">
+                <Col md={12}><Breadcrumbs /></Col>
+            </Row>
+            <Row className="show-grid" style={{paddingBottom:20}}>
+                <Col md={12}>
+                    <div>
+                        <h1>{this.state.config.appname}</h1>
+                    </div>
 
-                <div>
-                    <h1>{this.state.config.appname}</h1>
-                </div>
+                    <div>{this.state.config.text1}</div>
+                </Col>
+            </Row>
 
-                <div>{this.state.config.text1}</div>
+            <Row className="show-grid">
+                <Col md={12}>
 
-                <br/>
 
-                <div>
-                    <p>{this.state.config.text2}</p>
-                    <p>{this.state.config.text3}</p>
-                    <p>{this.state.config.text4}</p>
-                </div>
+                    <div>
+                        <p>{this.state.config.text2}</p>
+                        <p>{this.state.config.text3}</p>
+                        <p>{this.state.config.text4}</p>
+                    </div>
 
-                <div>
-                    <input ref="theInput" type="text" />
-                    <span>&nbsp;</span>
-                    <Button bsStyle={this.state.config.buttonStyle}
-                        className='button'
-                        onClick={this.addInputString}>
+                    <div>
+                        <input ref="theInput" type="text" />
+                        <span>&nbsp;</span>
+                        <Button bsStyle={this.state.config.buttonStyle}
+                            className='button'
+                            onClick={this.addInputString}>
                             {this.state.config.buttonText}
-                    </Button>
-                    <span>&nbsp;</span>
-                    <Button bsStyle={this.state.config.buttonStyle}
-                        className='button'
-                        onClick={this.resetDatabase}>
+                        </Button>
+                        <span>&nbsp;</span>
+                        <Button bsStyle={this.state.config.buttonStyle}
+                            className='button'
+                            onClick={this.resetDatabase}>
                             {this.state.config.buttonTextReset}
-                    </Button>
-                </div>
+                        </Button>
+                    </div>
 
-                <div>
-                    <ul>
+                    <div>
+                        <ul>
                         {this.state.strings.map(function (string, key) {
                             return (
                                 <li key={key}>{string}</li>
                             )
                         })}
-                    </ul>
-                </div>
-                <Markdown2Html src="./assets/REACTFIRE.md" />
-            </div>
-        </div>
+                        </ul>
+                    </div>
+                    <Markdown2Html src="./assets/REACTFIRE.md" />
+                </Col>
+
+            </Row>
+
+        </Grid>
+
+
     }
 });
 module.exports = ReactfireDemo;

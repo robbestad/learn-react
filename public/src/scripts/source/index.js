@@ -1,5 +1,5 @@
 var React = require("react");
-var Markdown2Html = require("react-markdown-to-html");
+var Markdown2Html = require("../react-markdown-to-html");
 var Breadcrumbs = require('react-breadcrumbs');
 
 

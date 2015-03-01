@@ -7,7 +7,7 @@ var React = require("react"),
     ReactBootstrap = require('react-bootstrap'),
     Button = ReactBootstrap.Button;
 
-var Markdown2Html = require("react-markdown-to-html");
+var Markdown2Html = require("../react-markdown-to-html");
 
 var Breadcrumbs = require('react-breadcrumbs');
 

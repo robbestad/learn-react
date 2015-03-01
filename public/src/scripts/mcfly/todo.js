@@ -35,7 +35,7 @@ var TodoActions = Flux.createActions({
 
 function getState(){
     return {
-        todos: TodoStore.getPosts()
+        posts: TodoStore.getPosts()
     }
 }
 
@@ -50,7 +50,7 @@ var TodosController = React.createClass({
         this.setState(getState());
     },
     render: function() {
-        return <Todos todos={this.state.todos} />;
+        return <Todos todos={this.state.posts} />;
     }
 });
 

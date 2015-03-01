@@ -1,11 +1,21 @@
 const Router = require("react-router");
 
-exports.RefluxRoute = Router.createRoute({
-    name: '/reflux',
-    handler: require("./reflux")
-});
-
 exports.StickyRoute = Router.createRoute({
     name: '/stickydiv',
     handler: require("./stickydiv")
+});
+
+exports.McFlyRoute = Router.createRoute({
+    name: '/mcfly',
+    handler: require("./mcfly")
+});
+
+exports.ReactFireRoute = Router.createRoute({
+    name: '/reactfire',
+    handler: require("./reactfire")
+});
+
+exports.ButtonRoute = Router.createRoute({
+    name: '/button',
+    handler: require("./button")
 });

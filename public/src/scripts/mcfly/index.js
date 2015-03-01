@@ -1,63 +1,28 @@
 /** McFly */
-var McFly = require("mcfly");
-var React = require("react");
-var $ = require("jquery");
-var Flux = new McFly();
+let McFly = require("mcfly"),
+    React = require("react"),
+    Flux = new McFly(),
+    {Bootstrap, Grid, Col, Row, Button} = require('react-bootstrap'),
+    {Link} = require('react-router'),
+    Markdown2Html = require("../react-markdown-to-html"),
+    Breadcrumbs = require('react-breadcrumbs');
 
 /** Store */
-
-var _todos = [];
-var store;
-
-function addTodo(text){
-    _todos.push(text);
-}
-
-var ApiStore = Flux.createStore({
-    getPosts: function(){
-        return _todos;
-    }
-}, function(payload){
-    if(payload.actionType === "FETCH_POSTS") {
-        $.get('http://www.reddit.com/new/.json')
-            .done(function(data){
-                store = {
-                    posts: data
-                };
-
-            }.bind(this))
-            .fail(function(err){
-                store.state = STATE_ERR;
-                store.error = 'Could not fetch posts from server';
-                if(err.responseJSON && err.responseJSON.error){
-                    store.error += ': ' + err.responseJSON.error;
-                }else{
-                    store.error += '.';
-                }
-            }.bind(this))
-            .always(function(){
-                addTodo(store.posts.data.children[0].data.title);
-                ApiStore.emitChange();
-
-            }.bind(this));
-
-    }
-});
+var ApiStore = require("./store");
 
 /** Actions */
 
 var ApiActions = Flux.createActions({
-    fetchPosts: function(text){
+    fetchPosts: function () {
         return {
-            actionType: "FETCH_POSTS",
-            text: text
+            actionType: "FETCH_POSTS"
         }
     }
 });
 
-function getState(){
+function getState() {
     return {
-        todos: ApiStore.getPosts()
+        posts: ApiStore.getPosts()
     }
 }
 
@@ -65,34 +30,64 @@ function getState(){
 
 var ApiController = React.createClass({
     mixins: [ApiStore.mixin],
-    getInitialState: function(){
+    getInitialState: function () {
         return getState();
     },
-    storeDidChange: function() {
+    storeDidChange: function () {
         this.setState(getState());
     },
-    render: function() {
-        return <ApiComponent todos={this.state.todos} />;
+    render: function () {
+        return <ApiComponent posts={this.state.posts} />;
     }
 });
 
 /** Component */
 
 var ApiComponent = React.createClass({
-    fetchPosts: function(){
-        ApiActions.fetchPosts('test');
+    fetchPosts: function () {
+        ApiActions.fetchPosts();
     },
-    render: function() {
-        return (
-            <div className="api_app">
-                <ul className="items">
-                { this.props.todos.map(function(todo, index){
-                    return <li key={index}>Todo {index} {todo}</li>
-                })}
-                </ul>
-                <button onClick={this.fetchPosts}>Fetch Next</button>
-            </div>
-        )
+    componentWillMount() {
+        this.fetchPosts();
+    },
+    render: function () {
+        return <Grid className="flyin-widget">
+            <Row className="show-grid">
+                <Col md={12}>
+                    <Breadcrumbs />
+                </Col>
+            </Row>
+            <Row className="show-grid">
+                <Col md={12}>
+                    This component uses McFly to populate a datastore with a JSON resource using AJAX.
+                    When you go back to the home screen, note that the counter is kept in sync
+                    with whatever is downloaded here.
+                </Col>
+            </Row>
+            <Row className="show-grid ">
+            {this.props.posts.map(function (item, idx) {
+                //var thumbnail = false;
+                //if (item.thumbnail.match('http')) thumbnail = true;
+                var permalink = "http://www.reddit.com/" + item.permalink;
+
+                return <Col key={idx} md={12} className="appear-in">
+                    <span style={{fontSize: '12px', color: '#aaa'}} >{item.subreddit}</span>
+                    <br/>
+                    <span style={{fontSize: '18px'}} >{item.title}</span>
+                    <br/>
+                    <a href={item.url} target="reddit">
+                            {item.domain}
+                    </a>
+                    <a style={{paddingLeft: '10px'}}  href={permalink} target="reddit">
+                        Comments
+                    </a>
+                </Col>
+            })}
+            </Row>
+
+
+        </Grid>
+
     }
 });
-module.exports=ApiController;
+module.exports = ApiController;

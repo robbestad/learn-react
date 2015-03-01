@@ -1004,6 +1004,11 @@ h2.footer {
 
 }
 
+.appear-in{
+  transition: all .3s cubic-bezier(1,0,1,1);
+
+}
+
 .menu-link:before {
   content: "";
   background: url(/assets/react_logo.png) -1px -2px no-repeat;

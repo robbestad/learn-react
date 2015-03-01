@@ -30,27 +30,27 @@ module.exports = Reflux.createStore({
     // Pull posts from server and trigger to let listeners know
     // posts changed
     updateFromServer: function(){
-        var _this=this;
-        $.get('http://www.reddit.com/new/.json')
-            .done(function(data){
-                store = {
-                    state: STATE_OK,
-                    posts: data
-                };
-
-            }.bind(this))
-            .fail(function(err){
-                store.state = STATE_ERR;
-                store.error = 'Could not fetch posts from server';
-                if(err.responseJSON && err.responseJSON.error){
-                    store.error += ': ' + err.responseJSON.error;
-                }else{
-                    store.error += '.';
-                }
-            }.bind(this))
-            .always(function(){
-                this.trigger(store);
-            }.bind(this));
+        //var _this=this;
+        //$.get('http://www.reddit.com/new/.json')
+        //    .done(function(data){
+        //        store = {
+        //            state: STATE_OK,
+        //            posts: data
+        //        };
+        //
+        //    }.bind(this))
+        //    .fail(function(err){
+        //        store.state = STATE_ERR;
+        //        store.error = 'Could not fetch posts from server';
+        //        if(err.responseJSON && err.responseJSON.error){
+        //            store.error += ': ' + err.responseJSON.error;
+        //        }else{
+        //            store.error += '.';
+        //        }
+        //    }.bind(this))
+        //    .always(function(){
+        //        this.trigger(store);
+        //    }.bind(this));
     },
 
     // Simply reload posts on init

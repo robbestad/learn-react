@@ -26,6 +26,8 @@ module.exports = React.createClass({
           menuOpen:false
       }
     },
+
+
     fadeFlash(){
         $("#feedback-modal").hide();
     },
@@ -95,6 +97,10 @@ module.exports = React.createClass({
     toggleMenu(){
         this.state.menuOpen === true ? this.closeMenu() : this.openMenu();
     },
+
+    //<li>
+    //<Link to="reflux">Reflux example</Link>
+    //</li>
     render() {
         return (<section>
             <div className="page-header-wrap">
@@ -123,9 +129,6 @@ module.exports = React.createClass({
                                                 </li>
                                                 <li>
                                                     <Link to="mcfly">McFly</Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="reflux">Reflux example</Link>
                                                 </li>
                                                 <li>
                                                     <Link to="button">Button Example</Link>
