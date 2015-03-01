@@ -19,3 +19,13 @@ exports.ButtonRoute = Router.createRoute({
     name: '/button',
     handler: require("./button")
 });
+
+exports.StaticsRoute = Router.createRoute({
+    name: '/static',
+    handler: require("./static")
+});
+
+exports.MarkdownRoute = Router.createRoute({
+    name: '/markdown',
+    handler: require("./markdown")
+});

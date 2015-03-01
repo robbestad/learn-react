@@ -84,9 +84,6 @@ module.exports = React.createClass({
         this.state.menuOpen === true ? this.closeMenu() : this.openMenu();
     },
 
-    //<li>
-    //<Link to="reflux">Reflux example</Link>
-    //</li>
     render() {
         return (<section>
             <div className="page-header-wrap">
