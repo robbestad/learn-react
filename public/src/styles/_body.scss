@@ -1378,11 +1378,18 @@ h2.header{
     width: 270px;
   }
 
+  .header-bar{
+    height: 60px;
+  }
+  .search-link{
+    display:none;
+  }
   .menu-link {
-    padding: 15px 20px 11px 24px;
+    margin: 15px 20px 11px 24px;
     position: fixed;
-    z-index: 10;
-    border:none;
+    border:1px white;
+    display:block;
+    z-index: 999;
   }
 
   .header-panel-wrap:first-child .header-panel-element {
