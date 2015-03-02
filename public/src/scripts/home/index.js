@@ -3,7 +3,6 @@ var React = require("react"),
     {Link} = require('react-router');
 const {StickyRoute, ReactFireRoute, McFlyRoute, ButtonRoute, StaticsRoute, MarkdownRoute} = require('../routes');
 var Breadcrumbs = require('react-breadcrumbs');
-var Reflux= require("../reflux");
 
 var ApiStore = require("../mcfly/store");
 
