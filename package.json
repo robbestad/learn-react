@@ -55,8 +55,6 @@
     "express": "^4.10.6",
     "extend": "^2.0.0",
     "firebase": "^2.2.0",
-    "flummox": "^2.7.1",
-    "flux": "^2.0.1",
     "gulp": "^3.8.10",
     "gulp-autoprefixer": "^2.0.0",
     "gulp-concat": "^2.4.2",
@@ -73,7 +71,6 @@
     "lodash": "^3.3.1",
     "marked": "^0.3.2",
     "mcfly": "0.0.10",
-    "object-assign": "^2.0.0",
     "react": "^0.12.x",
     "react-bootstrap": "^0.15.x",
     "react-breadcrumbs": "^0.2.x",
@@ -91,25 +88,19 @@
     "superagent-promise": "^0.2.0",
     "underscore": "^1.7.0",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.0.0",
     "watchify": "^2.2.1",
-    "webpack": "^1.4.15"
-  },
-  "devDependencies": {
     "babel": "^4.4.5",
     "babel-core": "^4.4.5",
     "babel-loader": "^4.0.0",
-    "blanket": "^1.1.6",
-    "coveralls": "^2.11.2",
     "flux": "^2.0.1",
     "glob": "^4.4.0",
     "jest": "^0.1.37",
     "jest-cli": "^0.2.1",
     "jsdom": "^4.0.0",
-    "mcfly": "0.0.10",
     "mocha": "^2.1.0",
     "mocha-lcov-reporter": "0.0.1",
-    "object-assign": "^2.0.0",
-    "react-tools": "^0.12.2"
+    "react-tools": "^0.12.2",
+    "webpack": "^1.6.0"
+
   }
 }
