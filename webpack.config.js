@@ -18,12 +18,16 @@ var config = {
         ]
     },
     plugins: [
-
     ],
+
     resolve: {
-        // you can now require('file') instead of require('file.js')
-        extensions: ['', '.js', '.json', '.jsx']
-    }
+      // you can now require('file') instead of require('file.js')
+      extensions: ['', '.js', '.json', '.jsx'],
+      modulesDirectories: ['node_modules', 'vendors', 'public/src'],
+      alias: {
+        app: '/public/src/scripts'
+      }
+    },
 };
 
 module.exports = config;
