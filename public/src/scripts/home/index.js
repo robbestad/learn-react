@@ -1,14 +1,16 @@
-var React = require("react"),
+const React = require("react"),
     {Bootstrap, Grid, Col, Row, Button} = require('react-bootstrap'),
-    {Link} = require('react-router');
-const {StickyRoute, ReactFireRoute, McFlyRoute, ButtonRoute, StaticsRoute, MarkdownRoute} = require('../routes');
-var Breadcrumbs = require('react-breadcrumbs');
+    {Link} = require('react-router'),
+    {StickyRoute, ReactFireRoute, McFlyRoute, ButtonRoute, StaticsRoute, MarkdownRoute} = require('../routes'),
+    Breadcrumbs = require('react-breadcrumbs'),
+    ApiStore = require("../mcfly/store");
 
-var ApiStore = require("../mcfly/store");
+export default React.createClass({
+        displayName: route => {
+            return `Home`;
+        },
 
-module.exports = React.createClass({
-    displayName: "Home",
-    render() {
+        render() {
         var inlineCss={
             padding:'10px',
             lineHeight:'16px',
@@ -16,7 +18,9 @@ module.exports = React.createClass({
         };
         return <Grid className="flyin-widget">
                 <Row className="show-grid">
-                    <Col md={12}><Breadcrumbs /></Col>
+                    <Col md={12}><Breadcrumbs />
+                       
+                    </Col>
                 </Row>
                 <Row className="show-grid" >
                     <Col md={12} style={{paddingBottom:20}}>Welcome to my collection of React examples, modules and tutorials. More will be coming

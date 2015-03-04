@@ -22,7 +22,7 @@ var ApiStore = Flux.createStore({
                 //addPosts(res.map( item => item ));
                 let data=[];
                 res.data.children.map(function(item){
-                    data.push(item.data);
+                    data.push(  item.data);
                 });
                 addPosts(data);
                 //addPosts(res.data.children[0].data.title);
