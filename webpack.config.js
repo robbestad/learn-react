@@ -3,7 +3,7 @@ var webpack = require('webpack');
 var config = {
     entry: "./public/src/scripts/app.js",
     output: {
-        filename: "public/dist/app.js"
+        filename: "public/dist/bundle.js"
     },
     module: {
         loaders: [
