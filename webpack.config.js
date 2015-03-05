@@ -7,14 +7,7 @@ var config = {
     },
     module: {
         loaders: [
-            {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/
-            }
-        ],
-        preLoaders:[
-            {test: /\.js$/, loader: 'jsx-loader?stripTypes&harmony',exclude: /node_modules/}
+                     { test: /\.js?$/, loaders: ['jsx-loader?harmony','babel-loader'], exclude: /node_modules/ }
         ]
     },
     plugins: [
