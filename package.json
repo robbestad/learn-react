@@ -15,9 +15,16 @@
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
-    "testFileExtensions": ["es6", "js"],
-    "moduleFileExtensions": ["js", "json", "es6"],
-     "unmockedModulePathPatterns": [
+    "testFileExtensions": [
+      "es6",
+      "js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "es6"
+    ],
+    "unmockedModulePathPatterns": [
       "<rootDir>/node_modules/react",
       "<rootDir>/node_modules/underscore",
       "<rootDir>/node_modules/jquery",
@@ -112,6 +119,7 @@
   "devDependencies": {
     "babel-jest": "^4.0.0",
     "jsx-loader": "^0.12.2",
+    "loader-utils": "^0.2.6",
     "react-hot-loader": "^1.1.1",
     "webpack": "^1.7.0",
     "webpack-dev-server": "^1.7.0"
