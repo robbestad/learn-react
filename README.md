@@ -23,7 +23,13 @@ Static Type checking is (partially) implemented with Flow.
 
 ## Tests
 
+#### Travis
+
+https://travis-ci.org/svenanders/react-tutorial
+
 [![Build Status](https://travis-ci.org/svenanders/react-tutorial.svg?branch=master)](https://travis-ci.org/svenanders/react-tutorial)
+
+#### Local testing
 
 ```npm test```
 
