@@ -19,9 +19,11 @@ $ npm run dev
 
 ```flow check```
 
-Static Type checking is implemented with Flow.
+Static Type checking is (partially) implemented with Flow.
 
 ## Tests
+
+[![Build Status](https://travis-ci.org/svenanders/react-tutorial.svg?branch=master)](https://travis-ci.org/svenanders/react-tutorial)
 
 ```npm test```
 
