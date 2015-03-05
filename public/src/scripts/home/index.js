@@ -23,7 +23,7 @@ export default React.createClass({
                     </Col>
                 </Row>
                 <Row className="show-grid" >
-                    <Col md={12} style={{paddingBottom:20}}>Welcome to my collection of React examples, modules and tutorials. More will be coming
+                    <Col md={12} style={{paddingBottom:20}}><strong>Learn React</strong> is collection of React examples, modules and tutorials. More will be coming
                         every now and then, so be sure to bookmark and come back.
                     </Col>
                 </Row>
