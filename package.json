@@ -114,9 +114,7 @@
     "superagent-promise": "^0.2.0",
     "underscore": "^1.7.0",
     "vinyl-buffer": "^1.0.0",
-    "watchify": "^2.2.1"
-  },
-  "devDependencies": {
+    "watchify": "^2.2.1",
     "babel-jest": "^4.0.0",
     "jsx-loader": "^0.12.2",
     "loader-utils": "^0.2.6",
