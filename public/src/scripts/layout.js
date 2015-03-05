@@ -174,6 +174,7 @@ module.exports = React.createClass({
 
             <div className="container main-container">
                     <RouteHandler />
+
             </div>
             <div className="push">&nbsp;</div>
 

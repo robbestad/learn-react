@@ -29,8 +29,7 @@ var Component = React.createClass({
                 <Col md={12}><Breadcrumbs /></Col>
             </Row>
             <Row className="show-grid">
-                <Col md={12}>Welcome to my collection of React examples, modules and tutorials. More will be coming
-                    every now and then, so be sure to bookmark and come back.
+                <Col md={12}>
                 </Col>
             </Row>
 
