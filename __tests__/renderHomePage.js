@@ -1,5 +1,5 @@
 /** @jsx React.DOM */
-
+jest.autoMockOff();
 jest.dontMock('../public/src/scripts/home/index.js');
 jest.dontMock('object-assign');
 jest.dontMock('../test-helpers/index.js');
@@ -14,7 +14,7 @@ describe('LoadHome', function() {
 
     var stubbed = testHelpers.makeStubbedDescriptor(App);
     var instance = TestUtils.renderIntoDocument(stubbed);
-    var title = TestUtils.findRenderedDOMComponentWithTag(instance, 'h1');
-    expect(title.getDOMNode().textContent).toBe('Home');
+    var renders = TestUtils.isCompositeComponent(instance);
+    expect(renders).toBe(true);
   });
 });

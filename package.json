@@ -12,16 +12,22 @@
     "test": "jest",
     "postinstall": "gulp build",
     "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base public/dist --config webpack.config.dev.js"
-
   },
   "jest": {
-    "scriptPreprocessor": "<rootDir>/preprocessor.js",
-    "unmockedModulePathPatterns": [
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "testFileExtensions": ["es6", "js"],
+    "moduleFileExtensions": ["js", "json", "es6"],
+     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules/react",
       "<rootDir>/node_modules/underscore",
       "<rootDir>/node_modules/jquery",
-      "<rootDir>/node_modules/reflux"
-    ]
+      "<rootDir>/node_modules/reflux",
+      "tty",
+      "net"
+    ],
+    "globals": {
+      "__DEV__": true
+    }
   },
   "config": {
     "blanket": {
@@ -104,8 +110,9 @@
     "watchify": "^2.2.1"
   },
   "devDependencies": {
-    "react-hot-loader": "^1.1.1",
+    "babel-jest": "^4.0.0",
     "jsx-loader": "^0.12.2",
+    "react-hot-loader": "^1.1.1",
     "webpack": "^1.7.0",
     "webpack-dev-server": "^1.7.0"
   }
