@@ -11,8 +11,8 @@ This repo is a learning tool for React. Each single module is meant to show or h
 ```sh
 $ npm install
 $ bower install
-$ ./script/dev
-# open http://localhost:3000
+$ npm run dev 
+# open http://localhost:8080
 ```
 
 ## Type checking
