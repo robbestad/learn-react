@@ -1,2 +1,2 @@
 #!/bin/bash
-NODE_ENV=development gulp dev
+NODE_ENV=development npm run dev

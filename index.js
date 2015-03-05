@@ -8,7 +8,7 @@ module.exports = function (options) {
     var express = require('express'),
         bodyParser = require('body-parser'),
         moulder = require('./lib/config-moulder'),
-         compress = require('compression')(),
+        compress = require('compression')(),
 
     // Instantiate app
         app = express(),
