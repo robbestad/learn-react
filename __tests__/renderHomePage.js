@@ -6,15 +6,13 @@ jest.dontMock('../test-helpers/index.js');
 
 describe('LoadHome', function() {
   it('renders home-page', function() {
-    var React = require('react/addons');
+    const React = require('react/addons');
+    const App = React.createFactory(require('../public/src/scripts/home/index.js'));
+    const TestUtils = React.addons.TestUtils;
+    const testHelpers = require('../test-helpers');
 
-    var App = React.createFactory(require('../public/src/scripts/home/index.js'));
-    var TestUtils = React.addons.TestUtils;
-    var testHelpers = require('../test-helpers');
-
-    var stubbed = testHelpers.makeStubbedDescriptor(App);
-    var instance = TestUtils.renderIntoDocument(stubbed);
-    var renders = TestUtils.isCompositeComponent(instance);
-    expect(renders).toBe(true);
+    const stubbed = testHelpers.makeStubbedDescriptor(App);
+    const instance = TestUtils.renderIntoDocument(stubbed);
+    expect(TestUtils.isCompositeComponent(instance)).toBe(true);
   });
 });
