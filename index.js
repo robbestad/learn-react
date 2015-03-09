@@ -24,7 +24,7 @@ module.exports = function (options) {
 
     // Decide which logging interface to use.
     // Attach it to `app` so that required route modules, etc. can use it
-    app.logger = options.logger || console.log.bind(console);
+        app.logger = options.logger || console.log.bind(console);
 
     // Enable verbose logging for incoming requests if configured to do so
     if (config.verbose) {
