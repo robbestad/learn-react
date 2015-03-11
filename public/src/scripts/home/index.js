@@ -19,7 +19,7 @@ export default React.createClass({
         return <Grid className="flyin-widget">
                 <Row className="show-grid">
                     <Col md={12}><Breadcrumbs />
-                       
+
                     </Col>
                 </Row>
                 <Row className="show-grid" >
