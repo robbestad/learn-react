@@ -2,10 +2,18 @@ var React = require('react'),
     {Router, Route, DefaultRoute, NotFoundRoute, RouteHandler, Redirect, Link} = require('react-router'),
     {ReactBootstrap, Nav} = require('react-bootstrap'),
     {ReactRouterBootstrap, NavItemLink, MenuItem, ButtonLink, DropdownButton, ButtonToolbar} = require('react-router-bootstrap'),
-    Headroom = require("react-headroom");
+    Headroom = require("react-headroom"),
+    LoginStore = require("./login/store");
+
 
 module.exports = React.createClass({
+    mixins: [LoginStore.mixin],
+
     displayName:"Learn React",
+    storeDidChange(){
+        console.log("store did change");
+        this.setState(this.state);
+    },
     getInitialState(){
       return {
           searchOpen:false,
@@ -98,6 +106,10 @@ module.exports = React.createClass({
                         </li>
 
                         <li onClick={this.closeMenu}>
+                            <Link to="login">Login</Link>
+                        </li>
+
+                        <li onClick={this.closeMenu}>
                             <Link to="mixin">Mixin Example</Link>
                         </li>
                         <li onClick={this.closeMenu}>
@@ -181,6 +193,9 @@ module.exports = React.createClass({
                 <div className="container">
                     <div className="logo-wrap">
                         <h2 className="page-footer">Learn React</h2>
+                        <p>
+                            <Link to="/login">Login</Link> status: {LoginStore.getLoggedIn().toString()}
+                        </p>
                     </div>
                     <ul className="footer-links">
                         <li>

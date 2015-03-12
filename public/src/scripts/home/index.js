@@ -3,7 +3,8 @@ const React = require("react"),
     {Link} = require('react-router'),
     {StickyRoute, ReactFireRoute, McFlyRoute, ButtonRoute, StaticsRoute, MarkdownRoute} = require('../routes'),
     Breadcrumbs = require('react-breadcrumbs'),
-    ApiStore = require("../mcfly/store");
+    ApiStore = require("../mcfly/store"),
+    LoginStore = require("../login/store");
 
 export default React.createClass({
         displayName: route => {
@@ -11,15 +12,15 @@ export default React.createClass({
         },
 
         render() {
-        var inlineCss={
+        let inlineCss={
             padding:'10px',
             lineHeight:'16px',
             color:'red'
         };
+
         return <Grid className="flyin-widget">
                 <Row className="show-grid">
                     <Col md={12}><Breadcrumbs />
-
                     </Col>
                 </Row>
                 <Row className="show-grid" >

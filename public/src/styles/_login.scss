@@ -1,0 +1,110 @@
+
+
+.header-bar .header-options.login-options {
+  width: 100%
+}
+
+.login-options .header-panel-wrap {
+  width: 100%;
+  text-align: right
+}
+
+.login-options .header-panel-wrap:first-child .header-panel-link {
+  border-left: 0
+}
+
+.login-options .header-panel {
+  text-align: left
+}
+
+.header-bar .header-options.login-options {
+  padding: 0 0 0 64px
+}
+
+.header-bar .header-options.login-options .notification-panel-wrap {
+  width: auto;
+  margin: 0 0 0 -64px
+}
+
+.header-bar .header-options.login-options .profile-link:after, .header-bar .header-options.login-options .profile-link:before {
+  content: " ";
+  display: table
+}
+
+.header-bar .header-options.login-options .profile-link:after {
+  clear: both
+}
+
+.header-bar .header-options.login-options .profile-link .img-wrap {
+  float: right
+}
+
+.login-link, .logout-link {
+  padding: 22px 5px;
+  width: auto;
+  line-height: 1.45em;
+  font-size: 1em;
+  font-weight: 700
+}
+
+.login-link .fa, .logout-link .fa {
+  display: none;
+  margin-right: 15px;
+  color: #666
+}
+
+.login-link.active-link, .logout-link.active-link {
+  color: #f5f5f5
+}
+
+.login-link.active-link .fa, .logout-link.active-link .fa {
+  color: $tertiary
+}
+
+.main-login {
+  left: 0;
+  padding: 42px 30px 0
+}
+
+@media (min-width: 768px) {
+
+  .login-options {
+    position: relative
+  }
+  .login-options .header-panel-wrap {
+    width: auto;
+    text-align: left
+  }
+  .login-options .header-panel-wrap:first-child .header-panel-link {
+    border-left: 1px solid $secondary
+  }
+  .login-panel-wrap, .logout-panel-wrap {
+    position: relative
+  }
+  .header-bar .header-options.login-options {
+    padding-left: 0
+  }
+  .header-bar .header-options.login-options .notification-panel-wrap {
+    margin-left: 0
+  }
+  .header-bar .header-options.login-options .profile-link .img-wrap {
+    float: none
+  }
+
+  .login-link, .logout-link {
+    padding: 19px 27px 21px;
+    line-height: 1.4em;
+    font-size: 1.286em;
+    font-weight: 400;
+    background: 0 0
+  }
+  .login-link .fa, .logout-link .fa {
+    display: inline-block
+  }
+  .main-login {
+    right: 0;
+    left: auto;
+    width: 300px
+  }
+
+}
