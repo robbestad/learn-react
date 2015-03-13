@@ -97,6 +97,9 @@ const Instructions = React.createClass({
                     In this example, a call to the function <strong>LoginStore.isAuthenticated()</strong> is used
                     to display login information if the user is logged in.
                 </p>
+                <p>
+                    As always, the source code is available on <a href="https://github.com/svenanders/react-tutorial">github</a>
+                </p>
 
             </div>
     }
@@ -189,12 +192,7 @@ module.exports = React.createClass({
                             <LoggedIn {...this.state} />
                         </p>
                     <Instructions />
-                    <p>
-                        <Button bsStyle="warning" bsSize="small" className="button" onClick={this.exposeToken} >
-                            Get Access Token
-                        </Button>
-                        <p style={inlineCss}><span ref="myToken" /></p>
-                    </p>
+                   
                 </Col>
             </Row>
         </Grid>
