@@ -62,6 +62,12 @@ const Instructions = React.createClass({
                     request access.
 
                 </p>
+                <p>
+                    This is similar to an authorization code, but rather
+                    than an authorization code being returned from the
+                    authorization request, a token is returned from the API.
+                </p>
+
                 <blockquote>
                     The implicit grant type is used to obtain access tokens and is
                     optimized for public clients known to operate a particular
@@ -72,30 +78,23 @@ const Instructions = React.createClass({
                     client makes separate requests for authorization and for
                     an access token, the client receives the access token as
                     the result of the authorization request.
-
-                    The implicit grant type does not include
-                    client authentication, and relies on the presence of
-                    the resource owner and the registration of the
-                    redirection URI. Because the access token is
-                    encoded into the redirection URI, it may be exposed
-                    to the resource owner and other applications
-                    residing on the same device:
                     </blockquote>
 
 
-                    <p>
-                    This is similar to an authorization code, but rather
-                    than an authorization code being returned from the
-                    authorization request, a token is returned from the API.
-                </p>
-                <p>Here's what happens. When you click <em>Login</em>, sends a POST request to a third-party service
-                    located at https://morning-forest-9780.herokuapp.com/. If the credentials are approved, the API
+
+                <p>Here's what happens. When you click <em>Login</em>, a POST request is sent to a third-party service
+                    located at https://morning-forest-9780.herokuapp.com/.
+                    </p>
+                <p>
+                     If the credentials are approved, the API
                     returns a couple of tokens in its response (an <em>access_token</em> and a <em>refresh_token</em>).
-                    <br/>The use of tokens are important from a security point of view, because they contain
+                </p>
+                <p>The use of tokens are important from a security point of view, because they contain
                     no login credentials and are only valid for a limited time.
-                    <br/>When you receive these tokens, the flux store sets a <em>loggedIn</em> variable to
+                </p>
+                <p>When you receive these tokens, the flux store sets a <em>loggedIn</em> variable to
                     true, which means that you have an easy way of knowing whether your user is authenticated or not.
-                    In this example, a call to the function <em>LoginStore.isAuthenticated()</em> is used
+                    In this example, a call to the function <strong>LoginStore.isAuthenticated()</strong> is used
                     to display login information if the user is logged in.
                 </p>
 
