@@ -8,7 +8,7 @@
   },
   "main": "public/src/scripts/app.js",
   "scripts": {
-    "start": "webpack -p && node server/index.js",
+    "start": "webpack -p && node start.js",
     "test": "jest",
     "postinstall": "gulp build",
     "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build --config webpack.config.dev.js"
