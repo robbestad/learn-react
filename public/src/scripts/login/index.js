@@ -41,7 +41,7 @@ module.exports = React.createClass({
         return `Home`;
     },
 
-    exposeToken: () => {
+    exposeToken() {
         this.refs.myToken.getDOMNode().innerHTML = this.getToken();
     },
 
