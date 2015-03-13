@@ -33,29 +33,57 @@ const Instructions = React.createClass({
             return <div>
                     <h3>Instructions</h3>
                 <p>
-                    Handling login in a stateless JavaScript based app (or a
-                    Single Page Application) can be quite tricky. In this example,
+                    Handling login in a pure JavaScript app (also called a
+                    Single Page Application, or a SPA) can be quite tricky. In this example,
                     I'm going to log in through third party API and store
-                    the credentials in my app using the flux pattern. The API is configured
-                    to authenticate with Oauth2.
-
+                    the credentials in my app using the flux pattern. I'm doing this in
+                    React, but the principle applies no matter what kind of
+                    JavaScript library you're using.
+                </p>
+                    <p>
+                        One thing to note is that the
+                     API is configured to authenticate with Oauth2.
+                    </p>
                     <blockquote>
                         OAuth 2.0 is the next evolution of the OAuth protocol which was
                         originally created in late 2006. OAuth 2.0 focuses on client
                         developer simplicity while providing specific authorization flows
                         for web applications, desktop applications, mobile phones,
-                        and living room devices. Source: <a href="http://oauth.net/2/" target="_blank">ouath.net</a></blockquote>
-                </p><p>
-                    In a regular server-based application I could have requested
+                        and living room devices. Source: <a href="http://oauth.net/2/" target="_blank">ouath.net</a>
+                    </blockquote>
+                <p>
+                    In a regular server-based application I would have requested
                     access with a combination of the users login information coupled
                     with a secret client key, and then been given an authorization code
-                    that I could have stored securely in a session.
+                    which I would have stored securely in a session.
                 </p><p>
                     In a browser-based application, this method is not secure, so instead
-                    I'm going to use something that is known as an implicit grant to
+                    I'm going to use something that is known as an <em>implicit grant</em> to
                     request access.
 
-                </p><p>
+                </p>
+                <blockquote>
+                    The implicit grant type is used to obtain access tokens and is
+                    optimized for public clients known to operate a particular
+                    redirection URI. These clients are typically implemented in a
+                    browser using a scripting language such as JavaScript.
+
+                    Unlike the authorization code grant type, in which the
+                    client makes separate requests for authorization and for
+                    an access token, the client receives the access token as
+                    the result of the authorization request.
+
+                    The implicit grant type does not include
+                    client authentication, and relies on the presence of
+                    the resource owner and the registration of the
+                    redirection URI. Because the access token is
+                    encoded into the redirection URI, it may be exposed
+                    to the resource owner and other applications
+                    residing on the same device:
+                    </blockquote>
+
+
+                    <p>
                     This is similar to an authorization code, but rather
                     than an authorization code being returned from the
                     authorization request, a token is returned from the API.
@@ -75,6 +103,7 @@ const Instructions = React.createClass({
     }
 });
 
+let timeoutArr=[];
 module.exports = React.createClass({
     mixins: [LoginStore.mixin],
 
@@ -82,15 +111,33 @@ module.exports = React.createClass({
         this.setState({loggedIn: LoginStore.isAuthenticated()});
         if(!LoginStore.isAuthenticated())
         this.refs.myLoginLabel.getDOMNode().innerHTML = 'Login failed';
+        else
+            this.refs.myLoginLabel.getDOMNode().innerHTML = 'Login successful!';
+
         this.refs.myLoginButton.getDOMNode().disabled = false;
 
+        for (var item of timeoutArr) {
+            clearTimeout(item);
+        }
     },
     login() {
 
         this.refs.myLoginLabel.getDOMNode().innerHTML = 'Logging in...';
-        setTimeout(()=>{
+        timeoutArr.push(setTimeout(()=>{
             this.refs.myLoginLabel.getDOMNode().innerHTML = 'Be patient...';
-        },2e3);
+        },2e3));
+        timeoutArr.push(setTimeout(()=>{
+            this.refs.myLoginLabel.getDOMNode().innerHTML = 'Results are coming...';
+        },4e3));
+        timeoutArr.push(setTimeout(()=>{
+            this.refs.myLoginLabel.getDOMNode().innerHTML = 'My, this is taking a long time isn\'t it?';
+        },6e3));
+        timeoutArr.push(setTimeout(()=>{
+            this.refs.myLoginLabel.getDOMNode().innerHTML = 'Are you sure you\'re still connected to the net?';
+        },8e3));
+        timeoutArr.push(setTimeout(()=>{
+            this.refs.myLoginLabel.getDOMNode().innerHTML = 'I\'m trying one last time...';
+        },1e4));
         this.refs.myLoginButton.getDOMNode().disabled = true;
         let userName=this.refs.userName.getDOMNode().value;
         let passWord=this.refs.passWord.getDOMNode().value;

@@ -3,6 +3,9 @@ let Flux = new McFly();
 let Ajax = require("../mixins/ajax");
 let loggedIn = loggedIn || false;
 
+const apiUrl="http://api-robbestad.dev";
+//const apiUrl="https://morning-forest-9780.herokuapp.com";
+
 function setLoggedIn() {
     loggedIn = true;
 }
@@ -29,7 +32,7 @@ var LoginStore = Flux.createStore({
         if(null !== refresh_token && "undefined" !== refresh_token){
 
         Ajax.post({
-            url: 'https://morning-forest-9780.herokuapp.com/oauth',
+            url: apiUrl+'/oauth',
             data: {
                 "grant_type": "refresh_token",
                 "refresh_token": refresh_token,
@@ -58,7 +61,7 @@ var LoginStore = Flux.createStore({
         if (!refresh_ok) {
 
             Ajax.post({
-                url: 'https://morning-forest-9780.herokuapp.com/oauth',
+                url: apiUrl+'/oauth',
                 data: {
                     "grant_type": "password",
                     "username": userName.toString(),
