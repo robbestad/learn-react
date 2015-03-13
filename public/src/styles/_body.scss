@@ -1423,10 +1423,12 @@ h2.header {
   justify-content: center;
 }
 
-body, span, div {
-  font: 500 1.5em/1.333 "proxima-nova", sans-serif !important;
+span, div {
+  font-size: 16px;
+  line-height: 18px;
 }
 
 blockquote{
-  font-size:14.5px;
+  font-size: 15px;
+  line-height: 18px;
 }
