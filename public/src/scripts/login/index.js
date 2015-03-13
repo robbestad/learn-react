@@ -36,7 +36,15 @@ const Instructions = React.createClass({
                     Handling login in a stateless JavaScript based app (or a
                     Single Page Application) can be quite tricky. In this example,
                     I'm going to log in through third party API and store
-                    the credentials in my app using the flux pattern.
+                    the credentials in my app using the flux pattern. The API is configured
+                    to authenticate with Oauth2.
+
+                    <blockquote>
+                        OAuth 2.0 is the next evolution of the OAuth protocol which was
+                        originally created in late 2006. OAuth 2.0 focuses on client
+                        developer simplicity while providing specific authorization flows
+                        for web applications, desktop applications, mobile phones,
+                        and living room devices. Source: <a href="http://oauth.net/2/" target="_blank">ouath.net</a></blockquote>
                 </p><p>
                     In a regular server-based application I could have requested
                     access with a combination of the users login information coupled
