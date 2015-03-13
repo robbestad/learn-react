@@ -8,16 +8,18 @@ const React = require("react"),
     LoginStore = require("./store");
 
 const LoginActions = Flux.createActions({
-    login: function () {
+    login: function (userName,passWord) {
         return {
-            actionType: "LOGIN"
+            actionType: "LOGIN",
+            userName: userName,
+            passWord: passWord
         }
     }
 });
 
 const LoggedIn = React.createClass({
     render() {
-        if (LoginStore.getLoggedIn()) {
+        if (LoginStore.isAuthenticated()) {
             return <div>You are logged in!</div>
         }
         else {
@@ -26,15 +28,67 @@ const LoggedIn = React.createClass({
     }
 });
 
+const Instructions = React.createClass({
+    render() {
+            return <div>
+                    <h3>Instructions</h3>
+                <p>
+                    Handling login in a stateless JavaScript based app (or a
+                    Single Page Application) can be quite tricky. In this example,
+                    I'm going to log in through third party API and store
+                    the credentials in my app using the flux pattern.
+                </p><p>
+                    In a regular server-based application I could have requested
+                    access with a combination of the users login information coupled
+                    with a secret client key, and then been given an authorization code
+                    that I could have stored securely in a session.
+                </p><p>
+                    In a browser-based application, this method is not secure, so instead
+                    I'm going to use something that is known as an implicit grant to
+                    request access.
+
+                </p><p>
+                    This is similar to an authorization code, but rather
+                    than an authorization code being returned from the
+                    authorization request, a token is returned from the API.
+                </p>
+                <p>Here's what happens. When you click <em>Login</em>, sends a POST request to a third-party service
+                    located at https://morning-forest-9780.herokuapp.com/. If the credentials are approved, the API
+                    returns a couple of tokens in its response (an <em>access_token</em> and a <em>refresh_token</em>).
+                    <br/>The use of tokens are important from a security point of view, because they contain
+                    no login credentials and are only valid for a limited time.
+                    <br/>When you receive these tokens, the flux store sets a <em>loggedIn</em> variable to
+                    true, which means that you have an easy way of knowing whether your user is authenticated or not.
+                    In this example, a call to the function <em>LoginStore.isAuthenticated()</em> is used
+                    to display login information if the user is logged in.
+                </p>
+
+            </div>
+    }
+});
+
 module.exports = React.createClass({
     mixins: [LoginStore.mixin],
 
     storeDidChange: function () {
-        this.setState({loggedIn: LoginStore.getLoggedIn()});
+        this.setState({loggedIn: LoginStore.isAuthenticated()});
+        this.refs.myLoginLabel.getDOMNode().innerHTML = '';
+
     },
-    componentWillMount: () => {
-        if (LoginStore.getLoggedIn() === false)
-            LoginActions.login();
+    login() {
+
+        this.refs.myLoginLabel.getDOMNode().innerHTML = 'Logging in...';
+        this.refs.myLoginButton.getDOMNode().disabled = true;
+        let userName=this.refs.userName.getDOMNode().value;
+        let passWord=this.refs.passWord.getDOMNode().value;
+
+        if (LoginStore.isAuthenticated() === false)
+            LoginActions.login(userName,passWord);
+    },
+
+    componentDidMount(){
+        if (LoginStore.isAuthenticated() === false)
+            this.refs.myLoginButton.getDOMNode().disabled = false;
     },
 
     displayName: route => {
@@ -51,26 +105,37 @@ module.exports = React.createClass({
     },
     render() {
         var inlineCss = {
-            padding: '10px',
+            padding: '10px 0 0 0 ',
             lineHeight: '16px',
-            color: 'red'
+            color: 'blue'
         };
 
         return <Grid className="flyin-widget">
             <Row className="show-grid">
                 <Col md={12}>
                     <Breadcrumbs />
+                        <p>
+                            <b>Username:</b><br/>
+                            <input ref="userName" type="text" defaultValue="marty" />
+                        </p>
+                        <p>
+                            <b>Password:</b><br/>
+                            <input ref="passWord" type="text" defaultValue="testpass" />
+                        </p>
 
-                    <LoggedIn {...this.state} />
+                        <br/>
+                        <Button ref="myLoginButton" bsStyle="success" bsSize="small" className="button" onClick={this.login}>
+                            Login
+                        </Button>
+                        <p style={inlineCss}><span ref="myLoginLabel" />
+                            <LoggedIn {...this.state} />
+                        </p>
+                    <Instructions />
                     <p>
-                        <hr />
-                        <input type="button" onClick={LoginActions.login} value="Login..."></input>
-                    </p>
-                    <p>
-                        <hr />
-                        <input type="button" onClick={this.exposeToken} value="get token...">&nbsp;
-                            <span ref="myToken" />
-                        </input>
+                        <Button bsStyle="warning" bsSize="small" className="button" onClick={this.exposeToken} >
+                            Get Access Token
+                        </Button>
+                        <p style={inlineCss}><span ref="myToken" /></p>
                     </p>
                 </Col>
             </Row>

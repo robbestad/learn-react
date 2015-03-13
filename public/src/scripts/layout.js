@@ -194,7 +194,7 @@ module.exports = React.createClass({
                     <div className="logo-wrap">
                         <h2 className="page-footer">Learn React</h2>
                         <p>
-                            <Link to="/login">Login</Link> status: {LoginStore.getLoggedIn().toString()}
+                            <Link to="/login">Login</Link> status: {LoginStore.isAuthenticated().toString()}
                         </p>
                     </div>
                     <ul className="footer-links">

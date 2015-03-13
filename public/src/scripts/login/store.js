@@ -5,14 +5,14 @@ let loggedIn = loggedIn || false;
 
 function setLoggedIn() {
     loggedIn = true;
-};
+}
 
 var LoginStore = Flux.createStore({
     getRefreshToken: () => {
         return 'undefined' !== typeof localStorage.getItem('auth.refresh_token') ?
             (localStorage.getItem('auth.refresh_token')) : false;
     },
-    getLoggedIn: () => {
+    isAuthenticated: () => {
         return loggedIn;
     },
     login: () => {
@@ -20,11 +20,15 @@ var LoginStore = Flux.createStore({
     }
 }, function (payload) {
     if (payload.actionType === "LOGIN") {
+
+        let userName=payload.userName;
+        let passWord=payload.passWord;
         let refresh_token = LoginStore.getRefreshToken();
         let refresh_ok = false;
-        if(null !== refresh_token){
+
+        if(null !== refresh_token && "undefined" !== refresh_token){
         Ajax.post({
-            url: 'http://morning-forest-9780.herokuapp.com/oauth',
+            url: 'https://morning-forest-9780.herokuapp.com/oauth',
             data: {
                 "grant_type": "refresh_token",
                 "refresh_token": refresh_token,
@@ -48,12 +52,13 @@ var LoginStore = Flux.createStore({
         });
         }
         if (!refresh_ok) {
+
             Ajax.post({
-                url: 'http://morning-forest-9780.herokuapp.com/oauth',
+                url: 'https://morning-forest-9780.herokuapp.com/oauth',
                 data: {
                     "grant_type": "password",
-                    "username": "marty",
-                    "password": "testpass",
+                    "username": userName.toString(),
+                    "password": passWord.toString(),
                     "client_id": "testclient",
                     "client_secret": "testpass"
                 },
