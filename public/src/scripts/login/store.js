@@ -27,6 +27,7 @@ var LoginStore = Flux.createStore({
         let refresh_ok = false;
 
         if(null !== refresh_token && "undefined" !== refresh_token){
+
         Ajax.post({
             url: 'https://morning-forest-9780.herokuapp.com/oauth',
             data: {
@@ -37,17 +38,20 @@ var LoginStore = Flux.createStore({
             },
             failure: function (err) {
                 console.log(err);
+                LoginStore.emitChange();
 
             },
             success: function (res) {
+
                 if (res.token_type === "Bearer") {
                     setLoggedIn();
                     refresh_ok = true;
                     localStorage.setItem('auth.access_token', res.access_token);
                     localStorage.setItem('auth.expires_in', res.expires_in);
                     localStorage.setItem('auth.refresh_token', res.refresh_token);
-                    LoginStore.emitChange();
                 }
+                LoginStore.emitChange();
+
             }
         });
         }
@@ -64,6 +68,8 @@ var LoginStore = Flux.createStore({
                 },
                 failure: function (err) {
                     console.log(err);
+                    LoginStore.emitChange();
+
                 },
                 success: function (res) {
                     if (res.token_type === "Bearer") {
@@ -71,8 +77,9 @@ var LoginStore = Flux.createStore({
                         localStorage.setItem('auth.access_token', res.access_token);
                         localStorage.setItem('auth.expires_in', res.expires_in);
                         localStorage.setItem('auth.refresh_token', res.refresh_token);
-                        LoginStore.emitChange();
                     }
+                    LoginStore.emitChange();
+
                 }
             });
         }

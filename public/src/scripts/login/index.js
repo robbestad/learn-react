@@ -80,12 +80,17 @@ module.exports = React.createClass({
 
     storeDidChange: function () {
         this.setState({loggedIn: LoginStore.isAuthenticated()});
-        this.refs.myLoginLabel.getDOMNode().innerHTML = '';
+        if(!LoginStore.isAuthenticated())
+        this.refs.myLoginLabel.getDOMNode().innerHTML = 'Login failed';
+        this.refs.myLoginButton.getDOMNode().disabled = false;
 
     },
     login() {
 
         this.refs.myLoginLabel.getDOMNode().innerHTML = 'Logging in...';
+        setTimeout(()=>{
+            this.refs.myLoginLabel.getDOMNode().innerHTML = 'Be patient...';
+        },2e3);
         this.refs.myLoginButton.getDOMNode().disabled = true;
         let userName=this.refs.userName.getDOMNode().value;
         let passWord=this.refs.passWord.getDOMNode().value;
@@ -131,7 +136,6 @@ module.exports = React.createClass({
                             <input ref="passWord" type="text" defaultValue="testpass" />
                         </p>
 
-                        <br/>
                         <Button ref="myLoginButton" bsStyle="success" bsSize="small" className="button" onClick={this.login}>
                             Login
                         </Button>

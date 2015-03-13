@@ -29,3 +29,8 @@ exports.MarkdownRoute = Router.createRoute({
     name: '/markdown',
     handler: require("./markdown")
 });
+
+exports.LoginRoute = Router.createRoute({
+    name: '/login',
+    handler: require("./login")
+});
