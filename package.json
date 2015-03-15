@@ -127,9 +127,7 @@
     "vinyl-buffer": "^1.0.0",
     "watchify": "^2.2.1",
     "webpack": "^1.7.0",
-    "webpack-dev-server": "^1.7.0"
-  },
-  "devDependencies": {
+    "webpack-dev-server": "^1.7.0",
     "gulp-load-plugins": "^0.8.1",
     "gulp-rename": "^1.2.0"
   }
