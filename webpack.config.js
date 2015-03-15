@@ -7,7 +7,7 @@ var config = {
     },
     module: {
         loaders: [
-                     { test: /\.js?$/, loaders: ['jsx-loader?harmony','babel-loader'], exclude: /node_modules/ }
+            { test: /\.js?$/, loaders: ['jsx?harmony','babel-loader'], exclude: /node_modules/ }
         ]
     },
     plugins: [
@@ -20,7 +20,7 @@ var config = {
       alias: {
         app: '/public/src/scripts'
       }
-    },
+    }
 };
 
 module.exports = config;

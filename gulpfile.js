@@ -1,6 +1,8 @@
 // Gulp plugins
 var gulp = require('gulp'),
   gutil = require('gulp-util'),
+  $ = require('gulp-load-plugins')(),
+
 
   //Browserify module, watch wrapper, and JSX transform
   watchify = require('watchify'),
@@ -25,6 +27,10 @@ gulp.task('clean:vendor', cleaner('vendor'));
 gulp.task('clean',
   ['clean:copy', 'clean:scripts', 'clean:styles', 'clean:vendor']);
 
+// Generate critical CSS
+gulp.task('copystyles', require('./tasks/copystyles')(config));
+gulp.task('critical', ['copystyles'], require('./tasks/critical')(config));
+
 // Concat vendor scripts (described in config)
 gulp.task('vendor', ['clean:vendor'], require('./tasks/vendor')(config));
 
@@ -48,5 +54,5 @@ gulp.task('dev', ['webpack','serve']);
 gulp.task('copy', ['clean:copy'], require('./tasks/copy')(config));
 
 // For deployment. Makes front-end ready to serve from `public/dist`
-gulp.task('build', ['copy', 'webpack', 'styles']);
+gulp.task('build', ['copy', 'webpack', 'styles', 'critical']);
 gulp.task('default', ['build','serve']);

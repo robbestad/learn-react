@@ -192,7 +192,7 @@ module.exports = React.createClass({
                             <LoggedIn {...this.state} />
                         </p>
                     <Instructions />
-                   
+
                 </Col>
             </Row>
         </Grid>
