@@ -15,10 +15,6 @@ export default React.createClass({
         return `Home`;
     },
 
-    componentDidMount(){
-        console.dir(RefluxStore.getData());
-    },
-
     render() {
         let inlineCss = {
             padding: '10px',
@@ -120,7 +116,7 @@ export default React.createClass({
                     This component uses McFly to populate a datastore with a JSON resource using AJAX.
                     <br/>
                     The McFly store currently holds
-                    <strong>{ApiStore.getPosts().length}</strong>
+                &nbsp;<strong>{ApiStore.getPosts().length}</strong>&nbsp;
                     objects
                     <br/>
                     <Button bsStyle="success" bsSize="small" className="button">
@@ -132,7 +128,9 @@ export default React.createClass({
                     <br/>
                     This component uses Reflux to populate a datastore with a JSON resource using AJAX.
                     <br/>
-                    <strong>{RefluxStore.getPosts().length}</strong>
+                    <br/>
+                    The Reglux store currently holds
+                    &nbsp;<strong>{RefluxStore.getPosts().length}</strong>&nbsp;
                     objects
                     <br/>
                     <Button bsStyle="success" bsSize="small" className="button">
