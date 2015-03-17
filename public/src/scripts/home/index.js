@@ -30,9 +30,10 @@ export default React.createClass({
             </Row>
             <Row className="show-grid" >
                 <Col md={12} style={{paddingBottom: 20}}>
-                    <strong>Learn React</strong>
+                &nbsp;<strong>Learn React</strong>&nbsp;
                     is collection of React examples, modules and tutorials. More will be coming
-                    every now and then, so be sure to bookmark and come back.
+                    every now and then, so be sure to bookmark and come back or star/fork it
+                    on <a href="https://github.com/svenanders/react-tutorial">github</a>.
                 </Col>
             </Row>
 
@@ -115,9 +116,7 @@ export default React.createClass({
                     <br/>
                     This component uses McFly to populate a datastore with a JSON resource using AJAX.
                     <br/>
-                    The McFly store currently holds
-                &nbsp;<strong>{ApiStore.getPosts().length}</strong>&nbsp;
-                    objects
+                    The McFly store currently holds&nbsp;<strong>{ApiStore.getPosts().length}</strong>&nbsp;objects
                     <br/>
                     <Button bsStyle="success" bsSize="small" className="button">
                         <Link to={McFlyRoute.name} style={{color: "#ffffff"}}>McFly example</Link>

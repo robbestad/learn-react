@@ -41,7 +41,7 @@ module.exports = Reflux.createStore({
         if('undefined' !== typeof store.posts)
             return store.posts.data.children;
 
-        return 0;
+        return [];
     },
 
 
