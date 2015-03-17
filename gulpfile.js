@@ -32,7 +32,7 @@ gulp.task('copystyles', require('./tasks/copystyles')(config));
 gulp.task('critical', ['copystyles'], require('./tasks/critical')(config));
 
 // Convert JSX to js
-gulp.task('jsx',  require('./tasks/transform')(config));
+//gulp.task('jsx',  require('./tasks/transform')(config));
 
 // Concat vendor scripts (described in config)
 gulp.task('vendor', ['clean:vendor'], require('./tasks/vendor')(config));
