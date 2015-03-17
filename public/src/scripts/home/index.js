@@ -128,10 +128,7 @@ export default React.createClass({
                     <br/>
                     This component uses Reflux to populate a datastore with a JSON resource using AJAX.
                     <br/>
-                    <br/>
-                    The Reglux store currently holds
-                    &nbsp;<strong>{RefluxStore.getPosts().length}</strong>&nbsp;
-                    objects
+                    The Reflux store currently holds&nbsp;<strong>{RefluxStore.getPosts().length}</strong>&nbsp;objects
                     <br/>
                     <Button bsStyle="success" bsSize="small" className="button">
                         <Link to={RefluxRoute.name} style={{color: "#ffffff"}}>RefluxRoute example</Link>
