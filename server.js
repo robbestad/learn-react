@@ -10,7 +10,7 @@ var config = require("./config/config");
 var validator = require('validator');
 var mime = require('mime');
 require('node-jsx').install({extension: '.jsx'});
-var
+var React = require("react"),
     options = options || {},
 
 // Instantiate app
@@ -41,6 +41,25 @@ app.use(bodyParser.json());
 
 // compress
 app.use(compress);
+
+app.get('/index.php', function (req, res) {
+    var markup="tet";
+    var Application = React.createFactory(require('./compiled/home'));
+    //var Application = (require('./compiled/home'));
+    var data=React.renderToString(Application());
+    res.send(data);
+    //React.renderToString(Application({path: '/'}), function (err, markup) {
+    //    console.log(err);
+    //    res.send('<!DOCTYPE html>' + markup);
+    //});
+
+    //
+    //res.header("Cache-Control", "public, max-age=172800"); // 2419200 14 days
+    //res.header("Expires", new Date(Date.now() + 172800).toUTCString()); // 345600000
+    //React.renderToStaticMarkup(App({path: '/'}), function (err, markup) {
+    //    res.send('<!DOCTYPE html>' + markup);
+    //});
+});
 
 // Serve static files from `public/dist`
 app.use(express.static(__dirname + '/public/dist'));

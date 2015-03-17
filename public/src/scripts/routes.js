@@ -34,3 +34,8 @@ exports.LoginRoute = Router.createRoute({
     name: '/login',
     handler: require("./login")
 });
+
+exports.RefluxRoute = Router.createRoute({
+    name: '/reflux',
+    handler: require("./reflux")
+});

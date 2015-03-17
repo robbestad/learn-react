@@ -1,4 +1,3 @@
-/** @jsx React.DOM */
 "use strict";
 
 if ("undefined" == typeof React)

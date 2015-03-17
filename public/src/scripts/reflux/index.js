@@ -31,6 +31,10 @@ module.exports = React.createClass({
             store: store.getData()
         };
     },
+    // Pull initial state from store
+    componentWillMount() {
+        actions.pollReddit();
+    },
     componentDidMount: function ():any {
         this.listenTo(store, this.onStoreTrigger);
 

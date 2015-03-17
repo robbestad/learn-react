@@ -53,14 +53,6 @@ module.exports = Reflux.createStore({
             }.bind(this));
     },
 
-    // Simply reload posts on init
-    init: function(){
-        this.reloadPosts();
-    },
-
-    reloadPosts: function(){
-        this.updateFromServer();
-    },
     // Set default data, put into loading state, kick off posts fetch from
     // server, and let listeners know
     pollReddit: function(){

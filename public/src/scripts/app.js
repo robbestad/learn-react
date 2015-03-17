@@ -32,7 +32,7 @@ var routes = (
         <Route name="static" handler={require('./static')} />
         <Route name="mixin" handler={require('./mixin')} />
         <Route name="flux" handler={require('./flux')} />
-
+        <Route name="reflux" handler={require('./reflux')} />
         <Route name="login" handler={require('./login')} />
         <Route name="markdown" handler={require('./markdown')} />
         <Route name="home" handler={require('./home')} />
