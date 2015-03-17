@@ -1,6 +1,9 @@
 var Reflux = require('reflux'),
+    State = require('./state'),
     actions = require('./actions'),
     $ = require("jquery");
+
+
 
 // Some constants for determining state; will be exported on store too
 var STATE_LOADING = 'loading',
@@ -14,6 +17,8 @@ var store = {
 
 // Export a new Reflux store
 module.exports = Reflux.createStore({
+    mixins: [State],
+
     // Constants for marking state of store
     STATE_LOADING: STATE_LOADING,
     STATE_OK: STATE_OK,
@@ -22,10 +27,23 @@ module.exports = Reflux.createStore({
     // Hook up the store to the actions in `actions.js`
     listenables: actions,
 
+    getInitialState: function () {
+        return {
+            json: []
+        };
+    },
+
     // Add some getters
     getData: function(){
         return store;
     },
+    getPosts: function(){
+        if('undefined' !== typeof store.posts)
+            return store.posts.data.children;
+
+        return 0;
+    },
+
 
     // Pull posts from server and trigger to let listeners know
     // posts changed
@@ -50,6 +68,7 @@ module.exports = Reflux.createStore({
             }.bind(this))
             .always(function(){
                 this.trigger(store);
+                //_this.setState({json:store})
             }.bind(this));
     },
 

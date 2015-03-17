@@ -48,12 +48,6 @@ module.exports = React.createClass({
            store:data
        })
     },
-    //
-    //shouldComponentUpdate(nextState, nextProps){
-    //    console.log(nextState);
-    //    console.log(nextProps);
-    //  //return false;
-    //},
 
     render: function ():any {
         if ("undefined" == typeof this.state.store) {

@@ -6,12 +6,17 @@ const React = require("react"),
         LoginRoute, MarkdownRoute, RefluxRoute} = require('../routes'),
     Breadcrumbs = require('react-breadcrumbs'),
     ApiStore = require("../mcfly/store"),
+    RefluxStore = require("../reflux/store"),
     LoginStore = require("../login/store");
 
 export default React.createClass({
     mixins: [Router.State],
     displayName: route => {
         return `Home`;
+    },
+
+    componentDidMount(){
+        console.dir(RefluxStore.getData());
     },
 
     render() {
@@ -126,6 +131,9 @@ export default React.createClass({
                     <strong>Reflux example</strong>
                     <br/>
                     This component uses Reflux to populate a datastore with a JSON resource using AJAX.
+                    <br/>
+                    <strong>{RefluxStore.getPosts().length}</strong>
+                    objects
                     <br/>
                     <Button bsStyle="success" bsSize="small" className="button">
                         <Link to={RefluxRoute.name} style={{color: "#ffffff"}}>RefluxRoute example</Link>
