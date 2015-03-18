@@ -29,7 +29,7 @@ html, body {
   background: #fafafa;
   min-width: 320px;
   font-family: "proxima-nova", sans-serif;
-  line-height: 1.42857;
+  line-height: 1.7em;
 }
 
 .content-wrap {
@@ -1431,9 +1431,19 @@ h2.header {
   justify-content: center;
 }
 
+a:link strong{
+  font-size: 19px;
+  line-height: 1.65em;
+
+}
+
+.columnBox{
+  margin: 20px 0 15px 0;
+}
+
 span, div {
   font-size: 16px;
-  line-height: 18px;
+  line-height: 1.65em;
 }
 
 blockquote{

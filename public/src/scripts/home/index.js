@@ -30,7 +30,7 @@ export default React.createClass({
                 </Col>
             </Row>
             <Row className="show-grid" >
-                <Col md={12} style={{paddingBottom: 20}}>
+                <Col md={12} className="columnBox">
                     <strong>Learn React</strong>
                 &nbsp; is a collection of React examples,
                     modules and tutorials. More will be coming
@@ -48,7 +48,7 @@ export default React.createClass({
 
 
             <Row>
-                <Col xs={12} md={6} style={{paddingBottom: 20}}>
+                <Col xs={12} md={6} className="columnBox">
 
                     <Link to={LoginRoute.name}>
                         <strong>
@@ -71,7 +71,7 @@ export default React.createClass({
 
 
                 </Col>
-                <Col xs={12} md={6} style={{paddingBottom: 20}}>
+                <Col xs={12} md={6} className="columnBox">
                     <Link to={ReactFireRoute.name}>
                         <strong>
                             ReactFire example
@@ -92,7 +92,7 @@ export default React.createClass({
                 </Col>
 
 
-                <Col xs={12} md={6} style={{paddingBottom: 20}}>
+                <Col xs={12} md={6} className="columnBox">
                     <Link to={ButtonRoute.name}>
                         <strong>
                             Button example
@@ -110,7 +110,7 @@ export default React.createClass({
 
                 </Col>
 
-                <Col xs={12} md={6} style={{paddingBottom: 20}}>
+                <Col xs={12} md={6} className="columnBox">
                     <Link to={StaticsRoute.name}>
                         <strong>
                             Statics example
@@ -124,7 +124,7 @@ export default React.createClass({
                     <span className="label blue">renderToStaticMarkup</span>
                 </Col>
 
-                <Col xs={12} md={6} style={{paddingBottom: 20}}>
+                <Col xs={12} md={6} className="columnBox">
                     <Link to={MarkdownRoute.name}>
                         <strong>
                             Markdown example
@@ -140,7 +140,7 @@ export default React.createClass({
                 </Col>
 
 
-                <Col xs={12} md={6} style={{paddingBottom: 20}}>
+                <Col xs={12} md={6} className="columnBox">
                     <Link to={McFlyRoute.name}>
                         <strong>
                             McFly example
@@ -160,7 +160,7 @@ export default React.createClass({
                     <span className="label blue">JSON</span>
 
                 </Col>
-                <Col xs={12} md={6} style={{paddingBottom: 20}}>
+                <Col xs={12} md={6} className="columnBox">
                     <Link to={RefluxRoute.name}>
                         <strong>
                             Reflux example
