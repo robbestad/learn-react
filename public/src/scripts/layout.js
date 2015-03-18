@@ -6,6 +6,30 @@ var React = require('react'),
     Hammer = require('react-hammerjs'),
     LoginStore = require("./login/store");
 
+let Handler = (function(){
+    var i = 1,
+        listeners = {};
+
+    return {
+        addListener: function(element, event, handler, capture) {
+            element.addEventListener(event, handler, capture);
+            listeners[i] = {element: element,
+                event: event,
+                handler: handler,
+                capture: capture};
+            return i++;
+        },
+        removeListener: function(id) {
+            if(id in listeners) {
+                var h = listeners[id];
+                h.element.removeEventListener(h.event, h.handler, h.capture);
+                delete listeners[id];
+            }
+        }
+    };
+}());
+
+let eventIds=[];
 
 module.exports = React.createClass({
     mixins: [LoginStore.mixin],
@@ -15,14 +39,41 @@ module.exports = React.createClass({
         console.log("store did change");
         this.setState(this.state);
     },
+    handleTap(){
+        this.closeMenu();
+
+        console.log('tapp!!');
+    },
     getInitialState(){
       return {
           searchOpen:false,
           menuOpen:false
       }
     },
+
+    eventHandler(type) {
+        let _this=this;
+        return Handler.addListener(window, type, function() {
+            _this.closeMenu();
+        }, false);
+    },
     componentDidMount(){
-        this.closeMenu();
+        let _this=this;
+        eventIds.push(Handler.addListener(window, 'touchmove', function() {
+            _this.closeMenu();
+        }, false));
+
+        eventIds.push(Handler.addListener(window, 'scroll', function() {
+            _this.closeMenu();
+        }, false));
+
+
+    },
+
+    componentWillUnmount(){
+        eventIds.map(function(eventId){
+            Handler.removeListener(eventId);
+        });
     },
 
     fadeFlash(){
@@ -79,10 +130,12 @@ module.exports = React.createClass({
     closeMenu(){
         //body.document.removeEventListener('touchstart', function(e){ e.preventDefault(); });
         var _this=this;
-        //var mm = $(".main-menu"), ml = $(".menu-link");
-        $(this.refs.mainMenu.getDOMNode()).slideUp("fast", function () {
-            _this.setState({menuOpen:false});
-        })
+
+        _this.setState({menuOpen:false});
+        $(this.refs.mainMenu.getDOMNode()).css("display","none");
+        //$(this.refs.mainMenu.getDOMNode()).slideUp("fast", function () {
+        //    _this.setState({menuOpen:false});
+        //})
     },
     closeSearch() {
         var _this=this;
@@ -184,7 +237,8 @@ module.exports = React.createClass({
                 </Headroom>
             </div>
 
-            <Hammer className="container main-container">
+            <Hammer className="container main-container" onTap={this.handleTap}
+                onPress={this.handleTap} onSwipe={this.handleTap}>
                     <RouteHandler />
             </Hammer>
             <div className="push">&nbsp;</div>

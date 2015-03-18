@@ -1023,15 +1023,15 @@ h2.footer {
 }
 
 .main-menu {
-  left: 0;
+//  left: 0;
   padding: 14px 0;
-  z-index: 9999;
-  position: fixed;
+//  z-index: 9999;
+//  position: absolute;
   top:49px;
 }
 
 .main-menu ul {
-  z-index: 9999!important;
+//  z-index: 9999!important;
   padding: 0;
   margin: 0;
   list-style: none
@@ -1047,7 +1047,7 @@ h2.footer {
 }
 
 .main-menu li a {
-  display: block;
+//  display: block;
   padding: 16px 17px 19px;
   font-size: 1.375em;
   line-height: 1.2em;
@@ -1231,7 +1231,8 @@ h2.footer {
     height: 40px;
   }
   .main-menu {
-    left: auto;
+//    left: auto;
+//    position: absolute;
     padding: 19px 9px 11px;
     width: 265px
   }
