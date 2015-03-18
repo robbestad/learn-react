@@ -63,17 +63,6 @@ export default React.createClass({
                 </Col>
 
 
-            </Row>
-            <Row>
-                <Col xs={12} md={6} style={{paddingBottom: 20}}>
-                    <strong>StickyDiv example</strong>
-                    <br/>
-                    This component can be wrapped around any div and will make it sticky when you scroll down.
-                    <br/>
-                    <Button bsStyle="success" bsSize="small" className="button">
-                        <Link to={StickyRoute.name} style={{color: "#ffffff"}}>StickyDiv example</Link>
-                    </Button>
-                </Col>
 
 
                 <Col xs={12} md={6} style={{paddingBottom: 20}}>
@@ -85,8 +74,6 @@ export default React.createClass({
                         <Link to={ButtonRoute.name} style={{color: "#ffffff"}}>OnClick example</Link>
                     </Button>
                 </Col>
-            </Row>
-            <Row>
 
                 <Col xs={12} md={6} style={{paddingBottom: 20}}>
                     <strong>Statics example</strong>
@@ -101,14 +88,13 @@ export default React.createClass({
                 <Col xs={12} md={6} style={{paddingBottom: 20}}>
                     <strong>Markdown example</strong>
                     <br/>
-                    React Component that converts a Markdown file to HTML.
+                    React Component that converts a Markdown file to HTML. All you need to do is
+                    add a Markdown file to your assets folder and reference it with this component.
                     <br/>
                     <Button bsStyle="success" bsSize="small" className="button">
                         <Link to={MarkdownRoute.name} style={{color: "#ffffff"}}>Markdown 2 HTML</Link>
                     </Button>
                 </Col>
-            </Row>
-            <Row>
 
 
                 <Col xs={12} md={6} style={{paddingBottom: 20}}>

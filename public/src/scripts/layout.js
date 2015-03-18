@@ -63,6 +63,8 @@ module.exports = React.createClass({
 
     closeMenu(){
         $("body").css("overflow","visible");
+        $("body").css("width","100%");
+        $("body").css("height","100%");
         var _this=this;
         //var mm = $(".main-menu"), ml = $(".menu-link");
         $(this.refs.mainMenu.getDOMNode()).slideUp("fast", function () {
@@ -109,21 +111,6 @@ module.exports = React.createClass({
                             <Link to="login">Login</Link>
                         </li>
 
-                        <li onClick={this.closeMenu}>
-                            <Link to="mixin">Mixin Example</Link>
-                        </li>
-                        <li onClick={this.closeMenu}>
-                            <Link to="static">Statics Example</Link>
-                        </li>
-                        <li onClick={this.closeMenu}>
-                            <Link to="markdown">Include Markdown</Link>
-                        </li>
-                        <li onClick={this.closeMenu}>
-                            <Link to="breadcrumbs">Breadcrumbs</Link>
-                        </li>
-                        <li onClick={this.closeMenu}>
-                            <Link to="reactfire">ReactFire</Link>
-                        </li>
 
                     </ul>
                 </nav>
