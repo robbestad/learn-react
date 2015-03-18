@@ -1,4 +1,3 @@
-import babelifyPolyfill from 'babelify/polyfill';
 import React from 'react';
 import Breadcrumbs from 'react-breadcrumbs';
 import {Bootstrap, Grid, Col, Row, Button} from 'react-bootstrap';
