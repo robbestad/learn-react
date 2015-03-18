@@ -31,16 +31,16 @@ export default React.createClass({
             </Row>
             <Row className="show-grid" >
                 <Col md={12} style={{paddingBottom: 20}}>
-                &nbsp;<strong>Learn React</strong>&nbsp;
-                    is collection of React examples, modules and tutorials. More will be coming
+                <strong>Learn React</strong>&nbsp; is a collection of React examples,
+                    modules and tutorials. More will be coming
                     every now and then, so be sure to bookmark and come back or star/fork it
-                    on <a href="https://github.com/svenanders/react-tutorial">github</a>.
+                    on <a href="https://github.com/svenanders/learn-react">github</a>.
                 </Col>
             </Row>
 
             <Row>
                 <Col xs={12} md={6} style={{paddingBottom: 20}}>
-                    <strong>Login EXAMPEL</strong>
+                    <strong>Login example</strong>
                     <br/>
                     Demonstrates a login component that passes credentials to a third party API and
                     authenticates with Oauth2.
