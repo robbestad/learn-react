@@ -56,20 +56,20 @@ module.exports = React.createClass({
     openMenu () {
         this.closeSearch();
         var _this=this;
-        $("body").css("overflow","hidden");
-
-        window.addEventListener("touchstart", function(event){
-            console.log(event.target.tagName);
-            if(event.target.tagName=="HTML" || event.target.tagName=="DIV"){
-                event.preventDefault();
-            }
-        } ,false);
-        window.addEventListener("touchmove", function(event){
-            console.log(event.target.tagName);
-            if(event.target.tagName=="HTML" || event.target.tagName=="DIV"){
-                event.preventDefault();
-            }
-        } ,false);
+        //$("body").css("overflow","hidden");
+        //
+        //window.addEventListener("touchstart", function(event){
+        //    console.log(event.target.tagName);
+        //    if(event.target.tagName=="HTML" || event.target.tagName=="DIV"){
+        //        event.preventDefault();
+        //    }
+        //} ,false);
+        //window.addEventListener("touchmove", function(event){
+        //    console.log(event.target.tagName);
+        //    if(event.target.tagName=="HTML" || event.target.tagName=="DIV"){
+        //        event.preventDefault();
+        //    }
+        //} ,false);
 
         $(this.refs.mainMenu.getDOMNode()).slideDown("fast", function () {
             _this.setState({menuOpen:true});
@@ -77,7 +77,7 @@ module.exports = React.createClass({
     },
 
     closeMenu(){
-        body.document.removeEventListener('touchstart', function(e){ e.preventDefault(); });
+        //body.document.removeEventListener('touchstart', function(e){ e.preventDefault(); });
         var _this=this;
         //var mm = $(".main-menu"), ml = $(".menu-link");
         $(this.refs.mainMenu.getDOMNode()).slideUp("fast", function () {
