@@ -98,7 +98,7 @@ const Instructions = React.createClass({
                     to display login information if the user is logged in.
                 </p>
                 <p>
-                    As always, the source code is available on <a href="https://github.com/svenanders/react-tutorial">github</a>
+                    As always, the source code is available on <a href="https://github.com/svenanders/learn-react">github</a>
                 </p>
 
             </div>
