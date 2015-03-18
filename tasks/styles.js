@@ -13,10 +13,9 @@ module.exports = function(config){
             .on('error', function(err){
                 gutil.log('Error in sass build:');
                 gutil.log(err.stack);
-            });
-
-            pipeline = pipeline.pipe(autoprefixer())
-
+            })
+            .pipe(autoprefixer())
+            .pipe(gulp.dest('./build'));
 
         if(config.cssmin)
             pipeline = pipeline.pipe(cssmin());

@@ -5049,7 +5049,8 @@ html {
 
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 12em; }
+  margin-bottom: 12em;
+  font-family: "proxima-nova", sans-serif; }
 
 .footer {
   position: absolute;
@@ -5062,7 +5063,8 @@ body {
 html, body {
   background: #fafafa;
   min-width: 320px;
-  font-family: "proxima-nova",sans-serif; }
+  font: 500 1.5em/1.333 "proxima-nova", sans-serif !important;
+  line-height: 1.42857; }
 
 .content-wrap {
   margin-left: -15px;
@@ -5793,7 +5795,7 @@ h2.header {
   color: #61dafb;
   font-size: 34px;
   margin: 13px 10px 0 20px;
-  font-family: "proxima-nova",sans-serif; }
+  font-family: "proxima-nova", sans-serif; }
 
 h2.footer {
   text-align: center;
@@ -5801,7 +5803,7 @@ h2.footer {
   height: 46px;
   font-size: 34px;
   margin: 0 auto;
-  font-family: "proxima-nova",sans-serif; }
+  font-family: "proxima-nova", sans-serif; }
 
 .header-bar .header-bar-wrap {
   padding-left: 191px; }
@@ -6073,7 +6075,7 @@ h2.footer {
     height: 46px;
     font-size: 20px;
     margin: 23px 0 0 20px;
-    font-family: "proxima-nova",sans-serif;
+    font-family: "proxima-nova", sans-serif;
     z-index: 0;
     text-align: center; } }
 
@@ -6082,7 +6084,7 @@ h2.footer {
 
 h1.itemHead {
   font-size: 0.9em;
-  font-family: "proxima-nova",sans-serif; }
+  font-family: "proxima-nova", sans-serif; }
 
 h2.header {
   margin: 0 auto;
@@ -6132,3 +6134,10 @@ h2.header {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center; }
+
+span, div {
+  font-size: 16px;
+  line-height: 18px; }
+
+blockquote {
+  font-size: 14px; }
