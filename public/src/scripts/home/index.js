@@ -7,6 +7,7 @@ const React = require("react"),
     Breadcrumbs = require('react-breadcrumbs'),
     ApiStore = require("../mcfly/store"),
     RefluxStore = require("../reflux/store"),
+    Rx = require('rx'),
     LoginStore = require("../login/store");
 
 export default React.createClass({
@@ -39,7 +40,7 @@ export default React.createClass({
 
             <Row>
                 <Col xs={12} md={6} style={{paddingBottom: 20}}>
-                    <strong>Login example</strong>
+                    <strong>Login EXAMPEL</strong>
                     <br/>
                     Demonstrates a login component that passes credentials to a third party API and
                     authenticates with Oauth2.

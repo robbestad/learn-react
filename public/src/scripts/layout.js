@@ -3,6 +3,7 @@ var React = require('react'),
     {ReactBootstrap, Nav} = require('react-bootstrap'),
     {ReactRouterBootstrap, NavItemLink, MenuItem, ButtonLink, DropdownButton, ButtonToolbar} = require('react-router-bootstrap'),
     Headroom = require("react-headroom"),
+    Hammer = require('react-hammerjs'),
     LoginStore = require("./login/store");
 
 
@@ -56,15 +57,27 @@ module.exports = React.createClass({
         this.closeSearch();
         var _this=this;
         $("body").css("overflow","hidden");
-        $("#app-root").css("overflow","hidden");
+
+        window.addEventListener("touchstart", function(event){
+            console.log(event.target.tagName);
+            if(event.target.tagName=="HTML" || event.target.tagName=="DIV"){
+                event.preventDefault();
+            }
+        } ,false);
+        window.addEventListener("touchmove", function(event){
+            console.log(event.target.tagName);
+            if(event.target.tagName=="HTML" || event.target.tagName=="DIV"){
+                event.preventDefault();
+            }
+        } ,false);
+
         $(this.refs.mainMenu.getDOMNode()).slideDown("fast", function () {
             _this.setState({menuOpen:true});
         });
     },
 
     closeMenu(){
-        $("body").css("overflow","visible");
-        $("#app-root").css("overflow","visible");
+        body.document.removeEventListener('touchstart', function(e){ e.preventDefault(); });
         var _this=this;
         //var mm = $(".main-menu"), ml = $(".menu-link");
         $(this.refs.mainMenu.getDOMNode()).slideUp("fast", function () {
@@ -171,9 +184,9 @@ module.exports = React.createClass({
                 </Headroom>
             </div>
 
-            <div className="container main-container">
+            <Hammer className="container main-container">
                     <RouteHandler />
-            </div>
+            </Hammer>
             <div className="push">&nbsp;</div>
 
             <div id="footer" className="footer">
