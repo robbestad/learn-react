@@ -5063,7 +5063,7 @@ body {
 html, body {
   background: #fafafa;
   min-width: 320px;
-  font: 500 1.5em/1.333 "proxima-nova", sans-serif !important;
+  font-family: "proxima-nova", sans-serif;
   line-height: 1.42857; }
 
 .content-wrap {
@@ -5183,6 +5183,11 @@ input[type=checkbox], input[type=radio] {
 
 .tt-suggestion p {
   margin: 0; }
+
+.label {
+  color: #141; }
+  .label.blue {
+    background-color: #61dafb; }
 
 .twitter-typeahead {
   width: 100%; }

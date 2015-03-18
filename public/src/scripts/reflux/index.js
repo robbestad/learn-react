@@ -6,6 +6,7 @@
 var React = require("react"),
     Reflux = require('reflux'),
     store = require('./store'),
+    {Bootstrap, Grid, Col, Row, Button, Badge, Label} = require('react-bootstrap'),
     PureRenderMixin = require('react/addons').addons.PureRenderMixin,
     actions = require('./actions');
 var Breadcrumbs = require('react-breadcrumbs');
@@ -61,9 +62,14 @@ module.exports = React.createClass({
 
         switch (this.state.store.state) {
             case store.STATE_OK:
-                return <div>
-                    <Breadcrumbs />
-                    <div className="flyin-widget">
+                return <Grid className="flyin-widget">
+                    <Row className="show-grid">
+                        <Col md={12}>
+                            <Breadcrumbs />
+                        </Col>
+                    </Row>
+                    <Row className="show-grid" >
+                        <Col md={12} style={{paddingBottom: 20}}>
                     <h1>Reflux Example</h1>
                     <h4 style={{color:"#aaa"}}>This componenent uses Reflux to populate a datastore with
                         new posts on Reddit</h4>
@@ -88,14 +94,19 @@ module.exports = React.createClass({
                             </div>
                         </div>
                     })}
-                </div>
-                </div>
+                        </Col>
+                    </Row>
+                </Grid>
             default:
-                return <div>
-                    <h1>Reflux Example (default)</h1>
-                    {this.state}
-                    {this.props}
-                </div>
+                return <Grid className="flyin-widget">
+                    <Row className="show-grid">
+                        <Col md={12}>
+                            <h1>Reflux Example (default)</h1>
+                            {this.state}
+                            {this.props}
+                    </Col>
+                    </Row>
+                    </Grid>
         }
     }
 });

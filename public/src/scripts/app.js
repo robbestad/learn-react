@@ -39,6 +39,7 @@ var routes = (
         <Route name="button" handler={require('./button')} />
         <Route name="mcfly" handler={require('./mcfly')} />
         <Route name="source" handler={require('./source')} />
+        <Route name="blog-articles" handler={require('./blog-articles')} />
         <Route name="breadcrumbs" handler={require('./breadcrumbs')} />
         <Route name="reactfire" handler={require('./reactfire')} />
         <Redirect from="/" to="home" />
