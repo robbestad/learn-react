@@ -56,6 +56,7 @@ module.exports = React.createClass({
         this.closeSearch();
         var _this=this;
         $("body").css("overflow","hidden");
+        $("#app-root").css("overflow","hidden");
         $(this.refs.mainMenu.getDOMNode()).slideDown("fast", function () {
             _this.setState({menuOpen:true});
         });
@@ -63,8 +64,7 @@ module.exports = React.createClass({
 
     closeMenu(){
         $("body").css("overflow","visible");
-        $("body").css("width","100%");
-        $("body").css("height","100%");
+        $("#app-root").css("overflow","visible");
         var _this=this;
         //var mm = $(".main-menu"), ml = $(".menu-link");
         $(this.refs.mainMenu.getDOMNode()).slideUp("fast", function () {

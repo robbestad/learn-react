@@ -1014,7 +1014,7 @@ h2.footer {
 .menu-link:before {
   content: "";
   background: url(/assets/react_logo.png) -1px -2px no-repeat;
-  display: block;
+//  display: block;
 
   //  width: 30px;
 //  height: 30px;
@@ -1027,7 +1027,7 @@ h2.footer {
   padding: 14px 0;
   z-index: 9999;
   position: fixed;
-  top:59px;
+  top:49px;
 }
 
 .main-menu ul {
