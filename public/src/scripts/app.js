@@ -42,6 +42,7 @@ var routes = (
         <Route name="blog-articles" handler={require('./blog-articles')} />
         <Route name="breadcrumbs" handler={require('./breadcrumbs')} />
         <Route name="reactfire" handler={require('./reactfire')} />
+        <Route name="forms" handler={require('./forms')} />
         <Redirect from="/" to="home" />
     </Route>
 );

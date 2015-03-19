@@ -39,3 +39,8 @@ exports.RefluxRoute = Router.createRoute({
     name: '/reflux',
     handler: require("./reflux")
 });
+
+exports.FormsRoute = Router.createRoute({
+    name: '/forms',
+    handler: require("./forms")
+});
