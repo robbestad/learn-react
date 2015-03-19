@@ -62,4 +62,4 @@ gulp.task('copy', ['clean:copy'], require('./tasks/copy')(config));
 
 // For deployment. Makes front-end ready to serve from `public/dist`
 gulp.task('build', ['copy', 'webpack', 'styles']);
-gulp.task('default', ['build','serve']);
+gulp.task('default', ['build');
