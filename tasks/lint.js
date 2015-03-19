@@ -1,4 +1,4 @@
-'use strict';
+/*'use strict';
 var gulp = require('gulp'),
     jshint = require("gulp-jshint"),
     react = require("gulp-react"),
@@ -21,3 +21,4 @@ module.exports = function (config) {
         });
     };
 };
+*/
