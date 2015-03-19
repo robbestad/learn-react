@@ -3,7 +3,7 @@ const React = require("react"),
     Router = require('react-router'),
     {Link} = require('react-router'),
     {StickyRoute, ReactFireRoute, McFlyRoute, ButtonRoute, StaticsRoute,
-        LoginRoute, MarkdownRoute, RefluxRoute} = require('../routes'),
+        LoginRoute, MarkdownRoute, RefluxRoute, FormsRoute} = require('../routes'),
     Breadcrumbs = require('react-breadcrumbs'),
     ApiStore = require("../mcfly/store"),
     RefluxStore = require("../reflux/store"),
@@ -160,6 +160,7 @@ export default React.createClass({
                     <span className="label blue">JSON</span>
 
                 </Col>
+
                 <Col xs={12} md={6} className="columnBox">
                     <Link to={RefluxRoute.name}>
                         <strong>
@@ -178,6 +179,22 @@ export default React.createClass({
                     <span className="label blue">Flux</span>
                 &nbsp;
                     <span className="label blue">JSON</span>
+                </Col>
+
+
+                <Col xs={12} md={6} className="columnBox">
+                    <Link to={FormsRoute.name}>
+                        <strong>
+                            Form validation example
+                        </strong>
+                    </Link>
+                    <br/>
+                    E-mail input validation.
+                    <br/>
+                    <span className="label blue">Input</span>
+                    &nbsp;
+                    <span className="label blue">Flux</span>
+
                 </Col>
             </Row>
         </Grid>
