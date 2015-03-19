@@ -5,7 +5,9 @@ const React = require("react"),
     Breadcrumbs = require('react-breadcrumbs'),
     McFly = require("mcfly"),
     Flux = new McFly(),
-    LoginStore = require("./store");
+    LoginStore = require("./store"),
+    PureRenderMixin = require('react/addons').addons.PureRenderMixin;
+
 
 const LoginActions = Flux.createActions({
     login: function (userName,passWord) {
@@ -18,6 +20,8 @@ const LoginActions = Flux.createActions({
 });
 
 const LoggedIn = React.createClass({
+    mixins: [PureRenderMixin],
+
     render() {
         if (LoginStore.isAuthenticated()) {
             return <div>You are logged in!</div>
@@ -29,6 +33,8 @@ const LoggedIn = React.createClass({
 });
 
 const Instructions = React.createClass({
+    mixins: [PureRenderMixin],
+
     render() {
             return <div>
                     <h3>Instructions</h3>

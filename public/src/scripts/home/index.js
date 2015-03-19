@@ -8,10 +8,11 @@ const React = require("react"),
     ApiStore = require("../mcfly/store"),
     RefluxStore = require("../reflux/store"),
     Rx = require('rx'),
-    LoginStore = require("../login/store");
+    LoginStore = require("../login/store"),
+    PureRenderMixin = require('react/addons').addons.PureRenderMixin;
 
-export default React.createClass({
-    mixins: [Router.State],
+    export default React.createClass({
+    mixins: [Router.State, PureRenderMixin],
     displayName: route => {
         return `Home`;
     },

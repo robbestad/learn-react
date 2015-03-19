@@ -10,7 +10,7 @@ export default React.createClass({
         return <Grid className="flyin-widget">
             <Row className="show-grid">
                 <Col md={12}>
-                    <Breadcrumbs breadcrumbName={this.getParams().id} />
+                    <Breadcrumbs breadcrumbName={this.getParams().id} excludes={['Articles','Learn React']} />
                 </Col>
             </Row>
             <Row className="show-grid">
