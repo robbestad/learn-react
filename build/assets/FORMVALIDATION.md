@@ -23,7 +23,7 @@
 
         validationState: function() {
             var email = this.state.value;
-            if(email.length < 3) {return ''};
+            if(email.length < 4) {return ''};
             if (!/^.+@.+\..+$/.test(email)) {
                 if(!/^.+@.+$/.test(email)) {
                     return 'error';
