@@ -3,7 +3,7 @@ const React = require("react"),
     Router = require('react-router'),
     {Link} = require('react-router'),
     {StickyRoute, ReactFireRoute, McFlyRoute, ButtonRoute, StaticsRoute,
-        LoginRoute, MarkdownRoute, RefluxRoute, FormsRoute} = require('../routes'),
+        LoginRoute, MarkdownRoute, RefluxRoute, FormsRoute, ChartsRoute} = require('../routes'),
     Breadcrumbs = require('react-breadcrumbs'),
     ApiStore = require("../mcfly/store"),
     RefluxStore = require("../reflux/store"),
@@ -196,6 +196,26 @@ export default React.createClass({
                     <span className="label blue">Flux</span>
 
                 </Col>
+
+
+
+                <Col xs={12} md={6} className="columnBox">
+                    <Link to={ChartsRoute.name}>
+                        <strong>
+                            Chart example
+                        </strong>
+                    </Link>
+                    <br/>
+                    Donut Chart using the D3 wrapper C3.
+                    <br/>
+                    <span className="label blue">C3</span>
+                &nbsp;
+                    <span className="label blue">D3</span>
+
+
+                </Col>
+
+
             </Row>
         </Grid>
     }

@@ -44,3 +44,8 @@ exports.FormsRoute = Router.createRoute({
     name: '/forms',
     handler: require("./forms")
 });
+
+exports.ChartsRoute = Router.createRoute({
+    name: '/charts',
+    handler: require("./charts")
+});
