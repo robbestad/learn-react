@@ -93,7 +93,10 @@
     "gulp-util": "^3.0.1",
     "gulp-watch": "^3.0.0",
     "gulp-webpack": "^1.2.0",
+    "gulp-jshint": "^1.9.4",
+    "gulp-react": "^3.0.1",
     "hammer": "0.0.5",
+    "jshint-stylish-ex": "^0.2.0",
     "jest": "^0.1.37",
     "jest-cli": "^0.2.1",
     "jquery": "^2.1.3",
@@ -137,8 +140,5 @@
     "webpack-dev-server": "^1.7.0"
   },
   "devDependencies": {
-    "gulp-jshint": "^1.9.4",
-    "gulp-react": "^3.0.1",
-    "jshint-stylish-ex": "^0.2.0"
   }
 }
