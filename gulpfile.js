@@ -3,10 +3,6 @@ var gulp = require('gulp'),
   gutil = require('gulp-util'),
   $ = require('gulp-load-plugins')(),
 
-
-  //Browserify module, watch wrapper, and JSX transform
-  watchify = require('watchify'),
-
   // Load config file and moulder and detect environment
   moulder = require('./lib/config-moulder'),
   environment = process.env.NODE_ENV || 'production',
@@ -35,8 +31,7 @@ gulp.task('critical', ['copystyles'], require('./tasks/critical')(config));
 //gulp.task('jsx',  require('./tasks/transform')(config));
 
 // Jslinting
-gulp.task('lint', require("./tasks/lint")(config));
-
+//gulp.task('lint', require("./tasks/lint")(config));
 
 // Concat vendor scripts (described in config)
 gulp.task('vendor', ['clean:vendor'], require('./tasks/vendor')(config));
@@ -54,12 +49,11 @@ gulp.task('webpack', ['clean:scripts', 'vendor'], require('./tasks/webpack')(con
 gulp.task('serve', ['vendor', 'copy', 'styles'],
   require('./tasks/serve')(config));
 
-// Alias
 gulp.task('dev', ['webpack','serve']);
 
 // Copies static files that don't need any build processing to `public/dist`
 gulp.task('copy', ['clean:copy'], require('./tasks/copy')(config));
 
 // For deployment. Makes front-end ready to serve from `public/dist`
-gulp.task('build', ['copy', 'webpack', 'styles']);
-gulp.task('default', ['build','serve']);
+gulp.task('build', ['vendor','copy', 'styles']);
+gulp.task('default', ['build']);
