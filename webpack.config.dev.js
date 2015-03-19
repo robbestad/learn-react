@@ -10,7 +10,7 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.js?$/, loaders: ['react-hot', 'jsx?harmony','babel-loader'], exclude: /node_modules/ }
+            { test: /[\.js?$|\.jsx?$]/, loaders: ['react-hot', 'jsx?harmony','babel-loader'], exclude: /node_modules/ }
         ]
     },
     resolve: {
