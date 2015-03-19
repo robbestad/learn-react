@@ -139,6 +139,6 @@
     "gulp-watch": "^3.0.0",
     "gulp-webpack": "^1.2.0",
     "gulp-jshint": "^1.9.4",
-    "gulp-react": "^3.0.1",
+    "gulp-react": "^3.0.1"
   }
 }
