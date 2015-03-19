@@ -106,21 +106,14 @@ module.exports = React.createClass({
 
     openMenu () {
         this.closeSearch();
+        var scrollPosition = [
+            self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
+            self.pageYOffset || document.documentElement.scrollTop  || document.body.scrollTop
+        ];
+        console.log(scrollPosition);
+        this.refs.mainMenu.getDOMNode().style.top=(scrollPosition[1]+40);
+
         var _this=this;
-        //$("body").css("overflow","hidden");
-        //
-        //window.addEventListener("touchstart", function(event){
-        //    console.log(event.target.tagName);
-        //    if(event.target.tagName=="HTML" || event.target.tagName=="DIV"){
-        //        event.preventDefault();
-        //    }
-        //} ,false);
-        //window.addEventListener("touchmove", function(event){
-        //    console.log(event.target.tagName);
-        //    if(event.target.tagName=="HTML" || event.target.tagName=="DIV"){
-        //        event.preventDefault();
-        //    }
-        //} ,false);
 
         $(this.refs.mainMenu.getDOMNode()).slideDown("fast", function () {
             _this.setState({menuOpen:true});
@@ -128,7 +121,7 @@ module.exports = React.createClass({
     },
 
     closeMenu(){
-        //body.document.removeEventListener('touchstart', function(e){ e.preventDefault(); });
+
         var _this=this;
 
         _this.setState({menuOpen:false});
