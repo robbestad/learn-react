@@ -43,6 +43,7 @@ var routes = (
         <Route name="breadcrumbs" handler={require('./breadcrumbs')} />
         <Route name="reactfire" handler={require('./reactfire')} />
         <Route name="forms" handler={require('./forms')} />
+        <Route name="charts" handler={require('./charts')} />
         <Redirect from="/" to="home" />
     </Route>
 );
