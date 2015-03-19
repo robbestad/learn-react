@@ -34,6 +34,10 @@ gulp.task('critical', ['copystyles'], require('./tasks/critical')(config));
 // Convert JSX to js
 //gulp.task('jsx',  require('./tasks/transform')(config));
 
+// Jslinting
+gulp.task('lint', require("./tasks/lint")(config));
+
+
 // Concat vendor scripts (described in config)
 gulp.task('vendor', ['clean:vendor'], require('./tasks/vendor')(config));
 

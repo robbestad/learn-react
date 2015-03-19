@@ -135,5 +135,10 @@
     "watchify": "^2.2.1",
     "webpack": "^1.7.0",
     "webpack-dev-server": "^1.7.0"
+  },
+  "devDependencies": {
+    "gulp-jshint": "^1.9.4",
+    "gulp-react": "^3.0.1",
+    "jshint-stylish-ex": "^0.2.0"
   }
 }
