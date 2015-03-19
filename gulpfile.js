@@ -3,10 +3,6 @@ var gulp = require('gulp'),
   gutil = require('gulp-util'),
   $ = require('gulp-load-plugins')(),
 
-
-  //Browserify module, watch wrapper, and JSX transform
-  watchify = require('watchify'),
-
   // Load config file and moulder and detect environment
   moulder = require('./lib/config-moulder'),
   environment = process.env.NODE_ENV || 'production',
