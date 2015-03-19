@@ -54,7 +54,6 @@ gulp.task('webpack', ['clean:scripts', 'vendor'], require('./tasks/webpack')(con
 gulp.task('serve', ['vendor', 'copy', 'styles'],
   require('./tasks/serve')(config));
 
-// Alias
 gulp.task('dev', ['webpack','serve']);
 
 // Copies static files that don't need any build processing to `public/dist`
@@ -62,4 +61,4 @@ gulp.task('copy', ['clean:copy'], require('./tasks/copy')(config));
 
 // For deployment. Makes front-end ready to serve from `public/dist`
 gulp.task('build', ['copy', 'webpack', 'styles']);
-gulp.task('default', ['build');
+gulp.task('default', ['build']);
