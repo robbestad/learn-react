@@ -21,7 +21,9 @@ var Thumbnail= React.createClass({
 
 
 module.exports = React.createClass({
-    displayName:"Reflux",
+    displayName: route => {
+        return `Reflux example`;
+    },
 
     mixins: [Reflux.ListenerMixin,
         PureRenderMixin],
@@ -51,15 +53,6 @@ module.exports = React.createClass({
     },
 
     render: function ():any {
-        if ("undefined" == typeof this.state.store) {
-            return <div>
-                <Breadcrumbs />
-
-                <h1>Reflux Example</h1>
-          undefined:  {this.state}
-            </div>
-        }
-
         switch (this.state.store.state) {
             case store.STATE_OK:
                 return <Grid className="flyin-widget">
@@ -101,9 +94,13 @@ module.exports = React.createClass({
                 return <Grid className="flyin-widget">
                     <Row className="show-grid">
                         <Col md={12}>
-                            <h1>Reflux Example (default)</h1>
-                            {this.state}
-                            {this.props}
+                            <Breadcrumbs />
+                        </Col>
+                    </Row>
+                    <Row className="show-grid">
+                        <Col md={12}>
+                            <h1>Reflux Example </h1>
+                            Loading...
                     </Col>
                     </Row>
                     </Grid>

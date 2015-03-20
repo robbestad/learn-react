@@ -21,7 +21,7 @@ module.exports = React.createClass({
 
     validationState: function() {
         var email = this.state.value;
-        if(email.length < 4) {return ''};
+        if(email.length < 4) {return 'warning'};
         if (!/^.+@.+\..+$/.test(email)) {
             if(!/^.+@.+$/.test(email)) {
                 return 'error';
@@ -39,7 +39,7 @@ module.exports = React.createClass({
         });
     },
 
-    render: () => {
+    render () {
         return <Grid className="flyin-widget">
             <Row className="show-grid">
                 <Col md={12}><Breadcrumbs /></Col>

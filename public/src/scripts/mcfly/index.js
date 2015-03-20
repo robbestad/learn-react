@@ -30,6 +30,9 @@ function getState() {
 
 var ApiController = React.createClass({
     mixins: [ApiStore.mixin],
+    displayName: route => {
+        return `McFly flux example`;
+    },
     getInitialState: function () {
         return getState();
     },

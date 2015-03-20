@@ -160,7 +160,7 @@ module.exports = React.createClass({
     },
 
     displayName: route => {
-        return `Home`;
+        return `Login example`;
     },
 
     exposeToken() {
@@ -181,7 +181,7 @@ module.exports = React.createClass({
         return <Grid className="flyin-widget">
             <Row className="show-grid">
                 <Col md={12}>
-                    <Breadcrumbs />
+                    <Breadcrumbs  />
                         <p>
                             <b>Username:</b><br/>
                             <input ref="userName" type="text" defaultValue="marty" />
