@@ -1,18 +1,25 @@
-var React = require("react");
-
-var Breadcrumbs = require('react-breadcrumbs');
-var Markdown2Html = require("../react-markdown-to-html");
+import React from 'react';
+import Breadcrumbs from 'react-breadcrumbs';
+import {Bootstrap, Grid, Col, Row, Button} from 'react-bootstrap';
+import Markdown2Html from '../react-markdown-to-html';
 
 module.exports = React.createClass({
-    displayName: "Breadcrumbs",
+    displayName: "React-breadcrumbs",
 
-    render: function () {
-        return <div>
-            <Breadcrumbs separator=" | " />
-            <div className="flyin-widget">
-                <Markdown2Html src="assets/BREADCRUMBS.md" />
-            </div>
-        </div>
+    render () {
+        return <Grid className="flyin-widget">
+            <Row className="show-grid">
+                <Col md={12}>
+                    <Breadcrumbs separator=" | " />
+                </Col>
+            </Row>
+            <Row className="show-grid">
+                <Col md={12}>
+
+                    <Markdown2Html src="assets/BREADCRUMBS.md" />
+                </Col>
+            </Row>
+        </Grid>
     }
 
 });
