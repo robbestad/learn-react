@@ -1,10 +1,11 @@
-var watchify = require('watchify'),
+var 
   gulp = require('gulp'),
   gutil = require('gulp-util');
 
 // Wraps bundler with watchify to watch changes to bundled
 // files, watches sass scripts, watches statics to copy and
 // starts `index.js`.
+// watchify = require('watchify'), 
 
 module.exports = function(config){
 

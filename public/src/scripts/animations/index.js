@@ -48,7 +48,7 @@ module.exports = React.createClass({
                 springConstant: 2.4,
                 springDeceleration: 0.9,
             });
-        }, 2500);
+        }, 1500);
     },
 
     render: function () {

@@ -24,9 +24,9 @@ Static Type checking is (partially) implemented with Flow.
 
 #### Travis
 
-https://travis-ci.org/svenanders/react-tutorial
+https://travis-ci.org/svenanders/learn-react
 
-[![Build Status](https://travis-ci.org/svenanders/react-tutorial.svg?branch=master)](https://travis-ci.org/svenanders/react-tutorial)
+[![Build Status](https://travis-ci.org/svenanders/learn-react.svg?branch=master)](https://travis-ci.org/svenanders/learn-react)
 
 #### Local testing
 

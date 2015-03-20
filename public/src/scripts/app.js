@@ -23,6 +23,11 @@ var React = require('react'),
     ButtonToolbar = ReactBootstrap.ButtonToolbar;
 
 var Layout = require("./layout");
+let Empty = React.createClass({
+    render(){
+        return <RouteHandler />
+    }
+});
 
 // Define react-router routes
 var routes = (
@@ -39,7 +44,9 @@ var routes = (
         <Route name="button" handler={require('./button')} />
         <Route name="mcfly" handler={require('./mcfly')} />
         <Route name="source" handler={require('./source')} />
-        <Route name="blog-articles" handler={require('./blog-articles')} />
+        <Route name="articles" handler={require('./articles')}>
+            <Route name="/articles/article/:id" handler={require('./articles/item')} />
+        </Route>
         <Route name="breadcrumbs" handler={require('./breadcrumbs')} />
         <Route name="reactfire" handler={require('./reactfire')} />
         <Route name="forms" handler={require('./forms')} />

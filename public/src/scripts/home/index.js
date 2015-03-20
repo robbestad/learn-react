@@ -2,17 +2,20 @@ const React = require("react"),
     {Bootstrap, Grid, Col, Row, Button, Badge, Label} = require('react-bootstrap'),
     Router = require('react-router'),
     {Link} = require('react-router'),
+
     {StickyRoute, ReactFireRoute, McFlyRoute, ButtonRoute, StaticsRoute,
         LoginRoute, MarkdownRoute, RefluxRoute, FormsRoute,
-        ChartsRoute, AnimationsRoute} = require('../routes'),
+        ChartsRoute, AnimationsRoute, BreadcrumbsRoute} = require('../routes'),
+
     Breadcrumbs = require('react-breadcrumbs'),
     ApiStore = require("../mcfly/store"),
     RefluxStore = require("../reflux/store"),
     Rx = require('rx'),
-    LoginStore = require("../login/store");
+    LoginStore = require("../login/store"),
+    PureRenderMixin = require('react/addons').addons.PureRenderMixin;
 
-export default React.createClass({
-    mixins: [Router.State],
+    export default React.createClass({
+    mixins: [Router.State, PureRenderMixin],
     displayName: route => {
         return `Home`;
     },
@@ -25,11 +28,6 @@ export default React.createClass({
         };
 
         return <Grid className="flyin-widget">
-            <Row className="show-grid">
-                <Col md={12}>
-                    <Breadcrumbs />
-                </Col>
-            </Row>
             <Row className="show-grid" >
                 <Col md={12} className="columnBox">
                     <strong>Learn React</strong>
@@ -222,6 +220,20 @@ export default React.createClass({
                     Animations using Snabbt.Js.
                     <br/>
                     <span className="label blue">Snabbt</span>
+                </Col>
+
+                <Col xs={12} md={6} className="columnBox">
+                    <Link to={BreadcrumbsRoute.name}>
+                        <strong>
+                            Breadcrumbs example
+                        </strong>
+                    </Link>
+                    <br/>
+                    Automatic breadcrumbs with react-breadcrumbs
+                    <br/>
+                    <span className="label blue">breadcrumbs</span>
+                &nbsp;
+                    <span className="label blue">react-router</span>
                 </Col>
 
             </Row>
