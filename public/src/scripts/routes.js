@@ -50,6 +50,10 @@ exports.ChartsRoute = Router.createRoute({
     handler: require("./charts")
 });
 
+exports.AnimationsRoute = Router.createRoute({
+    name: '/animations',
+    handler: require("./animations")
+});
 
 exports.BreadcrumbsRoute = Router.createRoute({
     name: '/breadcrumbs',

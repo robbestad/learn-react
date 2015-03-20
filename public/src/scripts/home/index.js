@@ -2,8 +2,11 @@ const React = require("react"),
     {Bootstrap, Grid, Col, Row, Button, Badge, Label} = require('react-bootstrap'),
     Router = require('react-router'),
     {Link} = require('react-router'),
-    {StickyRoute, ReactFireRoute, McFlyRoute, ButtonRoute, StaticsRoute, BreadcrumbsRoute,
-        LoginRoute, MarkdownRoute, RefluxRoute, FormsRoute, ChartsRoute} = require('../routes'),
+
+    {StickyRoute, ReactFireRoute, McFlyRoute, ButtonRoute, StaticsRoute,
+        LoginRoute, MarkdownRoute, RefluxRoute, FormsRoute,
+        ChartsRoute, AnimationsRoute, BreadcrumbsRoute} = require('../routes'),
+
     Breadcrumbs = require('react-breadcrumbs'),
     ApiStore = require("../mcfly/store"),
     RefluxStore = require("../reflux/store"),
@@ -190,10 +193,7 @@ const React = require("react"),
                     <span className="label blue">Input</span>
                     &nbsp;
                     <span className="label blue">Flux</span>
-
                 </Col>
-
-
 
                 <Col xs={12} md={6} className="columnBox">
                     <Link to={ChartsRoute.name}>
@@ -207,8 +207,19 @@ const React = require("react"),
                     <span className="label blue">C3</span>
                 &nbsp;
                     <span className="label blue">D3</span>
+                </Col>
 
 
+                <Col xs={12} md={6} className="columnBox">
+                    <Link to={AnimationsRoute.name}>
+                        <strong>
+                            Animations example
+                        </strong>
+                    </Link>
+                    <br/>
+                    Animations using Snabbt.Js.
+                    <br/>
+                    <span className="label blue">Snabbt</span>
                 </Col>
 
                 <Col xs={12} md={6} className="columnBox">
@@ -223,10 +234,7 @@ const React = require("react"),
                     <span className="label blue">breadcrumbs</span>
                 &nbsp;
                     <span className="label blue">react-router</span>
-
-
                 </Col>
-
 
             </Row>
         </Grid>
