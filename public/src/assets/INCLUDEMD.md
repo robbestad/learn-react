@@ -32,4 +32,4 @@
      });
 
 [1]: https://facebook.github.io/react
-[2]: http://opensourceprojects.robbestad.com/#/markdown
+[2]: http://learnreact.robbestad.com/#/markdown

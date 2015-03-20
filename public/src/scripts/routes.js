@@ -49,3 +49,9 @@ exports.ChartsRoute = Router.createRoute({
     name: '/charts',
     handler: require("./charts")
 });
+
+
+exports.BreadcrumbsRoute = Router.createRoute({
+    name: '/breadcrumbs',
+    handler: require("./breadcrumbs")
+});

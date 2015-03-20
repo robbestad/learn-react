@@ -2,7 +2,7 @@
 
 [React][1] Component for [React-Router][4].
 
-Demo at [opensourceprojects.robbestad.com][2]
+Demo at [learnreact.robbestad.com][2]
 
 ## Installation
 
@@ -33,6 +33,6 @@ in your routes for every route. It will use the displayName parameter
 for the Breadcrumb link.
 
 [1]: https://facebook.github.io/react
-[2]: http://opensourceprojects.robbestad.com/
+[2]: http://learnreact.robbestad.com/
 [3]: https://github.com/svenanders/react-breadcrumbs/issues/1
 [4]: https://github.com/rackt/react-router

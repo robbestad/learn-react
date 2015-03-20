@@ -2,7 +2,7 @@ const React = require("react"),
     {Bootstrap, Grid, Col, Row, Button, Badge, Label} = require('react-bootstrap'),
     Router = require('react-router'),
     {Link} = require('react-router'),
-    {StickyRoute, ReactFireRoute, McFlyRoute, ButtonRoute, StaticsRoute,
+    {StickyRoute, ReactFireRoute, McFlyRoute, ButtonRoute, StaticsRoute, BreadcrumbsRoute,
         LoginRoute, MarkdownRoute, RefluxRoute, FormsRoute, ChartsRoute} = require('../routes'),
     Breadcrumbs = require('react-breadcrumbs'),
     ApiStore = require("../mcfly/store"),
@@ -207,6 +207,22 @@ const React = require("react"),
                     <span className="label blue">C3</span>
                 &nbsp;
                     <span className="label blue">D3</span>
+
+
+                </Col>
+
+                <Col xs={12} md={6} className="columnBox">
+                    <Link to={BreadcrumbsRoute.name}>
+                        <strong>
+                            Breadcrumbs example
+                        </strong>
+                    </Link>
+                    <br/>
+                    Automatic breadcrumbs with react-breadcrumbs
+                    <br/>
+                    <span className="label blue">breadcrumbs</span>
+                &nbsp;
+                    <span className="label blue">react-router</span>
 
 
                 </Col>
