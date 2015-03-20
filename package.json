@@ -129,6 +129,7 @@
     "reflux": "^0.2.7",
     "rx": "^2.4.3",
     "serve-favicon": "^2.2.0",
+    "snabbt.js": "^0.4.0",
     "superagent": "^0.21.0",
     "superagent-promise": "^0.2.0",
     "underscore": "^1.7.0",

@@ -44,6 +44,7 @@ var routes = (
         <Route name="reactfire" handler={require('./reactfire')} />
         <Route name="forms" handler={require('./forms')} />
         <Route name="charts" handler={require('./charts')} />
+        <Route name="animations" handler={require('./animations')} />
         <Redirect from="/" to="home" />
     </Route>
 );

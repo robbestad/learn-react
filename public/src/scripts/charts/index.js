@@ -29,8 +29,7 @@ module.exports = React.createClass({
             },
             data: {
                 columns: [
-                    ["Old recipe", 30],
-                    ["New recipe", 120]
+                    ["Donuts", 10]
                 ],
                 type: 'donut',
                 order: null
@@ -59,10 +58,7 @@ module.exports = React.createClass({
 
         setTimeout(function () {
             chart.unload({
-                ids: 'Old recipe'
-            });
-            chart.unload({
-                ids: 'New recipe'
+                ids: 'Donuts'
             });
         }, 2500);
 
