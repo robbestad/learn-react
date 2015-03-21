@@ -20,7 +20,7 @@ var Component = React.createClass({
     statics: {
         componentName: 'My Static Component',
         customRender: function(foo) {
-            return React.renderToStaticMarkup(<div dangerouslySetInnerHTML={{__html: foo.bar }}/>);
+            return React.renderToStaticMarkup(<span>{foo}</span>);
         }
     },
     render: function () {
@@ -36,8 +36,9 @@ var Component = React.createClass({
             <Row className="show-grid">
                 <Col md={12}>
                     <h1>{this.state.greeting}</h1>
-                <div dangerouslySetInnerHTML={{__html: <Component.customRender bar="This block is rendered with renderToStaticMarkup" />}} />
-                <Markdown2Html src="assets/STATICS.md" />
+                    <h2>{Component.componentName}</h2>
+                     <div dangerouslySetInnerHTML={{__html: Component.customRender({foo:'This block is rendered with renderToStaticMarkup'})}} />
+                    <Markdown2Html src="assets/STATICS.md" />
                 </Col>
 
             </Row>
@@ -46,8 +47,9 @@ var Component = React.createClass({
     }
 });
 
-console.log(Component.componentName);  // My Static Component
-//console.log(Component.customRender({foo:'bar'}));  // My Static Component
+//console output
+//console.log(Component.componentName);  // My Static Component
+//console.log(Component.customRender({foo:'This block is rendered with renderToStaticMarkup'})); x'x
 
 
 module.exports = Component;
