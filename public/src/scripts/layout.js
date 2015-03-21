@@ -36,13 +36,13 @@ module.exports = React.createClass({
 
     displayName:"Learn React",
     storeDidChange(){
-        console.log("store did change");
+        //console.log("store did change");
         this.setState(this.state);
     },
     handleTap(){
         this.closeMenu();
 
-        console.log('tapp!!');
+        //console.log('tapp!!');
     },
     getInitialState(){
       return {
@@ -110,7 +110,7 @@ module.exports = React.createClass({
             self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
             self.pageYOffset || document.documentElement.scrollTop  || document.body.scrollTop
         ];
-        console.log(scrollPosition);
+        //console.log(scrollPosition);
         this.refs.mainMenu.getDOMNode().style.top=(scrollPosition[1]+40);
 
         var _this=this;
@@ -230,13 +230,10 @@ module.exports = React.createClass({
                 </Headroom>
             </div>
 
-            <div className="container main-container">
+            <Hammer className="container main-container" onTap={this.handleTap}
+                onPress={this.handleTap} onSwipe={this.handleTap}>
                     <RouteHandler />
-  {/*
-   onTap={this.handleTap}
-   onPress={this.handleTap} onSwipe={this.handleTap}>
-   */}
-            </div>
+            </Hammer>
 
             <div className="push">&nbsp;</div>
 
