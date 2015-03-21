@@ -20,6 +20,7 @@ const LoginActions = Flux.createActions({
 });
 
 const LoggedIn = React.createClass({
+
     mixins: [PureRenderMixin],
 
     render() {
@@ -113,8 +114,12 @@ const Instructions = React.createClass({
 
 let timeoutArr=[];
 module.exports = React.createClass({
-    mixins: [LoginStore.mixin],
 
+    displayName: () => {
+        return `Login example with McFly`;
+    },
+
+    mixins: [LoginStore.mixin],
     storeDidChange: function () {
         this.setState({loggedIn: LoginStore.isAuthenticated()});
         if(!LoginStore.isAuthenticated())
@@ -159,10 +164,6 @@ module.exports = React.createClass({
             this.refs.myLoginButton.getDOMNode().disabled = false;
     },
 
-    displayName: route => {
-        return `Login example`;
-    },
-
     exposeToken() {
         this.refs.myToken.getDOMNode().innerHTML = this.getToken();
     },
@@ -181,7 +182,7 @@ module.exports = React.createClass({
         return <Grid className="flyin-widget">
             <Row className="show-grid">
                 <Col md={12}>
-                    <Breadcrumbs  />
+                    <Breadcrumbs />
                         <p>
                             <b>Username:</b><br/>
                             <input ref="userName" type="text" defaultValue="marty" />

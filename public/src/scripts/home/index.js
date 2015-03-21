@@ -15,7 +15,7 @@ const React = require("react"),
     PureRenderMixin = require('react/addons').addons.PureRenderMixin;
 
     export default React.createClass({
-    mixins: [Router.State, PureRenderMixin],
+    mixins: [PureRenderMixin],
     displayName: route => {
         return `Home`;
     },

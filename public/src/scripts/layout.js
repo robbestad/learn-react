@@ -230,10 +230,14 @@ module.exports = React.createClass({
                 </Headroom>
             </div>
 
-            <Hammer className="container main-container" onTap={this.handleTap}
-                onPress={this.handleTap} onSwipe={this.handleTap}>
+            <div className="container main-container">
                     <RouteHandler />
-            </Hammer>
+  {/*
+   onTap={this.handleTap}
+   onPress={this.handleTap} onSwipe={this.handleTap}>
+   */}
+            </div>
+
             <div className="push">&nbsp;</div>
 
             <div id="footer" className="footer">

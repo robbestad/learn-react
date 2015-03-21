@@ -3,15 +3,14 @@
  * @flow
  */
 
-// Require libraries
-var React = require('react'),
-    Router = require('react-router'),
-    Route = Router.Route,
-    DefaultRoute = Router.DefaultRoute,
+var React = require('react');
+var TransitionGroup = require('react/lib/ReactCSSTransitionGroup');
+var Router = require('react-router');
+var { Route, RouteHandler, Link } = Router;
+
+var    DefaultRoute = Router.DefaultRoute,
     NotFoundRoute = Router.NotFoundRoute,
-    RouteHandler = Router.RouteHandler,
     Redirect = Router.Redirect,
-    Link = Router.Link,
 
     ReactBootstrap = require('react-bootstrap'),
     Nav = ReactBootstrap.Nav,
@@ -24,6 +23,10 @@ var React = require('react'),
 
 var Layout = require("./layout");
 let Empty = React.createClass({
+    contextTypes: {
+        router: React.PropTypes.func.isRequired
+    },
+
     render(){
         return <RouteHandler />
     }
@@ -33,6 +36,7 @@ let Empty = React.createClass({
 var routes = (
     <Route name="/" handler={Layout}>
         <DefaultRoute handler={require('./home')} />
+
         <Route name="stickydiv" handler={require('./stickydiv')} />
         <Route name="static" handler={require('./static')} />
         <Route name="mixin" handler={require('./mixin')} />
@@ -45,6 +49,7 @@ var routes = (
         <Route name="mcfly" handler={require('./mcfly')} />
         <Route name="source" handler={require('./source')} />
         <Route name="articles" handler={require('./articles')}>
+
             <Route name="/articles/article/:id" handler={require('./articles/item')} />
         </Route>
         <Route name="breadcrumbs" handler={require('./breadcrumbs')} />
@@ -56,8 +61,11 @@ var routes = (
     </Route>
 );
 
+
+
 // Run the router
 Router.run(routes, function (Handler) {
     // Render the root app view-controller
     React.render(<Handler />, $('#app-root')[0]);
 });
+
