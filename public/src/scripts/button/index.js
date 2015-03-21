@@ -4,8 +4,7 @@
  */
 
 var React = require("react"),
-    ReactBootstrap = require('react-bootstrap'),
-    Button = ReactBootstrap.Button;
+    {Grid, Col, Row, Button, Badge, Label} = require('react-bootstrap');
 
 var Markdown2Html = require("../react-markdown-to-html");
 
@@ -29,19 +28,24 @@ module.exports = React.createClass({
     },
 
     render: function ():any {
-        return <div>
-            <Breadcrumbs />
-            <div className="flyin-widget">
-            <h1>Button</h1>
-            <p>Demonstrates the use of the onClick function on a button.</p>
-            <p>
-                <Button bsStyle={this.state.buttonStyle} className="button"
-                    onClick={this.onClick}><span className="buttonStatus">{this.state.buttonText}</span></Button>
-            </p>
-            </div>
-            <hr />
-            <Markdown2Html src="./assets/CLICKBUTTON.md" />
-        </div>
+        return <Grid className="flyin-widget">
+            <Row className="show-grid">
+                <Col md={12}>
+                    <Breadcrumbs />
+                </Col>
+            </Row>
+            <Row className="show-grid">
+                <Col md={12}>
+                    <h1>Button</h1>
+                    <p>Demonstrates the use of the onClick function on a button.</p>
+                    <p>
+                        <Button bsStyle={this.state.buttonStyle} className="button"
+                            onClick={this.onClick}><span className="buttonStatus">{this.state.buttonText}</span></Button>
+                    </p>
+                <Markdown2Html src="./assets/CLICKBUTTON.md" />
+                </Col>
+            </Row>
+        </Grid>
     }
 });
 
