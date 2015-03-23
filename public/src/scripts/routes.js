@@ -1,3 +1,5 @@
+'use strict';
+
 const Router = require("react-router");
 
 exports.StickyRoute = Router.createRoute({

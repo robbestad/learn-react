@@ -1,8 +1,9 @@
 {
   "node": true,
-  "esnext" : true,
+  "asi": true,
+  "esnext": true,
   "boss": true,
-  "curly": true,
+  "curly": false,
   "devel": true,
   "eqnull": true,
   "expr": true,
@@ -14,6 +15,14 @@
   "nonstandard": true,
   "sub": true,
   "undef": true,
-  "unused": "vars"
+  "unused": true,
+  "multistr":true,
+  "globals": {
+    "localStorage": false,
+    "document": false,
+    "window": false,
+    "self": false,
+    "$": false
+  }
 }
 

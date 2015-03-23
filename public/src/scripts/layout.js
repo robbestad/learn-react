@@ -1,7 +1,7 @@
+'use strict';
+
 var React = require('react'),
-    {Router, Route, DefaultRoute, NotFoundRoute, RouteHandler, Redirect, Link} = require('react-router'),
-    {ReactBootstrap, Nav} = require('react-bootstrap'),
-    {ReactRouterBootstrap, NavItemLink, MenuItem, ButtonLink, DropdownButton, ButtonToolbar} = require('react-router-bootstrap'),
+    {RouteHandler, Link} = require('react-router'),
     Headroom = require("react-headroom"),
     Hammer = require('react-hammerjs'),
     LoginStore = require("./login/store");

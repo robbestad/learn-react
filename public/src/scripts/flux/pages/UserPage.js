@@ -58,7 +58,7 @@ var UserPage = React.createClass({
   },
 
   render() {
-    var { user, starredRepos } = this.state;
+    var { user } = this.state;
 
     return (
       <DocumentTitle title={'Starred by ' + this.parseLogin()}>

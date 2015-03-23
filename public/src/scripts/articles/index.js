@@ -1,3 +1,5 @@
+'use strict';
+
 //import React from 'react';
 //import Breadcrumbs from 'react-breadcrumbs';
 //import {Bootstrap, Grid, Col, Row, Button} from 'react-bootstrap';
@@ -25,8 +27,8 @@
 //};
 import React from 'react';
 import Breadcrumbs from 'react-breadcrumbs';
-import {Bootstrap, Grid, Col, Row, Button} from 'react-bootstrap';
-import Router,{Link, RouteHandler} from 'react-router';
+import {Grid, Col, Row} from 'react-bootstrap';
+import {Link, RouteHandler} from 'react-router';
 
 module.exports = React.createClass({
     contextTypes: {

@@ -1,10 +1,10 @@
+"use strict";
+
 /** McFly */
 let McFly = require("mcfly"),
     React = require("react"),
     Flux = new McFly(),
-    {Bootstrap, Grid, Col, Row, Button} = require('react-bootstrap'),
-    {Link} = require('react-router'),
-    Markdown2Html = require("../react-markdown-to-html"),
+    {Grid, Col, Row} = require('react-bootstrap'),
     Breadcrumbs = require('react-breadcrumbs');
 
 /** Store */
@@ -16,23 +16,21 @@ var ApiActions = Flux.createActions({
     fetchPosts: function () {
         return {
             actionType: "FETCH_POSTS"
-        }
+        };
     }
 });
 
 function getState() {
     return {
         posts: ApiStore.getPosts()
-    }
+    };
 }
 
 /** Controller View */
 
 var ApiController = React.createClass({
     mixins: [ApiStore.mixin],
-    displayName: route => {
-        return `McFly flux example`;
-    },
+    displayName:`McFly flux example`,
     getInitialState: function () {
         return getState();
     },
@@ -84,12 +82,12 @@ var ApiComponent = React.createClass({
                     <a style={{paddingLeft: '10px'}}  href={permalink} target="reddit">
                         Comments
                     </a>
-                </Col>
+                </Col>;
             })}
             </Row>
 
 
-        </Grid>
+        </Grid>;
 
     }
 });

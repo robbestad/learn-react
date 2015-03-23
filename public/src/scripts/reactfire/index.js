@@ -1,10 +1,11 @@
+'use strict';
+
 let React = require('react'),
     Breadcrumbs = require('react-breadcrumbs'),
     Markdown2Html = require("../react-markdown-to-html"),
     Firebase = require('firebase'),
     ReactFireMixin = require('reactfire'),
-    {Bootstrap, Grid, Col, Row, Button} = require('react-bootstrap'),
-    {Link} = require('react-router');
+    {Grid, Col, Row, Button} = require('react-bootstrap');
 
 let ReactfireDemo = React.createClass({
 
@@ -17,7 +18,7 @@ let ReactfireDemo = React.createClass({
         return {
             baseUrl: 'https://reactfire-demo.firebaseio.com/',
             strings: 'strings'
-        }
+        };
     },
 
     getInitialState() {
@@ -34,7 +35,7 @@ let ReactfireDemo = React.createClass({
                 text3: 'The database will be reset daily, but if you find the contents offensive you can reset it yourself by using the reset database button.'
             },
             strings: []
-        }
+        };
     },
 
     componentWillMount() {
@@ -54,7 +55,7 @@ let ReactfireDemo = React.createClass({
         // clears the input field after successfutl push
         let input = this.refs.theInput.getDOMNode();
         let inputVal = input.value;
-        if ('' != inputVal) {
+        if ('' !== inputVal) {
             let stringsRef = new Firebase(this.props.baseUrl + this.props.strings);
             stringsRef.push({'text': inputVal}, function () {
                 input.value = '';
@@ -73,7 +74,7 @@ let ReactfireDemo = React.createClass({
                     "text": "Some other text..."
                 }
             }
-        }
+        };
         let stringsRef = new Firebase(this.props.baseUrl);
         stringsRef.set(input);
     },
@@ -124,7 +125,7 @@ let ReactfireDemo = React.createClass({
                         {this.state.strings.map(function (string, key) {
                             return (
                                 <li key={key}>{string}</li>
-                            )
+                            );
                         })}
                         </ul>
                     </div>
@@ -133,7 +134,7 @@ let ReactfireDemo = React.createClass({
 
             </Row>
 
-        </Grid>
+        </Grid>;
 
 
     }

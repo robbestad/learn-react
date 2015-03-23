@@ -4,34 +4,11 @@
  */
 'use strict';
 
-var React = require('react');
-var TransitionGroup = require('react/lib/ReactCSSTransitionGroup');
-var Router = require('react-router');
-var { Route, RouteHandler, Link } = Router;
-
-var    DefaultRoute = Router.DefaultRoute,
-    NotFoundRoute = Router.NotFoundRoute,
+import Router, { Route } from 'react-router';
+var React = require('react'),
+    DefaultRoute = Router.DefaultRoute,
     Redirect = Router.Redirect,
-
-    ReactBootstrap = require('react-bootstrap'),
-    Nav = ReactBootstrap.Nav,
-    ReactRouterBootstrap = require('react-router-bootstrap'),
-    NavItemLink = ReactRouterBootstrap.NavItemLink,
-    MenuItem = ReactBootstrap.MenuItem,
-    ButtonLink = ReactRouterBootstrap.ButtonLink,
-    DropdownButton = ReactBootstrap.DropdownButton,
-    ButtonToolbar = ReactBootstrap.ButtonToolbar;
-
-var Layout = require("./layout");
-let Empty = React.createClass({
-    contextTypes: {
-        router: React.PropTypes.func.isRequired
-    },
-
-    render(){
-        return <RouteHandler />
-    }
-});
+    Layout = require("./layout");
 
 // Define react-router routes
 var routes = (
@@ -67,6 +44,6 @@ var routes = (
 // Run the router
 Router.run(routes, function (Handler) {
     // Render the root app view-controller
-    React.render(<Handler />, $('#app-root')[0]);
+    React.render(<Handler />, window.document.getElementById('app-root'));
 });
 

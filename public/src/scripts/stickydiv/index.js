@@ -3,16 +3,17 @@
  * @flow
  */
 
+'use strict';
+
 const React = require('react');
 
 var Sticky = require('../react-stickydiv');
 const Breadcrumbs = require('react-breadcrumbs'),
-    {Bootstrap, Grid, Col, Row, Button, Input, Well} = require('react-bootstrap'),
-    Markdown2Html = require("react-markdown-to-html");
+    {Grid, Col, Row} = require('react-bootstrap');
 
 module.exports = React.createClass({
     displayName: "Sticky Div",
-    render: function ():any {
+    render():any {
         return <Grid className="flyin-widget">
 
                 <Row className="show-grid">
@@ -49,8 +50,6 @@ module.exports = React.createClass({
 
                 </Row>
 
-            </Grid>
-
-
+            </Grid>;
     }
 });

@@ -1,3 +1,5 @@
+"use strict";
+
 var SetIntervalMixin = {
 
     componentWillMount: function() {
@@ -21,7 +23,7 @@ var Mixin = React.createClass({
     getInitialState(){
         return{
             seconds:0
-        }
+        };
     },
     mixins:[SetIntervalMixin],
     statics: {
@@ -46,7 +48,7 @@ var Mixin = React.createClass({
 
 
             </div>
-        </div>
+        </div>;
     }
 });
 module.exports=Mixin;

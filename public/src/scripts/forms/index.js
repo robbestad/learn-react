@@ -3,8 +3,10 @@
  * @flow
  */
 
+'use strict';
+
 var React = require("react"),
-    {Bootstrap, Grid, Col, Row, Button, Input} = require('react-bootstrap');
+    {Grid, Col, Row, Input} = require('react-bootstrap');
 
 var Markdown2Html = require("../react-markdown-to-html");
 
@@ -21,7 +23,7 @@ module.exports = React.createClass({
 
     validationState: function() {
         var email = this.state.value;
-        if(email.length < 4) {return 'warning'};
+        if(email.length < 4) {return 'warning'}
         if (!/^.+@.+\..+$/.test(email)) {
             if(!/^.+@.+$/.test(email)) {
                 return 'error';

@@ -1,10 +1,12 @@
+'use strict';
+
 /**
  * Click a button and animate the button class
  * @flow
  */
 
 var React = require("react"),
-    {Bootstrap, Grid, Col, Row, Button} = require('react-bootstrap');
+    {Grid, Col, Row, Button} = require('react-bootstrap');
 
 var Markdown2Html = require("../react-markdown-to-html");
 

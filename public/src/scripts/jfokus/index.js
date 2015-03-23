@@ -1,8 +1,10 @@
+'use strict';
+
 var React = require("react");
 //import React from 'react';
-import { Flummox } from 'flummox';
+//import { Flummox } from 'flummox';
 
-let flux = new Flummox();
+//let flux = new Flummox();
 
 module.exports=React.createClass({
 

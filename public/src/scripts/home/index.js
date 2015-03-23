@@ -1,31 +1,27 @@
+'use strict';
+
 const React = require("react"),
-    {Bootstrap, Grid, Col, Row, Button, Badge, Label} = require('react-bootstrap'),
-    Router = require('react-router'),
+    { Grid, Col, Row} = require('react-bootstrap'),
     {Link} = require('react-router'),
 
-    {StickyRoute, ReactFireRoute, McFlyRoute, ButtonRoute, StaticsRoute,
+    {ReactFireRoute, McFlyRoute, ButtonRoute, StaticsRoute,
         LoginRoute, MarkdownRoute, RefluxRoute, FormsRoute,
         ChartsRoute, AnimationsRoute, BreadcrumbsRoute} = require('../routes'),
 
-    Breadcrumbs = require('react-breadcrumbs'),
     ApiStore = require("../mcfly/store"),
     RefluxStore = require("../reflux/store"),
-    Rx = require('rx'),
+    //Rx = require('rx'),
     LoginStore = require("../login/store"),
     PureRenderMixin = require('react/addons').addons.PureRenderMixin;
 
     export default React.createClass({
     mixins: [PureRenderMixin],
-    displayName: route => {
-        return `Home`;
-    },
+    //displayName: route => {
+    //    return `Home`;
+    //},
+    displayName: 'Home',
 
     render() {
-        let inlineCss = {
-            padding: '10px',
-            lineHeight: '16px',
-            color: 'red'
-        };
 
         return <Grid className="flyin-widget">
             <Row className="show-grid" >

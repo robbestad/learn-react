@@ -1,11 +1,9 @@
 "use strict";
 
-if ("undefined" == typeof React)
-    var React = require('react');
+var React = require('react');
 
 var marked = require('marked');
 var _ = require('lodash');
-var $ = require('jquery');
 
 module.exports = React.createClass({
     displayName: "Markdown2HTML",

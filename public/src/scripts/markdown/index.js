@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Markdown class
  * @flow
@@ -6,10 +8,6 @@
 var React = require('react');
 
 var Breadcrumbs = require('react-breadcrumbs');
-
-var ReactBootstrap = require('react-bootstrap'),
-    Input = ReactBootstrap.Input,
-    Well = ReactBootstrap.Well;
 
 var Markdown2Html = require("../react-markdown-to-html");
 

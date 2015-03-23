@@ -1,5 +1,6 @@
-var update = require('react/addons').addons.update;
+'use strict';
 
+var update = require('react/addons').addons.update;
 
 var State = {
     init: function () {

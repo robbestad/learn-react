@@ -1,9 +1,8 @@
+'use strict';
+
 var Reflux = require('reflux'),
     State = require('./state'),
-    actions = require('./actions'),
-    $ = require("jquery");
-
-
+    actions = require('./actions');
 
 // Some constants for determining state; will be exported on store too
 var STATE_LOADING = 'loading',
@@ -48,7 +47,6 @@ module.exports = Reflux.createStore({
     // Pull posts from server and trigger to let listeners know
     // posts changed
     updateFromServer: function(){
-        var _this=this;
         $.get('http://www.reddit.com/new/.json')
             .done(function(data){
                 store = {

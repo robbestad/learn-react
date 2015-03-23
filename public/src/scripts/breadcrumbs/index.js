@@ -1,6 +1,8 @@
+'use strict';
+
 import React from 'react';
 import Breadcrumbs from 'react-breadcrumbs';
-import {Bootstrap, Grid, Col, Row, Button} from 'react-bootstrap';
+import {Grid, Col, Row} from 'react-bootstrap';
 import Markdown2Html from '../react-markdown-to-html';
 
 module.exports = React.createClass({

@@ -1,7 +1,7 @@
+'use strict';
+
 const React = require("react"),
-    {Bootstrap, Grid, Col, Row, Button} = require('react-bootstrap'),
-    {Link} = require('react-router'),
-    {StickyRoute, ReactFireRoute, McFlyRoute, ButtonRoute, StaticsRoute, MarkdownRoute} = require('../routes'),
+    {Grid, Col, Row, Button} = require('react-bootstrap'),
     Breadcrumbs = require('react-breadcrumbs'),
     McFly = require("mcfly"),
     Flux = new McFly(),

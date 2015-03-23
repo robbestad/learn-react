@@ -1,10 +1,12 @@
+'use strict';
+
 /**
  * Click a button class
  * @flow
  */
 
 var React = require("react"),
-    {Grid, Col, Row, Button, Badge, Label} = require('react-bootstrap');
+    {Grid, Col, Row, Button} = require('react-bootstrap');
 
 var Markdown2Html = require("../react-markdown-to-html");
 

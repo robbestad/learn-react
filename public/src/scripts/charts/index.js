@@ -1,10 +1,11 @@
+'use strict';
 /**
  * Chart class
  * @flow
  */
 
 var React = require("react"),
-    {Bootstrap, Grid, Col, Row, Button} = require('react-bootstrap');
+    {Grid, Col, Row} = require('react-bootstrap');
 
 var Markdown2Html = require("../react-markdown-to-html");
 

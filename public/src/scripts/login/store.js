@@ -1,3 +1,4 @@
+'use strict';
 let McFly = require("mcfly");
 let Flux = new McFly();
 let Ajax = require("../mixins/ajax");

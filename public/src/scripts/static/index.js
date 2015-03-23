@@ -1,6 +1,7 @@
+"use strict";
+
 var React = require("react"),
-    {Bootstrap, Grid, Col, Row, Button} = require('react-bootstrap'),
-    {Link} = require('react-router');
+    {Grid, Col, Row} = require('react-bootstrap');
 var Markdown2Html = require("../react-markdown-to-html");
 var Breadcrumbs = require('react-breadcrumbs');
 
@@ -10,12 +11,12 @@ var Component = React.createClass({
     getDefaultsProps(){
       return {
           foo: "bar"
-      }
+      };
     },
     getInitialState() {
         return {
             greeting: 'Hello World'
-        }
+        };
     },
     statics: {
         componentName: 'My Static Component',
@@ -43,7 +44,7 @@ var Component = React.createClass({
 
             </Row>
 
-        </Grid>
+        </Grid>;
     }
 });
 

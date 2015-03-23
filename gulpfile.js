@@ -1,7 +1,7 @@
+'use strict';
 // Gulp plugins
 var gulp = require('gulp'),
   gutil = require('gulp-util'),
-  $ = require('gulp-load-plugins')(),
 
   // Load config file and moulder and detect environment
   moulder = require('./lib/config-moulder'),
@@ -31,7 +31,7 @@ gulp.task('critical', ['copystyles'], require('./tasks/critical')(config));
 //gulp.task('jsx',  require('./tasks/transform')(config));
 
 // Jslinting
-//gulp.task('lint', require("./tasks/lint")(config));
+gulp.task('lint', require("./tasks/lint")(config));
 
 // Concat vendor scripts (described in config)
 gulp.task('vendor', ['clean:vendor'], require('./tasks/vendor')(config));

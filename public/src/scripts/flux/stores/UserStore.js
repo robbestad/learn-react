@@ -1,8 +1,7 @@
 'use strict';
 
 var AppDispatcher = require('../dispatcher/AppDispatcher'),
-    { createStore, mergeIntoBag, isInBag } = require('../utils/StoreUtils'),
-    $ = require('jquery');
+    { createStore, mergeIntoBag, isInBag } = require('../utils/StoreUtils');
 
 var _users = {};
 

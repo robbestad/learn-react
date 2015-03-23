@@ -1,3 +1,5 @@
+'use strict';
+
 var request = require('superagent-promise');
 
 module.exports = {

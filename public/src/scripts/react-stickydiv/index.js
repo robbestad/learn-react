@@ -1,9 +1,11 @@
+/*jshint -W079 */
+/*jshint -W084 */
+
 "use strict";
 
 var React = require("react");
 
 var util = {
-
     // findPos() by quirksmode.org
     // Finds the absolute position of an element on a page
     findPos: function (obj) {
@@ -94,7 +96,6 @@ module.exports = React.createClass({
         var height=0;
         if("undefined" != typeof this.refs.orig) height=this.refs.orig.getDOMNode().getBoundingClientRect().height;
         if("undefined" != typeof this.refs.dupe) height=this.refs.dupe.getDOMNode().getBoundingClientRect().height;
-        var divStyle;
         if(this.state.fix){
             divStyle= {
                 position: 'fixed',

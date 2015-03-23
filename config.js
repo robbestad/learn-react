@@ -1,4 +1,11 @@
+// Paths to use. Must end with a slash!
+const paths = {
+    src: './public/src/', // Where the sources are located
+    dist: './build/dist/' // Where the build products will be placed
+};
+
 module.exports = {
+  paths: paths,
   build: {
     vendor: {
       // Will be concantinated and included in index.html before app bundle.
@@ -9,16 +16,6 @@ module.exports = {
         // `@import "bootstrap"`
         './node_modules/bootstrap-sass/assets/stylesheets'
       ]
-    },
-    browserify: {
-      // Browserify will search through these paths for `require`s
-      paths: [
-        './public/src',
-        './node_modules'
-      ],
-      // Will append source maps if true (Generally overridden in production
-      // config as `false`)
-      debug: true
     },
     // Will be rimraffed before builds and whatnot on a task-required basis
     clean: {
@@ -36,7 +33,10 @@ module.exports = {
     cssmin: false,
     // Uglify js after bundle? (Generally overridden in production config as
     // `true`)
-    uglify: false
+    uglify: false,
+    paths: {
+      src: './public/src/'
+    }
   },
   server: {
     // Port to run on. Overridden by PORT env variable or port passed as an
@@ -51,6 +51,7 @@ module.exports = {
   },
   // Merges into config if NODE_ENV is development
   development: {
+    paths:paths,
     build: {
       vendor: {
         js: [
@@ -64,6 +65,7 @@ module.exports = {
   },
   // Merges into config if NODE_ENV is production
   production: {
+    paths: paths,
     build: {
       vendor: {
         js: [

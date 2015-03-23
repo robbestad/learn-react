@@ -1,7 +1,6 @@
 'use strict';
 
 var AppDispatcher = require('../dispatcher/AppDispatcher'),
-    UserStore = require('./UserStore'),
     { createStore, mergeIntoBag, isInBag } = require('../utils/StoreUtils');
 
 var _repos = {};
