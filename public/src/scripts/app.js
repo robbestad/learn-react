@@ -2,6 +2,7 @@
  * Layout and route class
  * @flow
  */
+'use strict';
 
 var React = require('react');
 var TransitionGroup = require('react/lib/ReactCSSTransitionGroup');
