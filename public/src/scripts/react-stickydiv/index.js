@@ -64,6 +64,11 @@ var SimpleResizeMixin = {
 };
 
 module.exports = React.createClass({
+    displayName:"Sticky Div",
+    propTypes:{
+        className: React.PropTypes.string,
+        visibility: React.PropTypes.string
+    },
     mixins: [SimplePageScrollMixin, SimpleResizeMixin],
     getInitialState : function(){
         return {fix: false};
@@ -78,8 +83,8 @@ module.exports = React.createClass({
         if(!this.isMounted()) return false;
         var pos = util.findPosRelativeToViewport(this.getDOMNode());
         var height=0;
-        if("undefined" != typeof this.refs.orig) height=this.refs.orig.getDOMNode().getBoundingClientRect().height;
-        if("undefined" != typeof this.refs.dupe) height=this.refs.dupe.getDOMNode().getBoundingClientRect().height;
+        if("undefined" !== typeof this.refs.orig) height=this.refs.orig.getDOMNode().getBoundingClientRect().height;
+        if("undefined" !== typeof this.refs.dupe) height=this.refs.dupe.getDOMNode().getBoundingClientRect().height;
 
 
         if (pos[1]<Math.floor(height/2)){
@@ -94,8 +99,8 @@ module.exports = React.createClass({
         if("undefined" !== typeof this.props.className)
             className=this.props.className;
         var height=0;
-        if("undefined" != typeof this.refs.orig) height=this.refs.orig.getDOMNode().getBoundingClientRect().height;
-        if("undefined" != typeof this.refs.dupe) height=this.refs.dupe.getDOMNode().getBoundingClientRect().height;
+        if("undefined" !== typeof this.refs.orig) height=this.refs.orig.getDOMNode().getBoundingClientRect().height;
+        if("undefined" !== typeof this.refs.dupe) height=this.refs.dupe.getDOMNode().getBoundingClientRect().height;
         if(this.state.fix){
             divStyle= {
                 position: 'fixed',
@@ -109,7 +114,8 @@ module.exports = React.createClass({
                 {key: "dupe", ref:"dupe", className: className,style: divStyle},this.props.children
             );
 
-        } else {
+        }
+        if(!this.state.fix){
             divStyle= {
                 position: 'relative',
                 width: '100%',

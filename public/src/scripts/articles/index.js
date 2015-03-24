@@ -37,7 +37,7 @@ module.exports = React.createClass({
     displayName:"Articles",
     render() {
         var { router } = this.context;
-        if(router.getCurrentParams().id !== undefined){
+        if(router.getCurrentParams().id !== typeof 'undefined'){
             return <RouteHandler />
         } else {
         return <Grid className="flyin-widget">

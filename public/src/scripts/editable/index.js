@@ -1,6 +1,6 @@
 "use strict";
 
-if ("undefined" == typeof React)
+if ("undefined" === typeof React)
     var React = require('react');
         //escapeTextForBrowser = require('react/lib/escapeTextForBrowser');
 
@@ -8,7 +8,10 @@ module.exports = React.createClass({
     displayName: "Editable",
 
     propTypes: {
-        html: React.PropTypes.string
+        html: React.PropTypes.string,
+        editable: React.PropTypes.string,
+        onChange: React.PropTypes.string
+
     },
     shouldComponentUpdate: function (nextProps) {
         return nextProps.editable !== this.props.editable;
@@ -30,7 +33,7 @@ module.exports = React.createClass({
         return React.createElement('div', {
                 onInput: this.handleChange,
                 onBlur: this.handleChange,
-                contentEditable: undefined === this.props.editable ? true: this.props.editable,
+                contentEditable: "undefined" === typeof this.props.editable ? true: this.props.editable,
                 dangerouslySetInnerHTML: {__html: this.props.html}});
     }
 });

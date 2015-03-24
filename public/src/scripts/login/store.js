@@ -3,12 +3,17 @@ let McFly = require("mcfly");
 let Flux = new McFly();
 let Ajax = require("../mixins/ajax");
 let loggedIn = loggedIn || false;
+let lastError = lastError || false;
 
 //const apiUrl="http://api-robbestad.dev";
 const apiUrl="https://morning-forest-9780.herokuapp.com";
 
 function setLoggedIn() {
     loggedIn = true;
+}
+
+function setLastError(lastErr) {
+    lastError = lastErr;
 }
 
 var LoginStore = Flux.createStore({
@@ -35,13 +40,13 @@ var LoginStore = Flux.createStore({
         Ajax.post({
             url: apiUrl+'/oauth',
             data: {
-                "grant_type": "refresh_token",
-                "refresh_token": refresh_token,
-                "client_id": "testclient",
-                "client_secret": "testpass"
+                grant_type: "refresh_token",
+                refresh_token: refresh_token,
+                client_id: "testclient",
+                client_secret: "testpass"
             },
             failure: function (err) {
-                console.log(err);
+                setLastError(err);
                 LoginStore.emitChange();
 
             },
@@ -64,14 +69,14 @@ var LoginStore = Flux.createStore({
             Ajax.post({
                 url: apiUrl+'/oauth',
                 data: {
-                    "grant_type": "password",
-                    "username": userName.toString(),
-                    "password": passWord.toString(),
-                    "client_id": "testclient",
-                    "client_secret": "testpass"
+                    grant_type: "password",
+                    username: userName.toString(),
+                    password: passWord.toString(),
+                    client_id: "testclient",
+                    client_secret: "testpass"
                 },
                 failure: function (err) {
-                    console.log(err);
+                    setLastError(err);
                     LoginStore.emitChange();
 
                 },

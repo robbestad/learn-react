@@ -12,7 +12,11 @@ var React = require("react"),
     actions = require('./actions');
 var Breadcrumbs = require('react-breadcrumbs');
 
-var Thumbnail= React.createClass({
+var Thumbnail = React.createClass({
+    displayName:"Image",
+    propTypes:{
+      img: React.PropTypes.string
+    },
     render: function():any {
         return <div className="col-md-2 col-sm-4" style={{width:'85px'}}>
         <img src={this.props.img} style={{width: '75px', height: '65px', paddingTop:'15px'}} />
@@ -67,7 +71,7 @@ module.exports = React.createClass({
                     {this.state.store.posts.data.children.map(function (item, idx) {
                         var permalink = "http://www.reddit.com/" + item.data.permalink;
                         var thumbnail=false;
-                        if(item.data.thumbnail.match('http')) { thumbnail=true; }
+                        if(item.data.thumbnail.match('http')) thumbnail=true;
 
                         return <div className="row" key={idx} style={{marginBottom:'10px'}}>
                             { thumbnail ? <Thumbnail img={item.data.thumbnail}/> : '' }

@@ -36,7 +36,7 @@ module.exports = React.createClass({
             snabbt(element, 'attention', {
                 rotation: [0, 0, Math.PI/2],
                 springConstant: 1.9,
-                springDeceleration: 0.9,
+                springDeceleration: 0.9
             });
             this.setState({buttonText: "Spin me around", buttonClicked: 1, buttonStyle:'success'});
         }
@@ -48,7 +48,7 @@ module.exports = React.createClass({
             snabbt(element, 'attention', {
                 position: [50, 0, 0],
                 springConstant: 2.4,
-                springDeceleration: 0.9,
+                springDeceleration: 0.9
             });
         }, 1500);
     },
@@ -59,8 +59,7 @@ module.exports = React.createClass({
                 <Col md={12}><Breadcrumbs /></Col>
             </Row>
             <Row className="show-grid">
-                <Col md={12}>
-                </Col>
+                <Col md={12} />
             </Row>
             <Row className="show-grid">
                 <Col md={12}>

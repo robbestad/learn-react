@@ -45,11 +45,15 @@ var ApiController = React.createClass({
 /** Component */
 
 var ApiComponent = React.createClass({
+    displayName:"ApiComponent",
     fetchPosts: function () {
         ApiActions.fetchPosts();
     },
     componentWillMount() {
         this.fetchPosts();
+    },
+    propTypes:{
+        posts: React.PropTypes.object
     },
     render: function () {
         return <Grid className="flyin-widget">

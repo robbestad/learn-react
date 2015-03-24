@@ -4,6 +4,7 @@ var React = require('react'),
     {RouteHandler, Link} = require('react-router'),
     Headroom = require("react-headroom"),
     Hammer = require('react-hammerjs'),
+    $ = require('jquery'),
     LoginStore = require("./login/store");
 
 let Handler = (function(){

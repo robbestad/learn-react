@@ -15,6 +15,7 @@
   "nonstandard": true,
   "sub": true,
   "undef": true,
+  "mocha": true,
   "unused": true,
   "multistr":true,
   "globals": {
@@ -22,7 +23,13 @@
     "document": false,
     "window": false,
     "self": false,
-    "$": false
+    "$": false,
+    "process": false,
+    "module": false,
+    "exports": false,
+    "console": false,
+    "it": false,
+    "describe": false
   }
 }
 

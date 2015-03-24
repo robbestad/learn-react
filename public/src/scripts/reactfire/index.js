@@ -11,6 +11,11 @@ let ReactfireDemo = React.createClass({
 
     displayName: 'Firebase and Reactfire Example',
 
+    propTypes: {
+        baseUrl: React.PropTypes.string,
+        strings: React.PropTypes.string
+    },
+
     mixins: [ReactFireMixin],
 
     getDefaultProps() {
@@ -57,7 +62,7 @@ let ReactfireDemo = React.createClass({
         let inputVal = input.value;
         if ('' !== inputVal) {
             let stringsRef = new Firebase(this.props.baseUrl + this.props.strings);
-            stringsRef.push({'text': inputVal}, function () {
+            stringsRef.push({text: inputVal}, function () {
                 input.value = '';
             });
         }
@@ -66,12 +71,12 @@ let ReactfireDemo = React.createClass({
         //called on click of add-button,
         // resets the Firebase
         let input = {
-            "strings": {
+            strings: {
                 "-JiEPn2FMzEZldTFUmxp": {
-                    "text": "Some text in the FIrebase"
+                    text: "Some text in the FIrebase"
                 },
                 "-JiGNoWeU_Jfjb1Q7hDk": {
-                    "text": "Some other text..."
+                    text: "Some other text..."
                 }
             }
         };

@@ -4,11 +4,9 @@
  */
 'use strict';
 
-import Router, { Route } from 'react-router';
-var React = require('react'),
-    DefaultRoute = Router.DefaultRoute,
-    Redirect = Router.Redirect,
-    Layout = require("./layout");
+import Router, { Route, DefaultRoute, Redirect } from 'react-router';
+import React from 'react';
+import Layout from './layout';
 
 // Define react-router routes
 var routes = (
@@ -38,8 +36,6 @@ var routes = (
         <Redirect from="/" to="home" />
     </Route>
 );
-
-
 
 // Run the router
 Router.run(routes, function (Handler) {

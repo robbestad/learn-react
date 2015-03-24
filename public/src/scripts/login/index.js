@@ -20,14 +20,15 @@ const LoginActions = Flux.createActions({
 });
 
 const LoggedIn = React.createClass({
-
+    displayName: "Logged in",
     mixins: [PureRenderMixin],
 
     render() {
         if (LoginStore.isAuthenticated()) {
             return <div>You are logged in!</div>
         }
-        else {
+
+        if (!LoginStore.isAuthenticated()) {
             return <span />
         }
     }
@@ -35,7 +36,7 @@ const LoggedIn = React.createClass({
 
 const Instructions = React.createClass({
     mixins: [PureRenderMixin],
-
+    displayName:"Instructions",
     render() {
             return <div>
                     <h3>Instructions</h3>

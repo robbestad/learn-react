@@ -10,6 +10,7 @@
   "scripts": {
     "start": "node start.js",
     "test": "jest",
+    "lint": "node_modules/.bin/eslint public/src/scripts/",
     "postinstall": "gulp build && gulp critical && webpack -p",
     "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build --config webpack.config.dev.js"
   },
@@ -61,6 +62,7 @@
   "license": "ISC",
   "dependencies": {
     "babel-core": "^4.4.5",
+    "babel-eslint": "^2.0.2",
     "babel-jest": "^4.0.0",
     "babel-loader": "^4.0.0",
     "body-parser": "^1.10.0",
@@ -73,6 +75,8 @@
     "debug": "^2.1.2",
     "del": "^1.1.1",
     "es5-shim": "^4.0.5",
+    "eslint": "^0.17.1",
+    "eslint-plugin-react": "^1.6.0",
     "express": "^4.10.6",
     "extend": "^2.0.0",
     "firebase": "^2.2.0",

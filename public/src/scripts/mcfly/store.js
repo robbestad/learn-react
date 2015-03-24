@@ -4,10 +4,15 @@ var McFly = require("mcfly");
 var Flux = new McFly();
 var _posts = [];
 var Ajax = require("../mixins/ajax");
+let lastError = lastError || false;
 
 function addPosts(data) {
     _posts = data;
 }
+function setLastError(lastErr) {
+    lastError = lastErr;
+}
+
 
 var ApiStore = Flux.createStore({
     getPosts: function () {
@@ -18,7 +23,9 @@ var ApiStore = Flux.createStore({
         Ajax.get({
             url: 'http://www.reddit.com/new/.json',
             failure: function (err) {
-                console.log(err);
+                setLastError(err);
+                ApiStore.emitChange();
+
             },
             success: function (res) {
                 let data=[];

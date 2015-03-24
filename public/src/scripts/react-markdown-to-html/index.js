@@ -1,4 +1,5 @@
 "use strict";
+import $ from 'jquery';
 
 var React = require('react');
 
@@ -7,12 +8,15 @@ var _ = require('lodash');
 
 module.exports = React.createClass({
     displayName: "Markdown2HTML",
+    propTypes:{
+      src: React.PropTypes.string.isRequired
+    },
     getInitialState: function () {
         return {
             md: ''
         };
     },
-    componentDidMount: function () {
+    componentWillMount: function () {
         $.get(this.props.src, _.bind(function(data) {
             this.setState({md: marked(data)});
         }, this));

@@ -5,7 +5,6 @@ var React = require("react"),
 var Markdown2Html = require("../react-markdown-to-html");
 var Breadcrumbs = require('react-breadcrumbs');
 
-
 var Component = React.createClass({
     displayName:"Statics Example",
     getDefaultsProps(){
@@ -30,8 +29,7 @@ var Component = React.createClass({
                 <Col md={12}><Breadcrumbs /></Col>
             </Row>
             <Row className="show-grid">
-                <Col md={12}>
-                </Col>
+                <Col md={12} />
             </Row>
 
             <Row className="show-grid">
@@ -41,9 +39,7 @@ var Component = React.createClass({
                      <div dangerouslySetInnerHTML={{__html: Component.customRender({foo:'This block is rendered with renderToStaticMarkup'})}} />
                     <Markdown2Html src="assets/STATICS.md" />
                 </Col>
-
             </Row>
-
         </Grid>;
     }
 });
@@ -51,6 +47,5 @@ var Component = React.createClass({
 //console output
 //console.log(Component.componentName);  // My Static Component
 //console.log(Component.customRender({foo:'This block is rendered with renderToStaticMarkup'})); x'x
-
 
 module.exports = Component;

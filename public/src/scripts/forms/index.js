@@ -30,9 +30,10 @@ module.exports = React.createClass({
             } else {
                 return 'warning';
             }
-        } else {
-            return 'success';
         }
+
+        return 'success';
+
     },
 
     handleChange: function() {
@@ -47,8 +48,7 @@ module.exports = React.createClass({
                 <Col md={12}><Breadcrumbs /></Col>
             </Row>
             <Row className="show-grid">
-                <Col md={12}>
-                </Col>
+                <Col md={12} />
             </Row>
 
             <Row className="show-grid">

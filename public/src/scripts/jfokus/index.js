@@ -7,7 +7,7 @@ var React = require("react");
 //let flux = new Flummox();
 
 module.exports=React.createClass({
-
+    displayName: "JFokus",
     render(){
         return <div>
             <h1>Jfokus</h1>

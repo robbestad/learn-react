@@ -1,5 +1,7 @@
 'use strict';
 
+import $ from 'jquery';
+
 var Reflux = require('reflux'),
     State = require('./state'),
     actions = require('./actions');
