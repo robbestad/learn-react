@@ -8,7 +8,7 @@
 var React = require("react"),
     {Grid, Col, Row, Input} = require('react-bootstrap');
 
-var Markdown2Html = require("../react-markdown-to-html");
+var Markdown2Html = require("react-markdown-to-html");
 
 var Breadcrumbs = require('react-breadcrumbs');
 

@@ -2,7 +2,7 @@
 
 let React = require('react'),
     Breadcrumbs = require('react-breadcrumbs'),
-    Markdown2Html = require("../react-markdown-to-html"),
+    Markdown2Html = require("react-markdown-to-html"),
     Firebase = require('firebase'),
     ReactFireMixin = require('reactfire'),
     {Grid, Col, Row, Button} = require('react-bootstrap');

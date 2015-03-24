@@ -9,21 +9,26 @@ var React = require('react');
 
 var Breadcrumbs = require('react-breadcrumbs');
 
-var Markdown2Html = require("../react-markdown-to-html");
+var Markdown2Html = require("react-markdown-to-html");
+const {Grid, Col, Row, Button} = require('react-bootstrap');
 
 // Create a react view-controller
 module.exports = React.createClass({
-    displayName:"Markdown",
-
-    render: function(): any {
+    displayName: "Markdown",
+    render() {
         return (
-            <div>
-                <Breadcrumbs />
-                <div className="flyin-widget">
-
-                    <Markdown2Html src="assets/INCLUDEMD.md" />
-            </div>
-            </div>
-        );
+            <Grid className="flyin-widget">
+                <Row className="show-grid">
+                    <Col md={12}>
+                        <Breadcrumbs separator=" | " />
+                    </Col>
+                </Row>
+                <Row className="show-grid">
+                    <Col md={12}>
+                        <Markdown2Html src="assets/INCLUDEMD.md" />
+                    </Col>
+                </Row>
+            </Grid>
+        )
     }
 });
