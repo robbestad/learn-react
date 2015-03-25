@@ -130,19 +130,20 @@
   },
   "devDependencies": {
     "babel": "^4.4.5",
-    "gulp-watch": "^3.0.0",
-    "flux": "^2.0.1",
-    "marked": "^0.3.2",
-    "jsdom": "^4.0.0",
-    "vinyl-buffer": "^1.0.0",
-    "watchify": "^2.2.1",
     "browserify": "^7.0.3",
-    "mocha-lcov-reporter": "0.0.1",
+    "flux": "^2.0.1",
+    "gulp-watch": "^3.0.0",
     "jest": "^0.1.37",
     "jest-cli": "^0.2.1",
+    "jsdom": "^4.0.0",
+    "logdown": "^1.1.1",
+    "marked": "^0.3.2",
     "mocha": "^2.1.0",
+    "mocha-lcov-reporter": "0.0.1",
     "react-hot-loader": "^1.1.1",
     "react-stickydiv": "^3.3.0",
+    "vinyl-buffer": "^1.0.0",
+    "watchify": "^2.2.1",
     "webpack-dev-server": "^1.7.0"
   }
 }

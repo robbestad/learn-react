@@ -3,6 +3,8 @@
 const React = require("react"),
     { Grid, Col, Row} = require('react-bootstrap'),
     {Link} = require('react-router'),
+    Logdown = require('logdown'),
+    debug = new Logdown({ prefix: 'home' }),
 
     {ReactFireRoute, McFlyRoute, ButtonRoute, StaticsRoute,
         LoginRoute, MarkdownRoute, RefluxRoute, FormsRoute,
@@ -14,6 +16,7 @@ const React = require("react"),
     LoginStore = require("../login/store"),
     PureRenderMixin = require('react/addons').addons.PureRenderMixin;
 
+
     export default React.createClass({
     mixins: [PureRenderMixin],
     //displayName: route => {
@@ -21,6 +24,10 @@ const React = require("react"),
     //},
     displayName: 'Home',
 
+    componentDidMount(){
+        debug.log('lorem *'+this.constructor.displayName+'*');
+
+    },
     render() {
 
         return <Grid className="flyin-widget">

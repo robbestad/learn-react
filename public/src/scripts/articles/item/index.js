@@ -6,6 +6,7 @@ import {Grid, Col, Row} from 'react-bootstrap';
 
 
 class ArticleItem extends React.Component {
+
     componentDidMount(){
         //console.log(this.context.router.getCurrentRoutes());
     }
@@ -26,7 +27,13 @@ class ArticleItem extends React.Component {
     }
 }
 
+ArticleItem.displayName = "Item";
+
 ArticleItem.contextTypes = {
+    router: React.PropTypes.func.isRequired
+};
+
+ArticleItem.propTypes = {
     router: React.PropTypes.func.isRequired
 };
 

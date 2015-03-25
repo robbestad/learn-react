@@ -10,7 +10,7 @@ var React = require('react');
 var Breadcrumbs = require('react-breadcrumbs');
 
 var Markdown2Html = require("react-markdown-to-html");
-const {Grid, Col, Row, Button} = require('react-bootstrap');
+const {Grid, Col, Row} = require('react-bootstrap');
 
 // Create a react view-controller
 module.exports = React.createClass({
