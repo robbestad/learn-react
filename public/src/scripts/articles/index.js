@@ -37,13 +37,17 @@ module.exports = React.createClass({
     displayName:"Articles",
     render() {
         var { router } = this.context;
-        if(router.getCurrentParams().id !== typeof 'undefined'){
+        if(router.getCurrentParams().id !== undefined){
+            console.log( router.getCurrentParams().id);
             return <RouteHandler />
-        } else {
-        return <Grid className="flyin-widget">
+        }
+
+        if(router.getCurrentParams().id ===  undefined){
+            return <Grid className="flyin-widget">
             <Row className="show-grid">
                 <Col md={12}>
                     <Breadcrumbs />
+                    test
                 </Col>
             </Row>
             <Row className="show-grid">

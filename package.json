@@ -110,7 +110,7 @@
     "object-assign": "^2.0.0",
     "react": "^0.13.x",
     "react-bootstrap": "^0.17.x",
-    "react-breadcrumbs": "^0.13.x",
+    "react-breadcrumbs": "^0.13.1",
     "react-hammerjs": "^0.2.0",
     "react-headroom": "^1.5.1",
     "react-markdown-to-html": "^1.0.10",
