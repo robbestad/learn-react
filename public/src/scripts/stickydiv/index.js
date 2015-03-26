@@ -17,10 +17,12 @@ module.exports = React.createClass({
         return (<span className="flyin-widget">
             <Sticky offsetTop={70} zIndex={10}>
                 <span className="centered" style={{
-                    backgroundColor: '#fff', color: 'red',
-                    fontSize: 24, padding: 2, opacity: 1,
-                    position:'absolute',top:-73, width:'100%'
-                }}>I'm really sticky</span>
+                    backgroundColor: 'transparent', color: 'red',
+                    fontSize: 24, padding: 1, opacity: 1,
+                    position:'absolute',top:-30, width:'100%',zIndex:0
+                }}>
+                <span style={{backgroundColor: '#fff',boxShadow:'0px 5px 15px 15px rgba(0,0,0,0.75)'}}>I'm really sticky</span>
+                </span>
             </Sticky>
             <Grid >
                 <Row className="show-grid">

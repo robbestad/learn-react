@@ -4,7 +4,7 @@ const React = require("react"),
     { Grid, Col, Row} = require('react-bootstrap'),
     {Link} = require('react-router'),
     Logdown = require('logdown'),
-    debug = new Logdown({ prefix: 'home' }),
+    debug = new Logdown({ prefix: 'Welcome' }),
 
     {ReactFireRoute, McFlyRoute, ButtonRoute, StaticsRoute, StickyRoute,
         LoginRoute, MarkdownRoute, RefluxRoute, FormsRoute,
@@ -19,14 +19,9 @@ const React = require("react"),
 
     export default React.createClass({
     mixins: [PureRenderMixin],
-    //displayName: route => {
-    //    return `Home`;
-    //},
     displayName: 'Home',
-
     componentDidMount(){
-        debug.log('lorem *'+this.constructor.displayName+'*');
-
+        debug.log('to *Learn React*');
     },
     render() {
 
