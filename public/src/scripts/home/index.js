@@ -6,7 +6,7 @@ const React = require("react"),
     Logdown = require('logdown'),
     debug = new Logdown({ prefix: 'home' }),
 
-    {ReactFireRoute, McFlyRoute, ButtonRoute, StaticsRoute,
+    {ReactFireRoute, McFlyRoute, ButtonRoute, StaticsRoute, StickyRoute,
         LoginRoute, MarkdownRoute, RefluxRoute, FormsRoute,
         ChartsRoute, AnimationsRoute, BreadcrumbsRoute} = require('../routes'),
 
@@ -124,6 +124,18 @@ const React = require("react"),
                     <span className="label blue">Statics</span>
                 &nbsp;
                     <span className="label blue">renderToStaticMarkup</span>
+                </Col>
+
+                <Col xs={12} md={6} className="columnBox">
+                    <Link to={StickyRoute.name}>
+                        <strong>
+                            StickyDiv example
+                        </strong>
+                    </Link>
+                    <br/>
+                    Demonstrates the use of StickyDiv.
+                    <br/>
+                    <span className="label blue">StickyDiv</span>
                 </Col>
 
                 <Col xs={12} md={6} className="columnBox">
