@@ -61,3 +61,8 @@ exports.BreadcrumbsRoute = Router.createRoute({
     name: '/breadcrumbs',
     handler: require("./breadcrumbs")
 });
+
+exports.ComponentRoute = Router.createRoute({
+    name: '/component',
+    handler: require("./component")
+});
