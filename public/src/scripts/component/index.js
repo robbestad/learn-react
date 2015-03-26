@@ -24,7 +24,7 @@ var MyComponent = React.createClass({displayName: 'MyComponent',
             border: '1px solid grey',
             padding: '0.5em'
         };
-        return (<div style={divStyle} class="commentBox">{this.props.greeting}, world!</div>);
+        return (<div style={divStyle} className="commentBox">{this.props.greeting}, world!</div>);
     }
 });
 
