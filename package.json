@@ -116,6 +116,7 @@
     "react-markdown-to-html": "^1.0.10",
     "react-router": "^0.13.x",
     "react-router-bootstrap": "^0.9.1",
+    "react-stickydiv": "^3.3.2",
     "react-tools": "^0.13.x",
     "reactfire": "^0.4.0",
     "reactify": "^0.17.1",
