@@ -21,12 +21,12 @@ const React = require("react"),
     mixins: [PureRenderMixin],
     displayName: 'Home',
     componentDidMount(){
-        debug.log('Welcome to *Learn React*');
-        debug.log('*Learn React* is a collection of examples, ' +
-        'modules and tutorials for _Reactjs_. Additional examples ' +
+        console.log('%cWelcome to Learn React! ', 'background: #333; color: #aaa');
+        console.log('%cLearn React!', 'font-weight:bold;', 'is a collection of examples, ' +
+        'modules and tutorials for Reactjs');console.log('Additional examples ' +
         'are being added every now and then, so be sure to ' +
         'bookmark and come again!');
-        debug.log('http://learnreact.robbestad.com')
+        console.log('%chttp://learnreact.robbestad.com','background: #999;');
     },
     render() {
 
