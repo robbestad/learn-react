@@ -24,7 +24,11 @@ var routes = (
         <Route name="mcfly" handler={require('./mcfly')} />
         <Route name="source" handler={require('./source')} />
         <Route name="articles" handler={require('./articles')}>
-        <Route name="/articles/article/:id" handler={require('./articles/item')} /></Route>
+            <Route name="article/:id" handler={require('./articles/item/index')} >
+            </Route>
+            <Route name="article/:id/edit" handler={require('./articles/item/edit')} >
+            </Route>
+        </Route>
         <Route name="breadcrumbs" handler={require('./breadcrumbs')} />
         <Route name="reactfire" handler={require('./reactfire')} />
         <Route name="forms" handler={require('./forms')} />

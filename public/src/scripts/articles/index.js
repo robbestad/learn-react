@@ -38,7 +38,6 @@ module.exports = React.createClass({
     render() {
         var { router } = this.context;
         if(router.getCurrentParams().id !== undefined){
-            console.log( router.getCurrentParams().id);
             return <RouteHandler />
         }
 

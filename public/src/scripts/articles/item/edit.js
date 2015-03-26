@@ -6,25 +6,27 @@ import {Grid, Col, Row} from 'react-bootstrap';
 import {Link, RouteHandler} from 'react-router';
 
 
-class ArticleItem extends React.Component {
+class ArticleItemEdit extends React.Component {
 
     componentDidMount(){
         //console.table(this.context.router.getCurrentRoutes());
         //console.table(this.context.router.getCurrentParams());
+        //        <Route name="/articles/article/:id/edit" handler={require('./articles/item/edit')} />
+
     }
 
     render() {
         return <Grid className="flyin-widget">
             <Row className="show-grid">
                 <Col md={12}>
-                    <Breadcrumbs />
+                    <Breadcrumbs breadcrumbName={"Editing "+this.context.router.getCurrentParams().id} />
                 </Col>
             </Row>
             <Row className="show-grid">
                 <Col md={12}>
-                    The article
+                    Editing article {this.context.router.getCurrentParams().id}
                     <br/>
-                    <Link to="/articles/article/1/edit">Edit {this.context.router.getCurrentParams().id}</Link>
+                    <Link to="/articles/article/1">Back to {this.context.router.getCurrentParams().id}</Link>
 
                 </Col>
             </Row>
@@ -32,14 +34,13 @@ class ArticleItem extends React.Component {
     }
 }
 
-ArticleItem.displayName = "Item";
 
-ArticleItem.contextTypes = {
+ArticleItemEdit.contextTypes = {
     router: React.PropTypes.func.isRequired
 };
 
-ArticleItem.propTypes = {
+ArticleItemEdit.propTypes = {
     router: React.PropTypes.func
 };
 
-export default ArticleItem;
+export default ArticleItemEdit;
