@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Click a button class
+ * Basic reusable component
  * @flow
  */
 
