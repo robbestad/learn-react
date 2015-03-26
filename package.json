@@ -142,7 +142,6 @@
     "mocha": "^2.1.0",
     "mocha-lcov-reporter": "0.0.1",
     "react-hot-loader": "^1.1.1",
-    "react-stickydiv": "^3.3.2",
     "vinyl-buffer": "^1.0.0",
     "watchify": "^2.2.1",
     "webpack-dev-server": "^1.7.0"
