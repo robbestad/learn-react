@@ -4,7 +4,7 @@ const React = require("react"),
     { Grid, Col, Row} = require('react-bootstrap'),
     {Link} = require('react-router'),
     Logdown = require('../logdown/src'),
-    debug = new Logdown({ prefix: 'Welcome' }),
+    debug = new Logdown(),
 
     {ReactFireRoute, McFlyRoute, ButtonRoute, StaticsRoute, StickyRoute,
         LoginRoute, MarkdownRoute, RefluxRoute, FormsRoute,
@@ -21,7 +21,12 @@ const React = require("react"),
     mixins: [PureRenderMixin],
     displayName: 'Home',
     componentDidMount(){
-        debug.log('to *Learn React*');
+        debug.log('Welcome to *Learn React*');
+        debug.log('*Learn React* is a collection of examples, ' +
+        'modules and tutorials for _Reactjs_. Additional examples ' +
+        'are being added every now and then, so be sure to ' +
+        'bookmark and come again!');
+        debug.log('http://learnreact.robbestad.com')
     },
     render() {
 
