@@ -17,12 +17,12 @@ class ArticleItem extends React.Component {
         return <Grid className="flyin-widget">
             <Row className="show-grid">
                 <Col md={12}>
-                    <Breadcrumbs />
+                    <Breadcrumbs breadcrumbName={"Article "+this.context.router.getCurrentParams().id} />
                 </Col>
             </Row>
             <Row className="show-grid">
                 <Col md={12}>
-                    The article
+                    Viewing article {this.context.router.getCurrentParams().id}
                     <br/>
                     <Link to="/articles/article/1/edit">Edit {this.context.router.getCurrentParams().id}</Link>
 
