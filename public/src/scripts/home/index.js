@@ -8,7 +8,7 @@ const React = require("react"),
 
     {ReactFireRoute, McFlyRoute, ButtonRoute, StaticsRoute, StickyRoute,
         LoginRoute, MarkdownRoute, RefluxRoute, FormsRoute,
-        ChartsRoute, AnimationsRoute, BreadcrumbsRoute} = require('../routes'),
+        ChartsRoute, AnimationsRoute, BreadcrumbsRoute, ComponentRoute} = require('../routes'),
 
     ApiStore = require("../mcfly/store"),
     RefluxStore = require("../reflux/store"),
@@ -249,6 +249,19 @@ const React = require("react"),
                     <span className="label blue">breadcrumbs</span>
                 &nbsp;
                     <span className="label blue">react-router</span>
+                </Col>
+
+
+                <Col xs={12} md={6} className="columnBox">
+                    <Link to={ComponentRoute.name}>
+                        <strong>
+                            Basic react component example
+                        </strong>
+                    </Link>
+                    <br/>
+                    Creating a simple react component.
+                    <br/>
+                    <span className="label blue">react</span>
                 </Col>
 
             </Row>
