@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Logdown.js</title>
+  <style>
+    html {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      height: 100%;
+    }
+
+    h1 {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: 300;
+      text-transform: uppercase;
+      color: #333333;
+      padding: 20px;
+      display: inline-block;
+      border: 2px solid #333333;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-rendering: optimizelegibility;
+    }
+
+    .demo-is-running {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://github.com/caiogondim/logdown">
+    <img
+      style="position: absolute; top: 0; right: 0; border: 0;"
+      src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67"
+      alt="Fork me on GitHub"
+      data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"
+    >
+  </a>
+
+  <h1 class="open-devtools">Open your devtools</h1>
+  <h1 class="demo-is-running">Demo is running</h1>
+  <script src="lib/logdown.js"></script>
+  <script src="lib/devtools-detect.js"></script>
+  <script>
+    var demo = new Logdown({prefix: 'demo'})
+
+    function showLogMessages() {
+      var gap = 2000
+      var i = 1
+      var timeout
+
+      demo.log('Initializing demo')
+
+      timeout = i * gap
+      i += 1
+      setTimeout(function() {
+        var log1 = new Logdown({prefix: 'foo:bar'})
+        log1.log('Lorem *ipsum* dolor sit _amet_ foo bar')
+        log1.warn('The method `foo()` is deprecated. You should use `bar()`')
+      }, timeout)
+
+      timeout = i * gap
+      i += 1
+      setTimeout(function() {
+        var log2 = new Logdown({prefix: 'foo:quz'})
+        log2.log('Lorem *ipsum* dolor sit _amet_ foo bar')
+        log2.warn('The method `foo()` is deprecated. You should use `bar()`')
+      }, timeout)
+
+      timeout = i * gap
+      i += 1
+      setTimeout(function() {
+        var log3 = new Logdown({prefix: 'baz'})
+        log3.info('Sit viderer eripuit tincidunt an')
+        log3.error('The method `dolor()` is no longer supported.')
+      }, timeout)
+
+      timeout = i * gap
+      i += 1
+      setTimeout(function() {
+        var log4 = new Logdown({prefix: 'corge'})
+        log4.log('Id ius atqui interpretaris. Usu ea *dolor* alterum labores')
+        log4.warn('Simul *nonumes* qui ei.')
+      }, timeout)
+
+      timeout = i * gap
+      i += 1
+      setTimeout(function() {
+        var log4 = new Logdown({prefix: 'grault'})
+        log4.log('Molestie nominati _recteque_ no eam, qui *ei* putant delicatissi')
+        log4.log('Cum at delenit *apeirian* forensibus.')
+      }, timeout)
+
+      timeout = i * gap
+      i += 1
+      setTimeout(function() {
+        var log6 = new Logdown({prefix: 'waldo'})
+        log6.log('Molestie nominati _recteque_ no eam, qui *ei* putant delicatissi')
+        log6.log('Cum at delenit *apeirian* forensibus.')
+      }, timeout)
+
+      timeout = i * gap
+      i += 1
+      setTimeout(function() {
+        demo.log('Demo finished')
+      }, timeout)
+    }
+
+    window.addEventListener('devtoolschange', function() {
+      if (!window.devtools.open) {
+        demo.log('Devtools was open')
+        document.querySelector('.open-devtools').style.display = 'none'
+        document.querySelector('.demo-is-running').style.display = 'block'
+        showLogMessages()
+      }
+    })
+
+  </script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga')
+
+    ga('create', 'UA-60987420-1', 'auto')
+    ga('send', 'pageview')
+  </script>
+</body>
+</html>

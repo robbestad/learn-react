@@ -9,7 +9,9 @@ const React = require('react');
 
 var Sticky = require('react-stickydiv');
 const Breadcrumbs = require('react-breadcrumbs'),
-    {Grid, Col, Row} = require('react-bootstrap');
+    {Grid, Col, Row} = require('react-bootstrap'),
+    Markdown2Html = require("react-markdown-to-html");
+
 
 module.exports = React.createClass({
     displayName: "Sticky Div",
@@ -28,6 +30,7 @@ module.exports = React.createClass({
                 <Row className="show-grid">
                     <Col md={12}>
                         <Breadcrumbs />
+                        <Markdown2Html src="assets/STICKY.md" />
 
                     </Col>
                 </Row>

@@ -5,7 +5,8 @@ module.exports = function(config){
     return gulp
       .src(
         ['./public/src/index.html', './public/src/assets/**/*.*', 
-        './public/src/img/**/*.*', './public/src/favicon.ico'
+        './public/src/img/**/*.*', './public/src/favicon.ico',
+        './public/src/jquery.min.map',
         ],
         {base:'./public/src/'}
       )

@@ -1,0 +1,83 @@
+{
+  "name": "logdown",
+  "version": "1.1.1",
+  "description": "Debug utility with markdown support that runs on browser and server",
+  "main": "dist/index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "gulp test",
+    "build": "gulp build",
+    "deploy:example": "gulp deploy:example",
+    "test:travisci": "gulp test:travisci"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caiogondim/logdown"
+  },
+  "keywords": [
+    "log",
+    "markdown",
+    "debug",
+    "console",
+    "info",
+    "error",
+    "logging"
+  ],
+  "author": {
+    "name": "Caio Gondim",
+    "email": "me@caiogondim.com",
+    "url": "http://caiogondim.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caiogondim/logdown/issues"
+  },
+  "homepage": "https://github.com/caiogondim/logdown",
+  "devDependencies": {
+    "chai": "^2.0.0",
+    "gulp": "^3.8.11",
+    "gulp-gh-pages": "^0.5.0",
+    "gulp-header": "^1.2.2",
+    "gulp-jscs": "^1.4.0",
+    "gulp-jshint": "^1.9.2",
+    "gulp-mocha": "^2.0.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.1.0",
+    "jshint-stylish": "^1.0.0",
+    "karma": "^0.12.31",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-cli": "0.0.4",
+    "karma-firefox-launcher": "^0.1.4",
+    "karma-mocha": "^0.1.10",
+    "karma-opera-launcher": "^0.1.0",
+    "karma-safari-launcher": "^0.1.1",
+    "karma-sinon": "^1.0.4",
+    "mocha": "^2.1.0",
+    "sinon": "^1.12.2"
+  },
+  "gitHead": "4d82513ac3d25db0148473344bee4c81fa424edc",
+  "_id": "logdown@1.1.1",
+  "_shasum": "20350c8608f72a1fa9811d194a90e163fc198146",
+  "_from": "logdown@*",
+  "_npmVersion": "2.6.0",
+  "_nodeVersion": "0.12.0",
+  "_npmUser": {
+    "name": "caiogondim",
+    "email": "me@caiogondim.com"
+  },
+  "maintainers": [
+    {
+      "name": "caiogondim",
+      "email": "me@caiogondim.com"
+    }
+  ],
+  "dist": {
+    "shasum": "20350c8608f72a1fa9811d194a90e163fc198146",
+    "tarball": "http://registry.npmjs.org/logdown/-/logdown-1.1.1.tgz"
+  },
+  "_resolved": "https://registry.npmjs.org/logdown/-/logdown-1.1.1.tgz",
+  "readme": "ERROR: No README data found!"
+}

@@ -3,7 +3,7 @@
 const React = require("react"),
     { Grid, Col, Row} = require('react-bootstrap'),
     {Link} = require('react-router'),
-    Logdown = require('logdown'),
+    Logdown = require('../logdown/src'),
     debug = new Logdown({ prefix: 'Welcome' }),
 
     {ReactFireRoute, McFlyRoute, ButtonRoute, StaticsRoute, StickyRoute,
