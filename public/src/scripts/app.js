@@ -8,6 +8,16 @@ import Router, { Route, DefaultRoute, Redirect } from 'react-router';
 import React from 'react';
 import Layout from './layout';
 
+/*
+
+ <Route name="articles" handler={require('./articles')}>
+ <Route name="article/:id" handler={require('./articles/item/index')} >
+ </Route>
+ <Route name="article/:id/edit" handler={require('./articles/item/edit')} >
+ </Route>
+ </Route>
+
+ */
 // Define react-router routes
 var routes = (
     <Route name="/" handler={Layout}>
@@ -25,8 +35,8 @@ var routes = (
         <Route name="source" handler={require('./source')} />
         <Route name="articles" handler={require('./articles')}>
             <Route name="article/:id" handler={require('./articles/item/index')} >
-            </Route>
-            <Route name="article/:id/edit" handler={require('./articles/item/edit')} >
+                <Route name="edit" handler={require('./articles/item/edit')} >
+                </Route>
             </Route>
         </Route>
         <Route name="breadcrumbs" handler={require('./breadcrumbs')} />

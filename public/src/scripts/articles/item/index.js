@@ -5,15 +5,31 @@ import Breadcrumbs from 'react-breadcrumbs';
 import {Grid, Col, Row} from 'react-bootstrap';
 import {Link, RouteHandler} from 'react-router';
 
+//class Base1 {
+//    constructor(a) {
+//        this.a = a;
+//    }
+//}
+//let b1 = new Base1(1);
+
+//console.log(b1);-
 
 class ArticleItem extends React.Component {
-
-    componentDidMount(){
-        //console.table(this.context.router.getCurrentRoutes());
-        //console.table(this.context.router.getCurrentParams());
+    constructor(props) {
+        //super(props);
+        //console.log('super...') //=> undefined
+        //console.log(props) //=> undefined
     }
-
+    componentDidMount(){
+        console.log(this.context.router.getCurrentPathname().split("/")[this.context.router.getCurrentPathname().split("/").length-1]);
+    }
+    getCurrentPathFragment(){
+        return this.context.router.getCurrentPathname().split("/")[this.context.router.getCurrentPathname().split("/").length-1];
+    }
     render() {
+        if(this.getCurrentPathFragment()==='edit'){
+            return <RouteHandler />;
+        }
         return <Grid className="flyin-widget">
             <Row className="show-grid">
                 <Col md={12}>
@@ -24,7 +40,7 @@ class ArticleItem extends React.Component {
                 <Col md={12}>
                     Viewing article {this.context.router.getCurrentParams().id}
                     <br/>
-                    <Link to="/articles/article/1/edit">Edit {this.context.router.getCurrentParams().id}</Link>
+                    <Link to="/articles/article/2/edit">Edit {this.context.router.getCurrentParams().id}</Link>
 
                 </Col>
             </Row>
