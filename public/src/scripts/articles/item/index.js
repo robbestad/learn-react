@@ -40,7 +40,7 @@ class ArticleItem extends React.Component {
                 <Col md={12}>
                     Viewing article {this.context.router.getCurrentParams().id}
                     <br/>
-                    <Link to="/articles/article/2/edit">Edit {this.context.router.getCurrentParams().id}</Link>
+                    <Link to={"/articles/article/"+this.context.router.getCurrentParams().id+"/edit"}>Edit {this.context.router.getCurrentParams().id}</Link>
 
                 </Col>
             </Row>
