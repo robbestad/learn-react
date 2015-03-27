@@ -15,10 +15,10 @@ import {Link, RouteHandler} from 'react-router';
 //console.log(b1);-
 
 class ArticleItem extends React.Component {
-    constructor(props) {
-        //super(props);
-        //console.log('super...') //=> undefined
-        //console.log(props) //=> undefined
+    constructor(props, context) {
+        super(props);
+        console.log("%c current path from constructor", 'color:red');
+        console.log(context.router.getCurrentPathname()) //=> undefined
     }
     componentDidMount(){
         console.log(this.context.router.getCurrentPathname().split("/")[this.context.router.getCurrentPathname().split("/").length-1]);
