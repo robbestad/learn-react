@@ -7,10 +7,7 @@ const React = require("react"),
   debug = new Logdown(),
   ApiStore = require("../mcfly/store"),
   RefluxStore = require("../reflux/store"),
-  LoginStore = require("../login/store"),
-  {ReactFireRoute, McFlyRoute, ButtonRoute, StaticsRoute, StickyRoute,
-    LoginRoute, MarkdownRoute, RefluxRoute, FormsRoute,
-    ChartsRoute, AnimationsRoute, BreadcrumbsRoute, ComponentRoute} = require('../routes');
+  LoginStore = require("../login/store");
 
 module.exports = React.createClass({
   displayName: 'Home',
@@ -18,10 +15,6 @@ module.exports = React.createClass({
     console.log('%cWelcome to Learn React! ', 'background: #333; color: #aaa');
     console.log('%cLearn React!', 'font-weight:bold;', 'is a collection of examples, ' +
       'modules and tutorials for Reactjs');
-    console.log('Additional examples ' +
-      'are being added every now and then, so be sure to ' +
-      'bookmark and come again!');
-    console.log('%chttp://learnreact.robbestad.com', 'background: #999;');
   },
 
   render() {
@@ -46,52 +39,11 @@ module.exports = React.createClass({
 
 
       <Row>
-        <Col xs={12} md={6} className="columnBox">
-          <Link to={LoginRoute.props.path}>
-            <strong>
-              Login example
-            </strong>
-          </Link>
-          <br/>
-          Demonstrates a login component that passes credentials to a third party API and
-          authenticates with Oauth2.
-          <br/>
 
-          <em>Current login status: {LoginStore.isAuthenticated().toString()}</em>
-
-          <br/>
-          <span className="label blue">Login</span>
-          &nbsp;
-          <span className="label blue">McFly</span>
-          &nbsp;
-          <span className="label blue">Oauth</span>
-
-
-        </Col>
-
-        <Col xs={12} md={6} className="columnBox">
-          <Link to={ReactFireRoute.props.path}>
-            <strong>
-              ReactFire example
-            </strong>
-          </Link>
-          <br/>
-          Demonstrates the use of ReactFire, a convenience library for one-way data
-          binding to a Firebase. Also uses standard Firebase API in order to
-          populate the Firebase.
-
-          <br/>
-          <span className="label blue">Firebase</span>
-          &nbsp;
-          <span className="label blue">ReactFire</span>
-          &nbsp;
-          <span className="label blue">Data binding</span>
-
-        </Col>
 
 
         <Col xs={12} md={6} className="columnBox">
-          <Link to={ButtonRoute.props.path}>
+          <Link to="/button">
             <strong>
               Button example
             </strong>
@@ -109,7 +61,7 @@ module.exports = React.createClass({
         </Col>
 
         <Col xs={12} md={6} className="columnBox">
-          <Link to={StickyRoute.props.path}>
+          <Link to="/stickydiv">
             <strong>
               StickyDiv example
             </strong>
@@ -121,7 +73,7 @@ module.exports = React.createClass({
         </Col>
 
         <Col xs={12} md={6} className="columnBox">
-          <Link to={MarkdownRoute.props.path}>
+          <Link to="/markdown">
             <strong>
               Markdown example
             </strong>
@@ -136,50 +88,9 @@ module.exports = React.createClass({
         </Col>
 
 
-        <Col xs={12} md={6} className="columnBox">
-          <Link to={McFlyRoute.props.path}>
-            <strong>
-              McFly example
-            </strong>
-          </Link>
-          <br/>
-          This component uses McFly to populate a datastore with a JSON resource using AJAX.
-          <br/>
-          The McFly store currently holds&nbsp;
-          <strong>{ApiStore.getPosts().length}</strong>
-          &nbsp;objects
-          <br/>
-          <span className="label blue">McFly</span>
-          &nbsp;
-          <span className="label blue">Flux</span>
-          &nbsp;
-          <span className="label blue">JSON</span>
-
-        </Col>
 
         <Col xs={12} md={6} className="columnBox">
-          <Link to={RefluxRoute.props.path}>
-            <strong>
-              Reflux example
-            </strong>
-          </Link>
-          <br/>
-          This component uses Reflux to populate a datastore with a JSON resource using AJAX.
-          <br/>
-          The Reflux store currently holds&nbsp;
-          <strong>{RefluxStore.getPosts().length}</strong>
-          &nbsp;objects
-          <br/>
-          <span className="label blue">Reflux</span>
-          &nbsp;
-          <span className="label blue">Flux</span>
-          &nbsp;
-          <span className="label blue">JSON</span>
-        </Col>
-
-
-        <Col xs={12} md={6} className="columnBox">
-          <Link to={FormsRoute.props.path}>
+          <Link to="/forms">
             <strong>
               Form validation example
             </strong>
@@ -193,7 +104,7 @@ module.exports = React.createClass({
         </Col>
 
         <Col xs={12} md={6} className="columnBox">
-          <Link to={ChartsRoute.props.path}>
+          <Link to="/charts">
             <strong>
               Chart example
             </strong>
@@ -208,7 +119,7 @@ module.exports = React.createClass({
 
 
         <Col xs={12} md={6} className="columnBox">
-          <Link to={AnimationsRoute.props.path}>
+          <Link to="/animations">
             <strong>
               Animations example
             </strong>
@@ -220,7 +131,7 @@ module.exports = React.createClass({
         </Col>
 
         <Col xs={12} md={6} className="columnBox">
-          <Link to={BreadcrumbsRoute.props.path}>
+          <Link to="/breadcrumbs">
             <strong>
               Breadcrumbs example
             </strong>
@@ -234,35 +145,7 @@ module.exports = React.createClass({
         </Col>
 
 
-        <Col xs={12} md={6} className="columnBox">
-          <Link to={ComponentRoute.props.path}>
-            <strong>
-              Basic react component example
-            </strong>
-          </Link>
-          <br/>
-          Creating a simple react component.
-          <br/>
-          <span className="label blue">react</span>
-        </Col>
-
       </Row>
     </Grid>
   }
 });
-
-//    ApiStore = require("../mcfly/store"),
-//    RefluxStore = require("../reflux/store"),
-//    //Rx = require('rx'),
-//    LoginStore = require("../login/store");
-//
-//    export default React.createClass({
-//    displayName: 'Home',
-//    componentDidMount(){
-//        console.log('%cWelcome to Learn React! ', 'background: #333; color: #aaa');
-//        console.log('%cLearn React!', 'font-weight:bold;', 'is a collection of examples, ' +
-//        'modules and tutorials for Reactjs');console.log('Additional examples ' +
-//        'are being added every now and then, so be sure to ' +
-//        'bookmark and come again!');
-//        console.log('%chttp://learnreact.robbestad.com','background: #999;');
-//    },

@@ -2,7 +2,7 @@
 
 var React = require('react'),
   {findDOMNode} = require('react-dom'),
-  {RouteHandler, Link} = require('react-router'),
+  {Link} = require('react-router'),
   Hammer = require('react-hammerjs'),
   $ = require('jquery'),
   LoginStore = require("./login/store");
@@ -154,17 +154,12 @@ module.exports = React.createClass({
         <nav ref="mainMenu" className="main-menu header-panel">
           <ul >
             <li onClick={this.closeMenu}>
-              <Link to="home">Home</Link>
+              <Link to="/">Home</Link>
             </li>
 
             <li onClick={this.closeMenu}>
-              <Link to="source">Source</Link>
+              <Link to="/source">Source</Link>
             </li>
-
-            <li onClick={this.closeMenu}>
-              <Link to="login">Login</Link>
-            </li>
-
 
           </ul>
         </nav>
@@ -237,9 +232,6 @@ module.exports = React.createClass({
         <div className="container">
           <div className="logo-wrap">
             <h2 className="page-footer">Learn React</h2>
-            <p>
-              <Link to="/login">Login</Link> status: {LoginStore.isAuthenticated().toString()}
-            </p>
           </div>
           <ul className="footer-links">
             <li>
@@ -248,8 +240,6 @@ module.exports = React.createClass({
           </ul>
         </div>
       </div>
-
     </section>)
-
   }
 });

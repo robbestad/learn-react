@@ -13,7 +13,7 @@ module.exports = React.createClass({
             <Grid className="flyin-widget">
                 <Row className="show-grid">
                     <Col md={12}>
-                        <Breadcrumbs separator=" | " />
+                        <Breadcrumbs {...this.props} separator=" | " />
                     </Col>
                 </Row>
                 <Row className="show-grid">

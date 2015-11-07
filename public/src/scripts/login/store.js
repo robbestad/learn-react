@@ -5,7 +5,6 @@ let Ajax = require("../mixins/ajax");
 let loggedIn = loggedIn || false;
 let lastError = lastError || false;
 
-//const apiUrl="http://api-robbestad.dev";
 const apiUrl="https://morning-forest-9780.herokuapp.com";
 
 function setLoggedIn() {

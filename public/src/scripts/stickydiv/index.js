@@ -30,7 +30,7 @@ module.exports = React.createClass({
             <Grid >
               <Row className="show-grid">
                 <Col md={12}>
-                  <Breadcrumbs {...this.props} />
+                  <Breadcrumbs routes={this.props.routes} />
                   <Markdown2Html src="assets/STICKY.md"/>
 
                 </Col>

@@ -6,7 +6,6 @@ exports.StickyRoute = (<Route name="Stickydiv" path="/stickydiv" component={requ
 exports.McFlyRoute = (<Route name="McFly" path="/mcfly" component={require("./mcfly")}/>);
 exports.ReactFireRoute = (<Route name="ReactFire" path="/reactfire" component={require("./reactfire")}/>);
 exports.ButtonRoute = (<Route name="Button" path="/button" component={require("./button")}/>);
-exports.StaticsRoute = (<Route name="Statics" path="/static" component={require("./static")}/>);
 exports.MarkdownRoute = (<Route name="Markdown" path="/markdown" component={require("./markdown")}/>);
 exports.LoginRoute = (<Route name="Login" path="/login" component={require("./login")}/>);
 exports.RefluxRoute = (<Route name="Reflux" path="/reflux" component={require("./reflux")}/>);
