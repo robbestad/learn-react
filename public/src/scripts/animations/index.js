@@ -56,7 +56,7 @@ module.exports = React.createClass({
     render: function () {
         return <Grid className="flyin-widget">
             <Row className="show-grid">
-                <Col md={12}><Breadcrumbs /></Col>
+                <Col md={12}><Breadcrumbs {...this.props} /></Col>
             </Row>
             <Row className="show-grid">
                 <Col md={12} />

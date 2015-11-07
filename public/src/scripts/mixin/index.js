@@ -39,7 +39,7 @@ var Mixin = React.createClass({
     render() {
 
         return <div >
-            <Breadcrumbs />
+            <Breadcrumbs {...this.props} />
             <div className="flyin-widget">
 
                 <h1>Mixin</h1>

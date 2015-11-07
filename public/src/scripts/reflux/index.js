@@ -60,7 +60,7 @@ module.exports = React.createClass({
                 return <Grid className="flyin-widget">
                     <Row className="show-grid">
                         <Col md={12}>
-                            <Breadcrumbs />
+                            <Breadcrumbs {...this.props} />
                         </Col>
                     </Row>
                     <Row className="show-grid" >
@@ -96,7 +96,7 @@ module.exports = React.createClass({
                 return <Grid className="flyin-widget">
                     <Row className="show-grid">
                         <Col md={12}>
-                            <Breadcrumbs />
+                            <Breadcrumbs {...this.props} />
                         </Col>
                     </Row>
                     <Row className="show-grid">

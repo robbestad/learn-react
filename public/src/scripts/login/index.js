@@ -182,7 +182,7 @@ module.exports = React.createClass({
         return <Grid className="flyin-widget">
             <Row className="show-grid">
                 <Col md={12}>
-                    <Breadcrumbs />
+                    <Breadcrumbs {...this.props} />
                         <p>
                             <b>Username:</b><br/>
                             <input ref="userName" type="text" defaultValue="marty" />
