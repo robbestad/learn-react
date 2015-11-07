@@ -33,22 +33,23 @@ let history = createHistory();
 
 render((
   <Router>
-    <Route name="Learn ReactJS" path="/" component={require('./layout')}>
-      <Route name="Home" path="home" component={require('./home')}/>
-      <Route name="Stickydiv" path="stickydiv" component={require('./stickydiv')}/>
-      <Route name="Mixin" path="mixin" component={require('./mixin')}/>
-      <Route name="Reflux" path="reflux" component={require('./reflux')}/>
-      <Route name="Login" path="login" component={require('./login')}/>
-      <Route name="Markdown" path="markdown" component={require('./markdown')}/>
-      <Route name="Button" path="button" component={require('./button')}/>
-      <Route name="McFly" path="mcfly" component={require('./mcfly')}/>
-      <Route name="Source" path="source" component={require('./source')}/>
-      <Route name="Breadcrumbs" path="breadcrumbs" component={require('./breadcrumbs')}/>
-      <Route name="Reactfire" path="reactfire" component={require('./reactfire')}/>
-      <Route name="Forms" path="forms" component={require('./forms')}/>
-      <Route name="Charts" path="charts" component={require('./charts')}/>
-      <Route name="Animations" path="animations" component={require('./animations')}/>
-      <Route name="Component" path="component" component={require('./component')}/>
+    <Route name="Learn ReactJS" component={require('./layout')}>
+      <Route name="Home" path="/" component={require('./home')}/>
+        <Route name="Stickydiv" path="stickydiv" component={require('./stickydiv')}/>
+        <Route name="Mixin" path="mixin" component={require('./mixin')}/>
+        <Route name="Reflux" path="reflux" component={require('./reflux')}/>
+        <Route name="Login" path="login" component={require('./login')}/>
+        <Route name="Markdown" path="markdown" component={require('./markdown')}/>
+        <Route name="Button" path="button" component={require('./button')}/>
+        <Route name="McFly" path="mcfly" component={require('./mcfly')}/>
+        <Route name="Source" path="source" component={require('./source')}/>
+        <Route name="Breadcrumbs" path="breadcrumbs" component={require('./breadcrumbs')}/>
+        <Route name="Reactfire" path="reactfire" component={require('./reactfire')}/>
+        <Route name="Forms" path="forms" component={require('./forms')}/>
+        <Route name="Charts" path="charts" component={require('./charts')}/>
+        <Route name="Animations" path="animations" component={require('./animations')}/>
+        <Route name="Component" path="component" component={require('./component')}/>
+        {/*  <Redirect from="/" to="/home" />*/}
     </Route>
   </Router>
 ), document.getElementById('app-root'));
