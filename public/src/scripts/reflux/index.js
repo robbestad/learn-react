@@ -8,7 +8,7 @@ var React = require("react"),
     Reflux = require('reflux'),
     store = require('./store'),
     {Grid, Col, Row} = require('react-bootstrap'),
-    PureRenderMixin = require('react/addons').addons.PureRenderMixin,
+    PureRenderMixin = require('react-addons-pure-render-mixin'),
     actions = require('./actions');
 var Breadcrumbs = require('react-breadcrumbs');
 

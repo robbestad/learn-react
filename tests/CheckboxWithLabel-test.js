@@ -10,7 +10,7 @@ var assert = require('assert');
 
 describe('CheckboxWithLabel', function() {
   it('changes the text after click', function() {
-    var React = require('react/addons');
+    var React = require('react');
     var CheckboxWithLabel = require('../src/CheckboxWithLabel');
     var TestUtils = React.addons.TestUtils;
 

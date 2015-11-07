@@ -6,8 +6,7 @@ const React = require("react"),
     McFly = require("mcfly"),
     Flux = new McFly(),
     LoginStore = require("./store"),
-    PureRenderMixin = require('react/addons').addons.PureRenderMixin;
-
+    PureRenderMixin = require('react-addons-pure-render-mixin');
 
 const LoginActions = Flux.createActions({
     login: function (userName,passWord) {
