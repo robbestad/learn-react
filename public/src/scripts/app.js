@@ -6,52 +6,50 @@
 
 import Router, { Route, DefaultRoute, Redirect } from 'react-router';
 import React from 'react';
+import {render} from 'react-dom';
 import Layout from './layout';
-
+import { createHistory } from 'history'
 /*
 
- <Route name="articles" handler={require('./articles')}>
- <Route name="article/:id" handler={require('./articles/item/index')} >
+ <Route name="articles" component={require('./articles')}>
+ <Route name="article/:id" component={require('./articles/item/index')} >
  </Route>
- <Route name="article/:id/edit" handler={require('./articles/item/edit')} >
+ <Route name="article/:id/edit" component={require('./articles/item/edit')} >
  </Route>
  </Route>
 
  */
 // Define react-router routes
+let history = createHistory();
 var routes = (
-    <Route name="/" handler={Layout}>
-        <DefaultRoute handler={require('./home')} />
+<Router history={history}>
+    <Route name="/" component={Layout}>
+        <DefaultRoute component={require('./home')} />
 
-        <Route name="stickydiv" handler={require('./stickydiv')} />
-        <Route name="static" handler={require('./static')} />
-        <Route name="mixin" handler={require('./mixin')} />
-        <Route name="reflux" handler={require('./reflux')} />
-        <Route name="login" handler={require('./login')} />
-        <Route name="markdown" handler={require('./markdown')} />
-        <Route name="home" handler={require('./home')} />
-        <Route name="button" handler={require('./button')} />
-        <Route name="mcfly" handler={require('./mcfly')} />
-        <Route name="source" handler={require('./source')} />
-        <Route name="articles" handler={require('./articles')}>
-            <Route name="article/:id" handler={require('./articles/item/index')} >
-                <Route name="edit" handler={require('./articles/item/edit')} >
+        <Route name="stickydiv" component={require('./stickydiv')} />
+        <Route name="static" component={require('./static')} />
+        <Route name="mixin" component={require('./mixin')} />
+        <Route name="reflux" component={require('./reflux')} />
+        <Route name="login" component={require('./login')} />
+        <Route name="markdown" component={require('./markdown')} />
+        <Route name="home" component={require('./home')} />
+        <Route name="button" component={require('./button')} />
+        <Route name="mcfly" component={require('./mcfly')} />
+        <Route name="source" component={require('./source')} />
+        <Route name="articles" component={require('./articles')}>
+            <Route name="article/:id" component={require('./articles/item/index')} >
+                <Route name="edit" component={require('./articles/item/edit')} >
                 </Route>
             </Route>
         </Route>
-        <Route name="breadcrumbs" handler={require('./breadcrumbs')} />
-        <Route name="reactfire" handler={require('./reactfire')} />
-        <Route name="forms" handler={require('./forms')} />
-        <Route name="charts" handler={require('./charts')} />
-        <Route name="animations" handler={require('./animations')} />
-        <Route name="component" handler={require('./component')} />
+        <Route name="breadcrumbs" component={require('./breadcrumbs')} />
+        <Route name="reactfire" component={require('./reactfire')} />
+        <Route name="forms" component={require('./forms')} />
+        <Route name="charts" component={require('./charts')} />
+        <Route name="animations" component={require('./animations')} />
+        <Route name="component" component={require('./component')} />
         <Redirect from="/" to="home" />
     </Route>
+    </Router>
 );
-
-// Run the router
-Router.run(routes, function (Handler) {
-    // Render the root app view-controller
-    React.render(<Handler />, window.document.getElementById('app-root'));
-});
-
+render(routes, document.getElementById('app-root');
