@@ -10,10 +10,10 @@ module.exports = function(config){
             .pipe(sass({
                 includePaths: config.vendor.scss || []
             }))
-            //.on('error', function(err){
-            //    gutil.log('Error in sass build:');
-            //    gutil.log(err.stack);
-            //})
+            .on('error', function(err){
+                gutil.log('Error in sass build:');
+                gutil.log(err.stack);
+            })
             .pipe(autoprefixer())
             .pipe(gulp.dest('./build'));
 
