@@ -10,8 +10,8 @@
   "scripts": {
     "start": "node start.js",
     "test": "jest",
+    "publish": "gulp build && webpack -p && git commit -am\"heroku deploy\" && git push heroku master",
     "lint": "node_modules/.bin/eslint public/src/scripts/",
-    "postinstall": "gulp build && webpack -p && cp public/src/index.html build/index.html",
     "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build --config webpack.config.dev.js"
   },
   "jest": {
