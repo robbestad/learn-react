@@ -5,7 +5,7 @@ module.exports = {
     devtool: 'eval',
 
     output: {
-        path: __dirname+'/public/dist',
+        path: __dirname+'/build',
         filename: 'bundle.js'
     },
     module: {

@@ -4,7 +4,7 @@ var  port = process.env.PORT || 8080;
 
 // all other files
 app.get('*', function (req, res) {
-  res.sendFile(__dirname+"/public/dist/"+req.path);
+  res.sendFile(__dirname+"/build/"+req.path);
 });
 
 app.listen(process.env.PORT || port, function () {
