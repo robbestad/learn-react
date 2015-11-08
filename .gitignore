@@ -1,4 +1,5 @@
 .DS_Store
+temp
 build
 ../api/run.sh
 npm-debug.log
