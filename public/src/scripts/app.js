@@ -35,6 +35,7 @@ import Animations from './animations/index';
 import Charts from './charts/index';
 import Forms from './forms/index';
 import Breadcrumbs from './breadcrumbs/index';
+import Source from './source/index';
 
 const Wrapper = React.createClass({
   render(){
@@ -50,6 +51,7 @@ render((
         <Route name="Home" path="/home" component={Home}/>
         <Route name="StickyDiv" path="/stickydiv" component={StickyDiv}/>
         <Route name="Markdown" path="/markdown" component={Markdown}/>
+        <Route name="Source" path="/source" component={Source}/>
         <Route name="Button" path="/button" component={Button}/>
         <Route name="Animations" path="/animations" component={Animations}/>
         <Route name="Charts" path="/charts" component={Charts}/>
