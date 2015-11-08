@@ -20,6 +20,7 @@ module.exports = React.createClass({
   render() {
 
     return <Grid className="flyin-widget">
+      {this.props.children}
       <Row className="show-grid" >
         <Col md={12} className="columnBox">
           <strong>Learn React</strong>
