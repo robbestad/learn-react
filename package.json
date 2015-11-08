@@ -11,7 +11,7 @@
     "start": "node start.js",
     "test": "jest",
     "lint": "node_modules/.bin/eslint public/src/scripts/",
-    "postinstall": "gulp clean:copy clean:styles clean:scripts && gulp build && webpack -p && cp public/src/index.html build/index.html",
+    "postinstall": "gulp build && webpack -p && cp public/src/index.html build/index.html",
     "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build --config webpack.config.dev.js"
   },
   "jest": {

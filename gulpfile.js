@@ -27,6 +27,8 @@ gulp.task('clean',
 gulp.task('copystyles', require('./tasks/copystyles')(config));
 gulp.task('critical', ['copystyles'], require('./tasks/critical')(config));
 
+gulp.task('clean:all', ['clean:vendor','clean:copy']);
+
 // Concat vendor scripts (described in config)
 gulp.task('vendor', require('./tasks/vendor')(config));
 
