@@ -27,12 +27,6 @@ gulp.task('clean',
 gulp.task('copystyles', require('./tasks/copystyles')(config));
 gulp.task('critical', ['copystyles'], require('./tasks/critical')(config));
 
-// Convert JSX to js
-//gulp.task('jsx',  require('./tasks/transform')(config));
-
-// Jslinting
-//gulp.task('lint', require("./tasks/lint")(config));
-
 // Concat vendor scripts (described in config)
 gulp.task('vendor', ['clean:vendor'], require('./tasks/vendor')(config));
 
@@ -41,9 +35,6 @@ gulp.task('styles', ['clean:styles'], require('./tasks/styles')(config));
 
 // Webpack bundle
 gulp.task('webpack', ['clean:scripts', 'vendor'], require('./tasks/webpack')(config));
-
-// Bundle once
-//gulp.task('scripts', ['clean:scripts', 'vendor'], require('./tasks/webpack')(config));
 
 // Bundle and watch for changes to all files appropriately
 gulp.task('serve', ['vendor', 'copy', 'styles'],
@@ -55,5 +46,5 @@ gulp.task('dev', ['webpack','serve']);
 gulp.task('copy', ['clean:copy'], require('./tasks/copy')(config));
 
 // For deployment. Makes front-end ready to serve from `public/dist`
-gulp.task('build', ['vendor','copy', 'styles']);
+gulp.task('build', ['vendor', 'copy', 'styles']);
 gulp.task('default', ['build']);

@@ -1,7 +1,7 @@
 // Paths to use. Must end with a slash!
 const paths = {
     src: './public/src/', // Where the sources are located
-    dist: './build/dist/' // Where the build products will be placed
+    dist: './public/dist/' // Where the build products will be placed
 };
 
 module.exports = {
