@@ -27,9 +27,9 @@ module.exports = React.createClass({
           &nbsp; is a collection of React examples,
           modules and tutorials. More will be coming
           every now and then, so be sure to bookmark and come back or star/fork it
-          on
-          <a href="https://github.com/svenanders/learn-react">github</a>
-          .
+          on{" "}
+          <a href="https://github.com/svenanders/learn-react">github</a>.
+          Test: <Link to="breadcrumbs/some-path">test</Link>
         </Col>
       </Row>
       <Row className="show-grid">

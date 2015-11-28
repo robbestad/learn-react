@@ -48,7 +48,9 @@ render((
     <Route name="Root" component={Layout}>
       <Route name="Learn React" path="/" component={Wrapper}>
         <Redirect from="/" to="/home"/>
-        <Route name="Home" path="/home" component={Home}/>
+        <Route name="Home" path="/home" component={Home}>
+          <Route path="some-path" name="some-thing" component={Home} />
+        </Route>
         <Route name="StickyDiv" path="/stickydiv" component={StickyDiv}/>
         <Route name="Markdown" path="/markdown" component={Markdown}/>
         <Route name="Source" path="/source" component={Source}/>
@@ -56,7 +58,9 @@ render((
         <Route name="Animations" path="/animations" component={Animations}/>
         <Route name="Charts" path="/charts" component={Charts}/>
         <Route name="Forms" path="/forms" component={Forms}/>
-        <Route name="Breadcrumbs" path="/breadcrumbs" component={Breadcrumbs}/>
+        <Route name="Breadcrumbs" path="/breadcrumbs" component={Breadcrumbs}>
+          <Route path="some-path" name="some-thing" component={Home} />
+        </Route>
       </Route>
     </Route>
   </Router>

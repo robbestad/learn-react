@@ -12,7 +12,7 @@
     "test": "jest",
     "publish": "gulp build && webpack -p && gulp critical && git commit -am'heroku deploy' && git push heroku master",
     "lint": "node_modules/.bin/eslint public/src/scripts/",
-    "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build --config webpack.config.js"
+    "dev": "NODE_ENV=development webpack-dev-server --devtool eval --progress --colors --hot --content-base build --config webpack.config.js"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
