@@ -35,8 +35,9 @@ var config = {
     // you can now require('file') instead of require('file.js')
     extensions: ['', '.js', '.json', '.jsx'],
     modulesDirectories: ['node_modules', 'vendors', 'public/src'],
+    root: './public/src/scripts',
     alias: {
-      app: '/public/src/scripts'
+      app: './public/src/scripts'
     }
   }
 };
