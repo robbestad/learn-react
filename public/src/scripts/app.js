@@ -4,7 +4,7 @@
  */
 'use strict';
 
-import Router, { Route, DefaultRoute, Redirect } from 'react-router';
+import Router, { Route, DefaultRoute, Redirect, IndexRoute } from 'react-router';
 import React from 'react';
 import { render } from 'react-dom';
 import Layout from './layout';
@@ -45,22 +45,20 @@ const Wrapper = React.createClass({
 });
 render((
   <Router history={history}>
-    <Route name="Root" component={Layout}>
-      <Route name="Learn React" path="/" component={Wrapper}>
-        <Redirect from="/" to="/home"/>
-        <Route name="Home" path="/home" component={Home}>
-          <Route path="some-path" name="some-thing" component={Home} />
-        </Route>
-        <Route name="StickyDiv" path="/stickydiv" component={StickyDiv}/>
-        <Route name="Markdown" path="/markdown" component={Markdown}/>
-        <Route name="Source" path="/source" component={Source}/>
-        <Route name="Button" path="/button" component={Button}/>
-        <Route name="Animations" path="/animations" component={Animations}/>
-        <Route name="Charts" path="/charts" component={Charts}/>
-        <Route name="Forms" path="/forms" component={Forms}/>
-        <Route name="Breadcrumbs" path="/breadcrumbs" component={Breadcrumbs}>
-          <Route path="some-path" name="some-thing" component={Home} />
-        </Route>
+    <Route name="Root" path="/" component={Layout}>
+      <IndexRoute component={Home} />
+      <Route name="Home" path="/home" component={Home}>
+        <Route path="some-path" name="some-thing" component={Home} />
+      </Route>
+      <Route name="StickyDiv" path="/stickydiv" component={StickyDiv}/>
+      <Route name="Markdown" path="/markdown" component={Markdown}/>
+      <Route name="Source" path="/source" component={Source}/>
+      <Route name="Button" path="/button" component={Button}/>
+      <Route name="Animations" path="/animations" component={Animations}/>
+      <Route name="Charts" path="/charts" component={Charts}/>
+      <Route name="Forms" path="/forms" component={Forms}/>
+      <Route name="Breadcrumbs" path="/breadcrumbs" component={Breadcrumbs}>
+        <Route path="some-path" name="some-thing" component={Home} />
       </Route>
     </Route>
   </Router>
