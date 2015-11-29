@@ -30,7 +30,7 @@ module.exports = React.createClass({
           on{" "}
 
           <a href="https://github.com/svenanders/learn-react">github</a>.
-          Test: <Link to="breadcrumbs/some-path">test</Link>
+          {/*Test: <Link to="breadcrumbs/some-path">test</Link>*/}
         </Col>
       </Row>
       <Row className="show-grid">
