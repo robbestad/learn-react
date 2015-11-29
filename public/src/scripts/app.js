@@ -45,11 +45,9 @@ const Wrapper = React.createClass({
 });
 render((
   <Router history={history}>
-    <Route name="Root" path="/" component={Layout}>
+    <Route name="Learn React" path="/" component={Layout}>
       <IndexRoute component={Home} />
-      <Route name="Home" path="/home" component={Home}>
-        <Route path="some-path" name="some-thing" component={Home} />
-      </Route>
+      <Route name="Home" path="/home" component={Home}/>
       <Route name="StickyDiv" path="/stickydiv" component={StickyDiv}/>
       <Route name="Markdown" path="/markdown" component={Markdown}/>
       <Route name="Source" path="/source" component={Source}/>
