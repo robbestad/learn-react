@@ -9,23 +9,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import Layout from './layout';
 import { createHistory } from 'history'
-/*
 
- <Route path="/articles" component={require('./articles')}>
- <Route path="/article/:id" component={require('./articles/item/index')} >
- </Route>
- <Route path="/article/:id/edit" component={require('./articles/item/edit')} >
- </Route>
- </Route>
-
- <Route name="articles" path="/articles" component={require('./articles')}>
- <Route name="article" path="/article/:id" component={require('./articles/item/index')} >
- <Route path="/edit" component={require('./articles/item/edit')} >
- </Route>
- </Route>
- </Route>
-
- */
 let history = createHistory();
 import Home from './home/index';
 import StickyDiv from './stickydiv/index';
@@ -44,7 +28,7 @@ const Wrapper = React.createClass({
   }
 });
 render((
-  <Router history={history}>
+  <Router >
     <Route name="Learn React" path="/" component={Layout}>
       <IndexRoute component={Home} />
       <Route name="Home" path="/home" component={Home}/>
