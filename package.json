@@ -7,7 +7,7 @@
     "url": "https://github.com/svenanders/react-tutorial"
   },
   "main": "public/src/scripts/app.js",
-  "scripts": {
+  "scripts": {br
     "start": "node start.js",
     "test": "jest",
     "publish": "gulp build && webpack -p && gulp critical && git commit -am'heroku deploy' && git push heroku master",
@@ -106,7 +106,6 @@
     "react-addons-pure-render-mixin": "^0.14.2",
     "react-addons-update": "^0.14.2",
     "react-bootstrap": "^0.28.1",
-    "react-breadcrumbs": "^1.1.8",
     "react-hammerjs": "^0.4.2",
     "react-markdown-to-html": "^1.0.10",
     "react-router": "^1.0.0-rc3",
