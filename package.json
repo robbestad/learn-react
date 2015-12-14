@@ -106,7 +106,7 @@
     "react-addons-pure-render-mixin": "^0.14.2",
     "react-addons-update": "^0.14.2",
     "react-bootstrap": "^0.28.1",
-    "react-breadcrumbs": "^1.1.6",
+    "react-breadcrumbs": "^1.1.8",
     "react-hammerjs": "^0.4.2",
     "react-markdown-to-html": "^1.0.10",
     "react-router": "^1.0.0-rc3",
