@@ -1,3 +1,7 @@
+# NB
+
+I consider the code in this repo okayish for 2014-era React, but I now consider it completely deprecated. 
+
 # Learn React
 
 This repo is a learning tool for React. Each single module is meant to show or highlight a feature or thing you can do with React. Fork and add modules if you want to showcase something. 
