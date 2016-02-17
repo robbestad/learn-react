@@ -1,6 +1,9 @@
-# NB
+# ATTENTION
 
-I consider the code in this repo okayish for 2014-era React, but I now consider it completely deprecated. 
+*I consider the code in this repo okayish for 2014-era React, but I now consider it completely deprecated. *
+
+Please visit this repo instead: https://github.com/svenanders/minimal-react
+
 
 # Learn React
 
